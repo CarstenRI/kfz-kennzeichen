@@ -399,7 +399,8 @@ async function loadKennzeichenJson(){
     const fresh = {};
     for(const [code, entry] of Object.entries(data.kennzeichen)){
       if(entry && entry.name && entry.bundesland){
-        fresh[code] = [entry.name, entry.bundesland];
+        // Array-Form: [name, bundesland, origin?]  (origin ist optional)
+        fresh[code] = [entry.name, entry.bundesland, entry.origin || null];
       }
     }
     // Sanity-Check: Mindestens 600 Einträge erwarten, sonst Fallback behalten
@@ -653,14 +654,17 @@ async function lookup(rawCode){
     updatePlateState();
     return;
   }
-  const [name, bl] = entry;
+  const [name, bl, origin] = entry;
   addHistory(code);
   resultBox.classList.add('show');
   updatePlateState();
+  const originRow = (origin && origin !== name)
+    ? `<dt>Herleitung</dt><dd>${origin}</dd>` : '';
   resultBox.innerHTML = `
     <h2>${code} – ${name}</h2>
     <dl class="kv">
       <dt>Bundesland</dt><dd>${BUNDESLAND[bl] || bl}</dd>
+      ${originRow}
       <dt>Einwohner</dt><dd id="popCell" class="loading">lädt…</dd>
       <dt>Lage</dt><dd id="locCell" class="loading">lädt…</dd>
     </dl>
