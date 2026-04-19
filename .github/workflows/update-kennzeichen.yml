@@ -1,1 +1,67 @@
+name: Kennzeichen-Datenbank aktualisieren
 
+# Läuft monatlich am 1. um 04:15 UTC (06:15 Berlin) und kann jederzeit
+# manuell über "Run workflow" auf der Actions-Seite gestartet werden.
+on:
+  schedule:
+    - cron: '15 4 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-kennzeichen
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Update-Skript ausführen
+        id: run
+        run: |
+          python update_kennzeichen.py | tee update.log
+          # Datei-Änderung ermitteln
+          if git diff --quiet kennzeichen.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Keine Änderungen in kennzeichen.json"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Zusammenfassung im Job-Summary
+        if: always()
+        run: |
+          {
+            echo "## Kennzeichen-Update"
+            echo ""
+            echo '```'
+            cat update.log 2>/dev/null || echo "(kein Log)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit bei Änderungen
+        if: steps.run.outputs.changed == 'true'
+        run: |
+          git config user.name  "kennzeichen-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          COUNT=$(python -c "import json; print(json.load(open('kennzeichen.json'))['count'])")
+          ADDED=$(python -c "import json; print(json.load(open('kennzeichen.json'))['stats']['added'])")
+          REMOVED=$(python -c "import json; print(json.load(open('kennzeichen.json'))['stats']['removed'])")
+          CHANGED=$(python -c "import json; print(json.load(open('kennzeichen.json'))['stats']['changed'])")
+
+          git add kennzeichen.json
+          git commit \
+            -m "data: Kennzeichen-Datenbank aktualisiert (${COUNT} Einträge)" \
+            -m "+${ADDED} neu · -${REMOVED} entfernt · ~${CHANGED} geändert"
+          git push
