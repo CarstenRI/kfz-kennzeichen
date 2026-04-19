@@ -389,7 +389,7 @@ const clearHistoryBtn = document.getElementById('clearHistory');
 
 // ---------- History ----------
 const HISTORY_KEY = 'kz-history-v1';
-const CACHE_KEY = 'kz-cache-v1';
+const CACHE_KEY = 'kz-cache-v2';
 function loadHistory(){ try { return JSON.parse(localStorage.getItem(HISTORY_KEY))||[] } catch { return [] } }
 function saveHistory(h){ localStorage.setItem(HISTORY_KEY, JSON.stringify(h.slice(0,12))) }
 function addHistory(code){
@@ -489,22 +489,57 @@ async function fetchWikiSummary(title){
     return await r.json();
   } catch { return null; }
 }
-async function fetchWikiInfobox(title){
-  // Parse infobox to extract Einwohner (population) via Wikipedia action API
+async function fetchPopulation(title, wikidataId){
+  // Strategie 1: Wikidata API (P1082 = Einwohnerzahl) – zuverlässigste Quelle
+  if(wikidataId){
+    try {
+      const url = `https://www.wikidata.org/wiki/Special:EntityData/${wikidataId}.json`;
+      const r = await fetch(url);
+      if(r.ok){
+        const j = await r.json();
+        const entity = j.entities?.[wikidataId];
+        const claims = entity?.claims?.P1082;
+        if(claims && claims.length > 0){
+          // Neuesten Wert nehmen (nach Datum sortiert, Qualifier P585 = Zeitpunkt)
+          const valid = claims.filter(c => c.mainsnak?.datavalue?.value?.amount);
+          valid.sort((a,b) => {
+            const ta = a.qualifiers?.P585?.[0]?.datavalue?.value?.time || '';
+            const tb = b.qualifiers?.P585?.[0]?.datavalue?.value?.time || '';
+            return tb.localeCompare(ta);
+          });
+          if(valid.length > 0){
+            const n = parseInt(valid[0].mainsnak.datavalue.value.amount.replace('+',''), 10);
+            if(!isNaN(n) && n > 0) return n;
+          }
+        }
+      }
+    } catch {}
+  }
+
+  // Strategie 2: Wikipedia Infobox-Wikitext – mit mehreren Mustern
   try {
     const url = `https://de.wikipedia.org/w/api.php?action=parse&page=${encodeURIComponent(title)}&prop=wikitext&format=json&origin=*&redirects=1`;
     const r = await fetch(url);
-    if(!r.ok) return null;
-    const j = await r.json();
-    const wt = j.parse?.wikitext?.['*'] || '';
-    // Suche nach Einwohner = 12345
-    const m = wt.match(/Einwohner\s*=\s*([\d\.\s]+)/);
-    if(m){
-      const n = parseInt(m[1].replace(/[^\d]/g,''),10);
-      if(!isNaN(n) && n > 0) return n;
+    if(r.ok){
+      const j = await r.json();
+      const wt = j.parse?.wikitext?.['*'] || '';
+      const patterns = [
+        /\|\s*Einwohner\s*=\s*([\d\.]+)/,
+        /\|\s*Einwohnerzahl\s*=\s*([\d\.]+)/,
+        /\|\s*EW\s*=\s*([\d\.]+)/,
+        /\|\s*population\s*=\s*([\d\.]+)/i,
+      ];
+      for(const p of patterns){
+        const m = wt.match(p);
+        if(m){
+          const n = parseInt(m[1].replace(/[^\d]/g,''), 10);
+          if(!isNaN(n) && n > 0) return n;
+        }
+      }
     }
-    return null;
-  } catch { return null; }
+  } catch {}
+
+  return null;
 }
 async function geocode(q){
   try {
@@ -561,12 +596,10 @@ async function lookup(rawCode){
   geo = geoResult;
   wiki = wikiResult;
 
-  // population: try wiki.extract or infobox
+  // population: Wikidata (via wikibase_item aus Summary) → Infobox-Fallback
   if(pop == null){
-    if(wiki && wiki.description) {
-      // summary rarely contains population, so fetch infobox
-    }
-    pop = await fetchWikiInfobox(searchName);
+    const wikidataId = wiki?.wikibase_item || null;
+    pop = await fetchPopulation(searchName, wikidataId);
   }
 
   // cache
