@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kennzeichen-Finder – KFZ-Kennzeichen nachschlagen</title>
+<meta name="theme-color" content="#0f172a" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="icon.svg" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<style>
+  :root{
+    --bg:#0f172a; --panel:#111c34; --panel2:#172341; --accent:#38bdf8;
+    --accent2:#f59e0b; --text:#e2e8f0; --muted:#94a3b8; --ok:#22c55e;
+    --bad:#ef4444; --border:#1e293b; --card:#1a2540;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,sans-serif;
+            background:linear-gradient(160deg,#0b1222 0%,#0f172a 100%);color:var(--text);min-height:100vh}
+  header{padding:28px 24px 16px;text-align:center;border-bottom:1px solid var(--border);position:sticky;top:0;
+         background:rgba(15,23,42,.92);backdrop-filter:blur(8px);z-index:1000}
+  header h1{margin:0;font-size:26px;letter-spacing:.5px}
+  header h1 span{color:var(--accent)}
+  header p{margin:6px 0 0;color:var(--muted);font-size:14px}
+  main{max-width:1200px;margin:0 auto;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media (max-width:900px){main{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px;
+        box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .search-wrap{position:relative}
+  .plate{display:flex;align-items:center;gap:0;background:#f8fafc;border:3px solid #0f172a;border-radius:8px;
+         padding:6px 10px;font-family:"Courier New",monospace;font-weight:bold;box-shadow:inset 0 0 0 2px #0f172a}
+  .plate-eu{background:#1e40af;color:#facc15;padding:14px 6px;font-size:11px;font-weight:bold;
+            border-radius:4px 0 0 4px;margin-right:8px;text-align:center;line-height:1}
+  .plate-eu span{display:block;margin-top:4px;color:#facc15;font-size:14px}
+  input[type=text]{flex:1;border:none;background:transparent;color:#0f172a;font-family:inherit;
+                   font-weight:bold;font-size:28px;letter-spacing:2px;text-transform:uppercase;
+                   outline:none;width:100%;padding:6px}
+  input::placeholder{color:#94a3b8;font-weight:normal;letter-spacing:1px}
+  .hint{margin-top:8px;color:var(--muted);font-size:13px;text-align:center}
+  #suggestions{position:absolute;top:100%;left:0;right:0;background:var(--card);border:1px solid var(--border);
+               border-radius:0 0 10px 10px;max-height:260px;overflow-y:auto;z-index:50;box-shadow:0 10px 20px rgba(0,0,0,.4);
+               display:none}
+  #suggestions.open{display:block}
+  .sug{padding:8px 12px;cursor:pointer;display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--border)}
+  .sug:last-child{border-bottom:none}
+  .sug:hover, .sug.active{background:var(--panel2)}
+  .sug-code{font-family:monospace;font-weight:bold;color:var(--accent);min-width:50px}
+  .sug-name{color:var(--text);flex:1}
+  .sug-land{color:var(--muted);font-size:12px}
+  .result{margin-top:20px;padding:18px;background:var(--card);border-radius:12px;border:1px solid var(--border);display:none}
+  .result.show{display:block}
+  .result h2{margin:0 0 4px;font-size:22px;color:var(--accent)}
+  .result h3{margin:14px 0 6px;font-size:14px;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:1px}
+  .kv{display:grid;grid-template-columns:140px 1fr;gap:8px 12px;margin:8px 0;font-size:15px}
+  .kv dt{color:var(--muted)}
+  .kv dd{margin:0;color:var(--text)}
+  .pop{display:inline-block;background:var(--panel2);padding:2px 10px;border-radius:10px;font-weight:600}
+  .desc{margin-top:10px;color:var(--text);font-size:14px;line-height:1.5}
+  .thumb{float:right;margin:0 0 10px 12px;width:110px;height:110px;object-fit:cover;border-radius:10px;
+         border:1px solid var(--border)}
+  #map{height:420px;border-radius:12px;overflow:hidden;border:1px solid var(--border);background:#0b1222}
+  .history{margin-top:16px}
+  .history h3{margin:0 0 8px;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{background:var(--panel2);color:var(--text);border:1px solid var(--border);padding:4px 10px;border-radius:14px;
+        font-size:12px;font-family:monospace;cursor:pointer;transition:.15s}
+  .chip:hover{background:var(--accent);color:#0f172a;border-color:var(--accent)}
+  .error{background:#4c1d1d;border:1px solid #991b1b;color:#fecaca;padding:10px 14px;border-radius:8px;margin-top:12px}
+  .loading{color:var(--muted);font-style:italic;margin-top:10px}
+  footer{text-align:center;color:var(--muted);font-size:12px;padding:20px;border-top:1px solid var(--border)}
+  footer a{color:var(--accent);text-decoration:none}
+  .btn-clear{background:none;border:1px solid var(--border);color:var(--muted);border-radius:6px;
+             padding:2px 8px;font-size:11px;cursor:pointer;margin-left:6px}
+  .btn-clear:hover{color:var(--bad);border-color:var(--bad)}
+</style>
+</head>
+<body>
+<header>
+  <h1>🚗 <span>Kennzeichen</span>-Finder</h1>
+  <p>Gib ein deutsches KFZ-Unterscheidungszeichen ein und erfahre die Herkunft, Einwohnerzahl und Lage auf der Karte.</p>
+</header>
+
+<main>
+  <section class="card">
+    <div class="search-wrap">
+      <div class="plate">
+        <div class="plate-eu">EU<span>D</span></div>
+        <input id="code" type="text" placeholder="z. B. B, HH, M, MYK" autocomplete="off" spellcheck="false" />
+      </div>
+      <div id="suggestions"></div>
+    </div>
+    <div class="hint">Tipp: Du kannst auch nach Städten suchen (z. B. „München", „Berlin")</div>
+
+    <div id="result" class="result"></div>
+
+    <div class="history">
+      <h3>Verlauf <button class="btn-clear" id="clearHistory" title="Verlauf löschen">löschen</button></h3>
+      <div id="historyChips" class="chips"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div id="map"></div>
+  </section>
+</main>
+
+<footer>
+  Daten: Kennzeichen-Zuordnung integriert ·
+  Geokodierung: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap</a> (Nominatim) ·
+  Info &amp; Einwohner: <a href="https://de.wikipedia.org" target="_blank" rel="noopener">Wikipedia</a> ·
+  Karte: <a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>
+</footer>
+
+<script>
+// ============================================================
+//  Deutsche KFZ-Unterscheidungszeichen → Kommune / Landkreis
+//  Format: code : [Name, Bundesland]
+//  Bundesland-Kürzel:
+//    BW=Baden-Württemberg, BY=Bayern, BE=Berlin, BB=Brandenburg,
+//    HB=Bremen, HH=Hamburg, HE=Hessen, MV=Mecklenburg-Vorpommern,
+//    NI=Niedersachsen, NW=Nordrhein-Westfalen, RP=Rheinland-Pfalz,
+//    SL=Saarland, SN=Sachsen, ST=Sachsen-Anhalt,
+//    SH=Schleswig-Holstein, TH=Thüringen
+// ============================================================
+const KENNZEICHEN = {
+  "A":["Augsburg","BY"], "AA":["Ostalbkreis (Aalen)","BW"], "AB":["Aschaffenburg","BY"],
+  "ABG":["Altenburger Land","TH"], "ABI":["Anhalt-Bitterfeld","ST"], "AC":["Städteregion Aachen","NW"],
+  "AE":["Auerbach/Vogtland","SN"], "AIB":["Bad Aibling (Rosenheim)","BY"], "AIC":["Aichach-Friedberg","BY"],
+  "AK":["Altenkirchen (Westerwald)","RP"], "ALF":["Alfeld (Leine)","NI"], "ALS":["Alsfeld (Vogelsbergkreis)","HE"],
+  "ALZ":["Alzenau","BY"], "AM":["Amberg","BY"], "AN":["Ansbach","BY"],
+  "ANA":["Annaberg-Buchholz","SN"], "ANG":["Angermünde","BB"], "ANK":["Anklam","MV"],
+  "AÖ":["Altötting","BY"], "AP":["Weimarer Land (Apolda)","TH"], "APD":["Apolda","TH"],
+  "ARN":["Arnstadt (Ilm-Kreis)","TH"], "ART":["Artern (Kyffhäuserkreis)","TH"], "AS":["Amberg-Sulzbach","BY"],
+  "ASL":["Aschersleben (Salzlandkreis)","ST"], "ASZ":["Aue-Schwarzenberg","SN"], "AT":["Altentreptow","MV"],
+  "AU":["Aue (Erzgebirgskreis)","SN"], "AUR":["Aurich","NI"], "AW":["Ahrweiler","RP"],
+  "AZ":["Alzey-Worms","RP"], "AZE":["Anhalt-Zerbst","ST"],
+  "B":["Berlin","BE"], "BA":["Bamberg","BY"], "BAD":["Baden-Baden","BW"], "BAR":["Barnim","BB"],
+  "BBG":["Bernburg (Salzlandkreis)","ST"], "BB":["Böblingen","BW"], "BC":["Biberach","BW"],
+  "BCH":["Buchen (Neckar-Odenwald)","BW"], "BED":["Brand-Erbisdorf (Mittelsachsen)","SN"],
+  "BER":["Bernau bei Berlin","BB"], "BF":["Burgsteinfurt","NW"], "BGL":["Berchtesgadener Land","BY"],
+  "BH":["Bühl (Rastatt)","BW"], "BI":["Bielefeld","NW"], "BID":["Biedenkopf","HE"],
+  "BIN":["Bingen am Rhein","RP"], "BIR":["Birkenfeld","RP"], "BIT":["Eifelkreis Bitburg-Prüm","RP"],
+  "BIW":["Bischofswerda","SN"], "BK":["Landkreis Börde (Haldensleben)","ST"],
+  "BL":["Zollernalbkreis (Balingen)","BW"], "BLB":["Bad Berleburg","NW"], "BLK":["Burgenlandkreis","ST"],
+  "BM":["Rhein-Erft-Kreis (Bergheim)","NW"], "BN":["Bonn","NW"], "BNA":["Borna (Leipzig)","SN"],
+  "BO":["Bochum","NW"], "BOG":["Bogen (Straubing-Bogen)","BY"], "BOH":["Bocholt (Borken)","NW"],
+  "BOR":["Borken","NW"], "BOT":["Bottrop","NW"], "BP":["Bundespolizei","—"],
+  "BRA":["Brake (Wesermarsch)","NI"], "BRB":["Brandenburg an der Havel","BB"], "BRG":["Burg (Jerichower Land)","ST"],
+  "BRK":["Bad Brückenau","BY"], "BRL":["Braunlage (Goslar)","NI"], "BRV":["Bremervörde","NI"],
+  "BS":["Braunschweig","NI"], "BSB":["Bersenbrück","NI"], "BSK":["Beeskow (Oder-Spree)","BB"],
+  "BT":["Bayreuth","BY"], "BTF":["Bitterfeld","ST"], "BÜD":["Büdingen (Wetteraukreis)","HE"],
+  "BÜR":["Büren (Paderborn)","NW"], "BÜS":["Büsingen am Hochrhein","BW"], "BÜZ":["Bützow (Rostock)","MV"],
+  "BZ":["Bautzen","SN"],
+  "C":["Chemnitz","SN"], "CA":["Calau","BB"], "CB":["Cottbus","BB"], "CE":["Celle","NI"],
+  "CHA":["Cham","BY"], "CLP":["Cloppenburg","NI"], "CLZ":["Clausthal-Zellerfeld","NI"],
+  "CO":["Coburg","BY"], "COC":["Cochem-Zell","RP"], "COE":["Coesfeld","NW"],
+  "CR":["Crailsheim (Schwäbisch Hall)","BW"], "CUX":["Cuxhaven","NI"], "CW":["Calw","BW"],
+  "D":["Düsseldorf","NW"], "DA":["Darmstadt","HE"], "DAH":["Dachau","BY"], "DAN":["Lüchow-Dannenberg","NI"],
+  "DAU":["Vulkaneifel (Daun)","RP"], "DBR":["Bad Doberan (Rostock)","MV"], "DD":["Dresden","SN"],
+  "DE":["Dessau-Roßlau","ST"], "DEG":["Deggendorf","BY"], "DEL":["Delmenhorst","NI"],
+  "DGF":["Dingolfing-Landau","BY"], "DH":["Diepholz","NI"], "DI":["Dieburg (Darmstadt-Dieburg)","HE"],
+  "DIL":["Dillenburg (Lahn-Dill-Kreis)","HE"], "DIN":["Dinslaken (Wesel)","NW"],
+  "DIZ":["Diez (Rhein-Lahn-Kreis)","RP"], "DKB":["Dinkelsbühl","BY"], "DL":["Döbeln (Mittelsachsen)","SN"],
+  "DLG":["Dillingen a.d. Donau","BY"], "DM":["Demmin","MV"], "DN":["Düren","NW"], "DO":["Dortmund","NW"],
+  "DON":["Donau-Ries (Donauwörth)","BY"], "DU":["Duisburg","NW"], "DÜW":["Bad Dürkheim","RP"],
+  "DW":["Dippoldiswalde","SN"], "DZ":["Delitzsch (Nordsachsen)","SN"],
+  "E":["Essen","NW"], "EA":["Eisenach","TH"], "EB":["Eilenburg (Nordsachsen)","SN"], "EBE":["Ebersberg","BY"],
+  "EBN":["Ebern (Haßberge)","BY"], "ED":["Erding","BY"], "EE":["Elbe-Elster","BB"], "EF":["Erfurt","TH"],
+  "EG":["Eggenfelden (Rottal-Inn)","BY"], "EH":["Eisenhüttenstadt","BB"], "EI":["Eichstätt","BY"],
+  "EIC":["Eichsfeld","TH"], "EIL":["Eisleben (Mansfeld-Südharz)","ST"], "EIN":["Einbeck","NI"],
+  "EIS":["Eisenberg (Saale-Holzland)","TH"], "EL":["Emsland","NI"], "EM":["Emmendingen","BW"],
+  "EMD":["Emden","NI"], "EMS":["Rhein-Lahn-Kreis","RP"], "EN":["Ennepe-Ruhr-Kreis","NW"],
+  "ER":["Erlangen","BY"], "ERB":["Odenwaldkreis (Erbach)","HE"], "ERH":["Erlangen-Höchstadt","BY"],
+  "ERK":["Erkelenz (Heinsberg)","NW"], "ERZ":["Erzgebirgskreis","SN"], "ES":["Esslingen","BW"],
+  "ESB":["Eschenbach i.d.OPf.","BY"], "ESW":["Werra-Meißner-Kreis","HE"], "EU":["Euskirchen","NW"],
+  "EW":["Eberswalde (Barnim)","BB"],
+  "F":["Frankfurt am Main","HE"], "FB":["Wetteraukreis (Friedberg)","HE"], "FD":["Fulda","HE"],
+  "FDB":["Friedberg (Aichach-Friedberg)","BY"], "FDS":["Freudenstadt","BW"], "FEU":["Feuchtwangen","BY"],
+  "FF":["Frankfurt (Oder)","BB"], "FFB":["Fürstenfeldbruck","BY"], "FG":["Freiberg (Mittelsachsen)","SN"],
+  "FI":["Finsterwalde (Elbe-Elster)","BB"], "FKB":["Frankenberg (Waldeck-Frankenberg)","HE"],
+  "FL":["Flensburg","SH"], "FLÖ":["Flöha (Mittelsachsen)","SN"], "FN":["Bodenseekreis (Friedrichshafen)","BW"],
+  "FO":["Forchheim","BY"], "FOR":["Forst (Spree-Neiße)","BB"], "FR":["Freiburg im Breisgau","BW"],
+  "FRG":["Freyung-Grafenau","BY"], "FRI":["Friesland","NI"], "FRW":["Bad Freienwalde","BB"],
+  "FS":["Freising","BY"], "FT":["Frankenthal (Pfalz)","RP"], "FTL":["Freital","SN"],
+  "FÜ":["Fürth","BY"], "FÜS":["Füssen (Ostallgäu)","BY"], "FW":["Fürstenwalde/Spree","BB"],
+  "G":["Gera","TH"], "GA":["Gardelegen","ST"], "GAN":["Bad Gandersheim","NI"],
+  "GAP":["Garmisch-Partenkirchen","BY"], "GC":["Glauchau (Zwickau)","SN"], "GD":["Schwäbisch Gmünd","BW"],
+  "GDB":["Gadebusch (Nordwestmecklenburg)","MV"], "GE":["Gelsenkirchen","NW"], "GEL":["Geldern (Kleve)","NW"],
+  "GEO":["Gerolzhofen","BY"], "GER":["Germersheim","RP"], "GF":["Gifhorn","NI"],
+  "GG":["Groß-Gerau","HE"], "GHA":["Geithain (Leipzig)","SN"], "GHC":["Gräfenhainichen","ST"],
+  "GI":["Gießen","HE"], "GL":["Rheinisch-Bergischer Kreis","NW"], "GLA":["Gladbeck (Recklinghausen)","NW"],
+  "GM":["Oberbergischer Kreis (Gummersbach)","NW"], "GMN":["Grimmen (Vorpommern-Rügen)","MV"],
+  "GNT":["Genthin (Jerichower Land)","ST"], "GÖ":["Göttingen","NI"], "GOA":["St. Goar","RP"],
+  "GOH":["St. Goarshausen","RP"], "GP":["Göppingen","BW"], "GR":["Görlitz","SN"],
+  "GRA":["Grafenau (Freyung-Grafenau)","BY"], "GRH":["Großenhain (Meißen)","SN"],
+  "GRI":["Griesbach i.Rottal","BY"], "GRM":["Grimma (Leipzig)","SN"], "GRZ":["Greiz","TH"],
+  "GS":["Goslar","NI"], "GT":["Gütersloh","NW"], "GTH":["Gotha","TH"], "GÜ":["Güstrow (Rostock)","MV"],
+  "GUB":["Guben (Spree-Neiße)","BB"], "GUN":["Gunzenhausen","BY"], "GVM":["Grevesmühlen","MV"],
+  "GW":["Greifswald","MV"], "GZ":["Günzburg","BY"],
+  "H":["Hannover","NI"], "HA":["Hagen","NW"], "HAB":["Hammelburg (Bad Kissingen)","BY"],
+  "HAL":["Halle (Saale)","ST"], "HAM":["Hamm","NW"], "HAS":["Haßberge","BY"],
+  "HB":["Bremen","HB"], "HBN":["Hildburghausen","TH"], "HBS":["Halberstadt (Harz)","ST"],
+  "HC":["Hainichen (Mittelsachsen)","SN"], "HCH":["Hechingen (Zollernalbkreis)","BW"],
+  "HD":["Heidelberg","BW"], "HDH":["Heidenheim an der Brenz","BW"], "HDL":["Haldensleben (Börde)","ST"],
+  "HE":["Helmstedt","NI"], "HEB":["Hersbruck (Nürnberger Land)","BY"], "HEF":["Hersfeld-Rotenburg","HE"],
+  "HEI":["Dithmarschen (Heide)","SH"], "HER":["Herne","NW"], "HET":["Hettstedt (Mansfeld-Südharz)","ST"],
+  "HF":["Herford","NW"], "HG":["Hochtaunuskreis (Bad Homburg)","HE"], "HGN":["Hagenow (Ludwigslust-Parchim)","MV"],
+  "HGW":["Hansestadt Greifswald","MV"], "HH":["Hamburg","HH"], "HHM":["Hohenmölsen (Burgenlandkreis)","ST"],
+  "HI":["Hildesheim","NI"], "HIG":["Heiligenstadt (Eichsfeld)","TH"], "HIP":["Hilpoltstein (Roth)","BY"],
+  "HK":["Heidekreis","NI"], "HL":["Lübeck","SH"], "HM":["Hameln-Pyrmont","NI"],
+  "HMÜ":["Hann. Münden (Göttingen)","NI"], "HN":["Heilbronn","BW"], "HO":["Hof","BY"],
+  "HOG":["Hofgeismar (Kassel)","HE"], "HOH":["Hofheim (Haßberge)","BY"], "HOL":["Holzminden","NI"],
+  "HOM":["Saarpfalz-Kreis (Homburg)","SL"], "HOR":["Horb am Neckar (Freudenstadt)","BW"],
+  "HOT":["Hohenstein-Ernstthal (Zwickau)","SN"], "HP":["Bergstraße (Heppenheim)","HE"],
+  "HR":["Schwalm-Eder-Kreis","HE"], "HRO":["Hansestadt Rostock","MV"], "HS":["Heinsberg","NW"],
+  "HSK":["Hochsauerlandkreis","NW"], "HST":["Hansestadt Stralsund","MV"], "HU":["Main-Kinzig-Kreis (Hanau)","HE"],
+  "HV":["Havelberg (Stendal)","ST"], "HWI":["Hansestadt Wismar","MV"], "HX":["Höxter","NW"],
+  "HY":["Hoyerswerda (Bautzen)","SN"], "HZ":["Harz","ST"],
+  "IGB":["St. Ingbert","SL"], "IK":["Ilm-Kreis","TH"], "IL":["Ilmenau","TH"],
+  "ILL":["Illertissen (Neu-Ulm)","BY"], "IN":["Ingolstadt","BY"], "IZ":["Steinburg (Itzehoe)","SH"],
+  "J":["Jena","TH"], "JE":["Jessen (Wittenberg)","ST"], "JL":["Jerichower Land (Burg)","ST"],
+  "JÜL":["Jülich (Düren)","NW"],
+  "K":["Köln","NW"], "KA":["Karlsruhe","BW"], "KB":["Waldeck-Frankenberg","HE"], "KC":["Kronach","BY"],
+  "KE":["Kempten (Allgäu)","BY"], "KEH":["Kelheim","BY"], "KEL":["Kehl (Ortenaukreis)","BW"],
+  "KEM":["Kemnath (Tirschenreuth)","BY"], "KF":["Kaufbeuren","BY"], "KG":["Bad Kissingen","BY"],
+  "KH":["Bad Kreuznach","RP"], "KI":["Kiel","SH"], "KIB":["Donnersbergkreis","RP"],
+  "KL":["Kaiserslautern","RP"], "KLE":["Kleve","NW"], "KLZ":["Klötze (Altmarkkreis Salzwedel)","ST"],
+  "KM":["Kamenz (Bautzen)","SN"], "KN":["Konstanz","BW"], "KO":["Koblenz","RP"],
+  "KÖN":["Bad Königshofen","BY"], "KÖT":["Köthen (Anhalt-Bitterfeld)","ST"],
+  "KÖZ":["Bad Kötzting (Cham)","BY"], "KR":["Krefeld","NW"], "KRU":["Krumbach (Günzburg)","BY"],
+  "KS":["Kassel","HE"], "KT":["Kitzingen","BY"], "KU":["Kulmbach","BY"], "KUS":["Kusel","RP"],
+  "KW":["Königs Wusterhausen (Dahme-Spreewald)","BB"], "KY":["Kyritz (Ostprignitz-Ruppin)","BB"],
+  "KYF":["Kyffhäuserkreis","TH"],
+  "L":["Leipzig","SN"], "LA":["Landshut","BY"], "LAN":["Landau a.d. Isar","BY"],
+  "LAU":["Nürnberger Land (Lauf)","BY"], "LB":["Ludwigsburg","BW"], "LBS":["Bad Lobenstein","TH"],
+  "LBZ":["Lübz (Ludwigslust-Parchim)","MV"], "LD":["Landau in der Pfalz","RP"],
+  "LDK":["Lahn-Dill-Kreis","HE"], "LDS":["Dahme-Spreewald","BB"], "LEO":["Leonberg (Böblingen)","BW"],
+  "LER":["Leer","NI"], "LEV":["Leverkusen","NW"], "LG":["Lüneburg","NI"],
+  "LH":["Lüdinghausen (Coesfeld)","NW"], "LI":["Lindau (Bodensee)","BY"], "LIB":["Bad Liebenwerda","BB"],
+  "LIF":["Lichtenfels","BY"], "LIP":["Lippe","NW"], "LL":["Landsberg am Lech","BY"],
+  "LM":["Limburg-Weilburg","HE"], "LÖ":["Lörrach","BW"], "LÖB":["Löbau (Görlitz)","SN"],
+  "LOS":["Oder-Spree","BB"], "LP":["Lippstadt (Soest)","NW"], "LR":["Lahr (Ortenaukreis)","BW"],
+  "LRO":["Landkreis Rostock","MV"], "LSA":["Sachsen-Anhalt (Landesregierung)","ST"],
+  "LSN":["Sachsen (Landesregierung)","SN"], "LSZ":["Bad Langensalza","TH"], "LÜN":["Lünen (Unna)","NW"],
+  "LUP":["Ludwigslust-Parchim","MV"], "LWL":["Bad Wildungen","HE"],
+  "M":["München","BY"], "MA":["Mannheim","BW"], "MAB":["Marienberg (Erzgebirgskreis)","SN"],
+  "MAI":["Mainburg (Kelheim)","BY"], "MAK":["Mayen-Koblenz (Mayen)","RP"],
+  "MAL":["Mallersdorf (Straubing-Bogen)","BY"], "MB":["Miesbach","BY"], "MC":["Malchin","MV"],
+  "MD":["Magdeburg","ST"], "ME":["Mettmann","NW"], "MED":["Medebach (Hochsauerlandkreis)","NW"],
+  "MEI":["Meißen","SN"], "MEK":["Mittlerer Erzgebirgskreis","SN"], "MEL":["Melle (Osnabrück)","NI"],
+  "MER":["Merseburg (Saalekreis)","ST"], "MG":["Mönchengladbach","NW"], "MGH":["Bad Langensalza/Mühlhausen","TH"],
+  "MGN":["Meiningen (Schmalkalden-Meiningen)","TH"], "MH":["Mülheim an der Ruhr","NW"],
+  "MHL":["Mühlhausen (Unstrut-Hainich-Kreis)","TH"], "MI":["Minden-Lübbecke","NW"],
+  "MIL":["Miltenberg","BY"], "MK":["Märkischer Kreis","NW"], "MKK":["Main-Kinzig-Kreis","HE"],
+  "ML":["Mansfelder Land (Eisleben)","ST"], "MM":["Memmingen","BY"], "MN":["Unterallgäu (Mindelheim)","BY"],
+  "MO":["Moers (Wesel)","NW"], "MOL":["Märkisch-Oderland","BB"], "MON":["Monschau (Aachen)","NW"],
+  "MOS":["Neckar-Odenwald-Kreis (Mosbach)","BW"], "MQ":["Merseburg-Querfurt","ST"],
+  "MR":["Marburg-Biedenkopf","HE"], "MS":["Münster","NW"], "MSE":["Mecklenburgische Seenplatte","MV"],
+  "MSH":["Mansfeld-Südharz","ST"], "MSP":["Main-Spessart","BY"], "MST":["Mecklenburg-Strelitz","MV"],
+  "MTK":["Main-Taunus-Kreis","HE"], "MTL":["Muldentalkreis","SN"], "MÜ":["Mühldorf am Inn","BY"],
+  "MÜB":["Münchberg (Hof)","BY"], "MÜR":["Müritz","MV"], "MVL":["Mecklenburg-Vorpommern (Land)","MV"],
+  "MW":["Mittweida (Mittelsachsen)","SN"], "MY":["Mayen","RP"], "MYK":["Mayen-Koblenz","RP"],
+  "MZ":["Mainz","RP"], "MZG":["Merzig-Wadern","SL"],
+  "N":["Nürnberg","BY"], "NAB":["Nabburg (Schwandorf)","BY"], "NAI":["Naila (Hof)","BY"],
+  "NAU":["Nauen (Havelland)","BB"], "NB":["Neubrandenburg","MV"], "ND":["Neuburg-Schrobenhausen","BY"],
+  "NDH":["Nordhausen","TH"], "NE":["Rhein-Kreis Neuss","NW"], "NEA":["Neustadt a.d.Aisch-Bad Windsheim","BY"],
+  "NEB":["Nebra (Burgenlandkreis)","ST"], "NEC":["Neustadt bei Coburg","BY"],
+  "NEN":["Neunburg vorm Wald","BY"], "NES":["Rhön-Grabfeld (Bad Neustadt a.d.Saale)","BY"],
+  "NEW":["Neustadt a.d.Waldnaab","BY"], "NF":["Nordfriesland","SH"], "NH":["Neuhaus am Rennweg","TH"],
+  "NI":["Nienburg (Weser)","NI"], "NK":["Neunkirchen (Saar)","SL"], "NM":["Neumarkt in der Oberpfalz","BY"],
+  "NMB":["Naumburg (Burgenlandkreis)","ST"], "NMS":["Neumünster","SH"], "NÖ":["Nördlingen (Donau-Ries)","BY"],
+  "NOH":["Grafschaft Bentheim (Nordhorn)","NI"], "NOL":["Niederschlesischer Oberlausitzkreis (Niesky)","SN"],
+  "NOM":["Northeim","NI"], "NOR":["Norden (Aurich)","NI"], "NP":["Neuruppin (Ostprignitz-Ruppin)","BB"],
+  "NR":["Neuwied","RP"], "NT":["Nürtingen (Esslingen)","BW"], "NU":["Neu-Ulm","BY"],
+  "NVP":["Nordvorpommern","MV"], "NW":["Neustadt an der Weinstraße","RP"], "NWM":["Nordwestmecklenburg","MV"],
+  "NY":["Niesky (Görlitz)","SN"], "NZ":["Neustrelitz (Mecklenburgische Seenplatte)","MV"],
+  "OA":["Oberallgäu","BY"], "OAL":["Ostallgäu","BY"], "OB":["Oberhausen","NW"],
+  "OC":["Oschatz (Nordsachsen)","SN"], "OCH":["Ochsenfurt (Würzburg)","BY"],
+  "OD":["Stormarn (Bad Oldesloe)","SH"], "OE":["Olpe","NW"], "OF":["Offenbach am Main","HE"],
+  "OG":["Ortenaukreis (Offenburg)","BW"], "OH":["Ostholstein","SH"], "OHA":["Osterode am Harz","NI"],
+  "OHV":["Oberhavel","BB"], "OHZ":["Osterholz","NI"], "OK":["Ohrekreis (Börde)","ST"],
+  "OL":["Oldenburg (Oldenburg)","NI"], "OPR":["Ostprignitz-Ruppin","BB"], "OS":["Osnabrück","NI"],
+  "OSL":["Oberspreewald-Lausitz","BB"], "OVI":["Oberviechtach (Schwandorf)","BY"],
+  "OVL":["Vogtlandkreis (historisch)","SN"], "OVP":["Ostvorpommern","MV"],
+  "P":["Potsdam","BB"], "PA":["Passau","BY"], "PAF":["Pfaffenhofen a.d.Ilm","BY"],
+  "PAN":["Rottal-Inn (Pfarrkirchen)","BY"], "PAR":["Parchim (Ludwigslust-Parchim)","MV"],
+  "PB":["Paderborn","NW"], "PCH":["Parchim","MV"], "PE":["Peine","NI"],
+  "PEG":["Pegnitz (Bayreuth)","BY"], "PF":["Pforzheim / Enzkreis","BW"], "PI":["Pinneberg","SH"],
+  "PIR":["Sächsische Schweiz-Osterzgebirge (Pirna)","SN"], "PL":["Plauen (Vogtlandkreis)","SN"],
+  "PLÖ":["Plön","SH"], "PM":["Potsdam-Mittelmark","BB"], "PN":["Pößneck (Saale-Orla-Kreis)","TH"],
+  "PR":["Prignitz","BB"], "PS":["Pirmasens","RP"], "PZ":["Prenzlau (Uckermark)","BB"],
+  "QFT":["Querfurt (Saalekreis)","ST"], "QLB":["Quedlinburg (Harz)","ST"],
+  "R":["Regensburg","BY"], "RA":["Rastatt","BW"], "RD":["Rendsburg-Eckernförde","SH"],
+  "RE":["Recklinghausen","NW"], "REG":["Regen","BY"], "REH":["Rehau (Hof)","BY"],
+  "RG":["Riesa-Großenhain (Meißen)","SN"], "RH":["Roth","BY"], "RI":["Rinteln (Schaumburg)","NI"],
+  "RIE":["Riesa (Meißen)","SN"], "RL":["Rochlitz (Mittelsachsen)","SN"],
+  "RM":["Rockenhausen (Donnersbergkreis)","RP"], "RN":["Rhein-Neckar-Kreis (Heidelberg)","BW"],
+  "RO":["Rosenheim","BY"], "ROD":["Bad Rodach (Coburg)","BY"], "ROF":["Rotenburg an der Fulda","HE"],
+  "ROL":["Rottenburg a.d.Laaber","BY"], "ROS":["Landkreis Rostock","MV"],
+  "ROT":["Rothenburg ob der Tauber","BY"], "ROW":["Rotenburg (Wümme)","NI"], "RS":["Remscheid","NW"],
+  "RSL":["Roßlau (Elbe)","ST"], "RT":["Reutlingen","BW"], "RÜD":["Rheingau-Taunus-Kreis","HE"],
+  "RÜG":["Rügen (Vorpommern-Rügen)","MV"], "RV":["Ravensburg","BW"], "RW":["Rottweil","BW"],
+  "RZ":["Herzogtum Lauenburg (Ratzeburg)","SH"],
+  "S":["Stuttgart","BW"], "SAB":["Saarburg (Trier-Saarburg)","RP"], "SAD":["Schwandorf","BY"],
+  "SAL":["Saalfeld-Rudolstadt","TH"], "SAN":["Sangerhausen (Mansfeld-Südharz)","ST"],
+  "SAW":["Altmarkkreis Salzwedel","ST"], "SB":["Regionalverband Saarbrücken","SL"],
+  "SBG":["Strausberg (Märkisch-Oderland)","BB"], "SBK":["Schönebeck (Salzlandkreis)","ST"],
+  "SC":["Schwabach","BY"], "SCZ":["Schleiz (Saale-Orla-Kreis)","TH"], "SDL":["Stendal","ST"],
+  "SDT":["Schwedt/Oder (Uckermark)","BB"], "SE":["Segeberg","SH"], "SEB":["Sebnitz","SN"],
+  "SEE":["Seelow (Märkisch-Oderland)","BB"], "SEL":["Selb (Wunsiedel)","BY"],
+  "SFB":["Senftenberg (Oberspreewald-Lausitz)","BB"], "SFT":["Staßfurt (Salzlandkreis)","ST"],
+  "SG":["Solingen","NW"], "SGH":["Sangerhausen","ST"], "SHA":["Schwäbisch Hall","BW"],
+  "SHG":["Schaumburg (Stadthagen)","NI"], "SHK":["Saale-Holzland-Kreis","TH"], "SHL":["Suhl","TH"],
+  "SI":["Siegen-Wittgenstein","NW"], "SIG":["Sigmaringen","BW"], "SIM":["Rhein-Hunsrück-Kreis (Simmern)","RP"],
+  "SK":["Saalekreis","ST"], "SL":["Schleswig-Flensburg","SH"], "SLE":["Schleiden (Euskirchen)","NW"],
+  "SLF":["Saalfeld-Rudolstadt","TH"], "SLK":["Salzlandkreis","ST"], "SLS":["Saarlouis","SL"],
+  "SLÜ":["Schlüchtern (Main-Kinzig-Kreis)","HE"], "SLZ":["Bad Salzungen (Wartburgkreis)","TH"],
+  "SM":["Schmalkalden-Meiningen","TH"], "SN":["Schwerin","MV"], "SO":["Soest","NW"],
+  "SOB":["Schrobenhausen","BY"], "SOG":["Schongau (Weilheim-Schongau)","BY"], "SOK":["Saale-Orla-Kreis","TH"],
+  "SOM":["Sömmerda","TH"], "SON":["Sonneberg","TH"], "SP":["Speyer","RP"],
+  "SPB":["Spremberg (Spree-Neiße)","BB"], "SPN":["Spree-Neiße","BB"], "SR":["Straubing","BY"],
+  "SRB":["Strasburg (Vorpommern-Greifswald)","MV"], "SRO":["Stadtroda","TH"], "ST":["Steinfurt","NW"],
+  "STA":["Starnberg","BY"], "STB":["Sternberg (Ludwigslust-Parchim)","MV"], "STD":["Stade","NI"],
+  "STE":["Bad Staffelstein (Lichtenfels)","BY"], "STL":["Stollberg (Erzgebirgskreis)","SN"],
+  "SU":["Rhein-Sieg-Kreis (Siegburg)","NW"], "SÜW":["Südliche Weinstraße","RP"], "SW":["Schweinfurt","BY"],
+  "SZ":["Salzgitter","NI"], "SZB":["Schwarzenberg (Erzgebirgskreis)","SN"],
+  "TBB":["Main-Tauber-Kreis (Tauberbischofsheim)","BW"], "TDO":["Torgau-Oschatz","SN"],
+  "TE":["Tecklenburg (Steinfurt)","NW"], "TF":["Teltow-Fläming","BB"], "TG":["Torgau (Nordsachsen)","SN"],
+  "THL":["Thüringen (Landesregierung)","TH"], "TIR":["Tirschenreuth","BY"], "TÖL":["Bad Tölz-Wolfratshausen","BY"],
+  "TO":["Torgau (Nordsachsen)","SN"], "TP":["Templin (Uckermark)","BB"], "TR":["Trier","RP"],
+  "TS":["Traunstein","BY"], "TÜ":["Tübingen","BW"], "TUT":["Tuttlingen","BW"],
+  "UE":["Uelzen","NI"], "UEM":["Ueckermünde (Vorpommern-Greifswald)","MV"], "UFF":["Uffenheim","BY"],
+  "UH":["Unstrut-Hainich-Kreis","TH"], "UL":["Ulm","BW"], "UM":["Uckermark","BB"], "UN":["Unna","NW"],
+  "V":["Vogtlandkreis","SN"], "VAI":["Vaihingen (Ludwigsburg)","BW"], "VB":["Vogelsbergkreis","HE"],
+  "VEC":["Vechta","NI"], "VER":["Verden","NI"], "VG":["Vorpommern-Greifswald","MV"],
+  "VIB":["Vilsbiburg (Landshut)","BY"], "VIE":["Viersen","NW"], "VIT":["Viechtach (Regen)","BY"],
+  "VK":["Völklingen (Saarbrücken)","SL"], "VOF":["Vilshofen (Passau)","BY"],
+  "VOH":["Vohenstrauß (Neustadt a.d.Waldnaab)","BY"], "VR":["Vorpommern-Rügen","MV"],
+  "VS":["Schwarzwald-Baar-Kreis (Villingen-Schwenningen)","BW"],
+  "W":["Wuppertal","NW"], "WA":["Waldeck (Waldeck-Frankenberg)","HE"], "WAF":["Warendorf","NW"],
+  "WAK":["Wartburgkreis","TH"], "WAR":["Warburg (Höxter)","NW"], "WB":["Wittenberg","ST"],
+  "WBS":["Worbis (Eichsfeld)","TH"], "WDA":["Werdau (Zwickau)","SN"], "WE":["Weimar","TH"],
+  "WEL":["Weilburg (Limburg-Weilburg)","HE"], "WEN":["Weiden in der Oberpfalz","BY"],
+  "WER":["Wernigerode (Harz)","ST"], "WES":["Wesel","NW"], "WF":["Wolfenbüttel","NI"],
+  "WHV":["Wilhelmshaven","NI"], "WI":["Wiesbaden","HE"], "WIL":["Bernkastel-Wittlich","RP"],
+  "WIZ":["Witzenhausen (Werra-Meißner-Kreis)","HE"], "WL":["Harburg (Winsen/Luhe)","NI"],
+  "WLG":["Wolgast (Vorpommern-Greifswald)","MV"], "WM":["Weilheim-Schongau","BY"],
+  "WMS":["Wolmirstedt (Börde)","ST"], "WN":["Rems-Murr-Kreis (Waiblingen)","BW"],
+  "WND":["St. Wendel","SL"], "WO":["Worms","RP"], "WOB":["Wolfsburg","NI"],
+  "WOH":["Wolfhagen (Kassel)","HE"], "WOL":["Wolfen (Anhalt-Bitterfeld)","ST"],
+  "WR":["Wernigerode (historisch)","ST"], "WRN":["Waren (Müritz)","MV"],
+  "WSF":["Weißenfels (Burgenlandkreis)","ST"], "WST":["Ammerland (Westerstede)","NI"],
+  "WT":["Waldshut","BW"], "WTL":["Wittlich (Bernkastel-Wittlich)","RP"], "WTM":["Wittmund","NI"],
+  "WUG":["Weißenburg-Gunzenhausen","BY"], "WUN":["Wunsiedel im Fichtelgebirge","BY"],
+  "WUR":["Wurzen (Leipzig)","SN"], "WÜ":["Würzburg","BY"], "WW":["Westerwaldkreis (Montabaur)","RP"],
+  "WZL":["Wetzlar (Lahn-Dill-Kreis)","HE"],
+  "Z":["Zwickau","SN"], "ZE":["Zerbst (Anhalt-Bitterfeld)","ST"], "ZEL":["Zell (Cochem-Zell)","RP"],
+  "ZI":["Zittau (Görlitz)","SN"], "ZIG":["Ziegenhain (Schwalm-Eder-Kreis)","HE"],
+  "ZP":["Zschopau (Erzgebirgskreis)","SN"], "ZR":["Zeulenroda (Greiz)","TH"],
+  "ZW":["Zweibrücken","RP"], "ZZ":["Zeitz (Burgenlandkreis)","ST"]
+};
+
+const BUNDESLAND = {
+  "BW":"Baden-Württemberg","BY":"Bayern","BE":"Berlin","BB":"Brandenburg",
+  "HB":"Bremen","HH":"Hamburg","HE":"Hessen","MV":"Mecklenburg-Vorpommern",
+  "NI":"Niedersachsen","NW":"Nordrhein-Westfalen","RP":"Rheinland-Pfalz",
+  "SL":"Saarland","SN":"Sachsen","ST":"Sachsen-Anhalt",
+  "SH":"Schleswig-Holstein","TH":"Thüringen","—":"Sonderkennzeichen"
+};
+
+// ---------- Map init ----------
+const map = L.map('map', { zoomControl: true }).setView([51.1657, 10.4515], 6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  maxZoom: 18
+}).addTo(map);
+let currentMarker = null;
+
+// ---------- DOM refs ----------
+const input = document.getElementById('code');
+const sugBox = document.getElementById('suggestions');
+const resultBox = document.getElementById('result');
+const historyChips = document.getElementById('historyChips');
+const clearHistoryBtn = document.getElementById('clearHistory');
+
+// ---------- History ----------
+const HISTORY_KEY = 'kz-history-v1';
+const CACHE_KEY = 'kz-cache-v1';
+function loadHistory(){ try { return JSON.parse(localStorage.getItem(HISTORY_KEY))||[] } catch { return [] } }
+function saveHistory(h){ localStorage.setItem(HISTORY_KEY, JSON.stringify(h.slice(0,12))) }
+function addHistory(code){
+  let h = loadHistory().filter(x => x !== code);
+  h.unshift(code);
+  saveHistory(h);
+  renderHistory();
+}
+function renderHistory(){
+  const h = loadHistory();
+  historyChips.innerHTML = h.length
+    ? h.map(c => `<span class="chip" data-code="${c}">${c}</span>`).join('')
+    : '<span style="color:var(--muted);font-size:12px">Noch keine Anfragen</span>';
+  historyChips.querySelectorAll('.chip').forEach(el => {
+    el.addEventListener('click', () => { input.value = el.dataset.code; lookup(el.dataset.code); });
+  });
+}
+clearHistoryBtn.addEventListener('click', () => { localStorage.removeItem(HISTORY_KEY); renderHistory(); });
+
+// ---------- Cache ----------
+function loadCache(){ try { return JSON.parse(localStorage.getItem(CACHE_KEY))||{} } catch { return {} } }
+function saveCache(c){ localStorage.setItem(CACHE_KEY, JSON.stringify(c)) }
+function cacheGet(k){ return loadCache()[k] }
+function cacheSet(k,v){ const c=loadCache(); c[k]=v; saveCache(c) }
+
+// ---------- Autocomplete ----------
+function findMatches(q){
+  q = q.trim().toUpperCase();
+  if(!q) return [];
+  const out = [];
+  for(const [code, [name, bl]] of Object.entries(KENNZEICHEN)){
+    if(code === q) out.push({code,name,bl,score:0});
+    else if(code.startsWith(q)) out.push({code,name,bl,score:1});
+    else if(name.toUpperCase().includes(q)) out.push({code,name,bl,score:2});
+  }
+  return out.sort((a,b)=> a.score - b.score || a.code.localeCompare(b.code)).slice(0,12);
+}
+function renderSuggestions(list){
+  if(!list.length){ sugBox.classList.remove('open'); sugBox.innerHTML=''; return; }
+  sugBox.innerHTML = list.map((m,i) =>
+    `<div class="sug${i===0?' active':''}" data-code="${m.code}">
+       <span class="sug-code">${m.code}</span>
+       <span class="sug-name">${m.name}</span>
+       <span class="sug-land">${BUNDESLAND[m.bl]||m.bl}</span>
+     </div>`).join('');
+  sugBox.classList.add('open');
+  sugBox.querySelectorAll('.sug').forEach(el => {
+    el.addEventListener('click', () => {
+      input.value = el.dataset.code;
+      sugBox.classList.remove('open');
+      lookup(el.dataset.code);
+    });
+  });
+}
+let activeIdx = 0;
+input.addEventListener('input', () => {
+  const matches = findMatches(input.value);
+  activeIdx = 0;
+  renderSuggestions(matches);
+});
+input.addEventListener('keydown', (e) => {
+  const items = sugBox.querySelectorAll('.sug');
+  if(e.key === 'ArrowDown' && items.length){
+    e.preventDefault();
+    activeIdx = Math.min(activeIdx+1, items.length-1);
+    items.forEach((el,i)=> el.classList.toggle('active', i===activeIdx));
+    items[activeIdx].scrollIntoView({block:'nearest'});
+  } else if(e.key === 'ArrowUp' && items.length){
+    e.preventDefault();
+    activeIdx = Math.max(activeIdx-1, 0);
+    items.forEach((el,i)=> el.classList.toggle('active', i===activeIdx));
+    items[activeIdx].scrollIntoView({block:'nearest'});
+  } else if(e.key === 'Enter'){
+    e.preventDefault();
+    if(items.length){
+      const code = items[activeIdx].dataset.code;
+      input.value = code;
+      sugBox.classList.remove('open');
+      lookup(code);
+    } else {
+      lookup(input.value);
+    }
+  } else if(e.key === 'Escape'){
+    sugBox.classList.remove('open');
+  }
+});
+document.addEventListener('click', (e) => {
+  if(!sugBox.contains(e.target) && e.target !== input) sugBox.classList.remove('open');
+});
+
+// ---------- Wikipedia + Geocoding ----------
+async function fetchWikiSummary(title){
+  try {
+    const url = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}?redirect=true`;
+    const r = await fetch(url);
+    if(!r.ok) return null;
+    return await r.json();
+  } catch { return null; }
+}
+async function fetchWikiInfobox(title){
+  // Parse infobox to extract Einwohner (population) via Wikipedia action API
+  try {
+    const url = `https://de.wikipedia.org/w/api.php?action=parse&page=${encodeURIComponent(title)}&prop=wikitext&format=json&origin=*&redirects=1`;
+    const r = await fetch(url);
+    if(!r.ok) return null;
+    const j = await r.json();
+    const wt = j.parse?.wikitext?.['*'] || '';
+    // Suche nach Einwohner = 12345
+    const m = wt.match(/Einwohner\s*=\s*([\d\.\s]+)/);
+    if(m){
+      const n = parseInt(m[1].replace(/[^\d]/g,''),10);
+      if(!isNaN(n) && n > 0) return n;
+    }
+    return null;
+  } catch { return null; }
+}
+async function geocode(q){
+  try {
+    const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=de&q=${encodeURIComponent(q)}`;
+    const r = await fetch(url, { headers: { 'Accept-Language': 'de' }});
+    if(!r.ok) return null;
+    const arr = await r.json();
+    if(!arr.length) return null;
+    return { lat: parseFloat(arr[0].lat), lon: parseFloat(arr[0].lon), display: arr[0].display_name };
+  } catch { return null; }
+}
+
+function fmtNumber(n){
+  if(n==null) return '—';
+  return n.toLocaleString('de-DE');
+}
+
+// ---------- Main lookup ----------
+async function lookup(rawCode){
+  const code = (rawCode||'').trim().toUpperCase();
+  if(!code) return;
+  const entry = KENNZEICHEN[code];
+  if(!entry){
+    resultBox.classList.add('show');
+    resultBox.innerHTML = `<div class="error">Kennzeichen <b>${code}</b> wurde nicht gefunden. Versuche es mit einem anderen Code oder wähle einen Vorschlag.</div>`;
+    return;
+  }
+  const [name, bl] = entry;
+  addHistory(code);
+  resultBox.classList.add('show');
+  resultBox.innerHTML = `
+    <h2>${code} – ${name}</h2>
+    <dl class="kv">
+      <dt>Bundesland</dt><dd>${BUNDESLAND[bl] || bl}</dd>
+      <dt>Einwohner</dt><dd id="popCell" class="loading">lädt…</dd>
+      <dt>Lage</dt><dd id="locCell" class="loading">lädt…</dd>
+    </dl>
+    <div id="descBox" class="loading">Lade Beschreibung …</div>
+  `;
+
+  // Try cache first
+  const cached = cacheGet(code);
+  let geo = cached?.geo;
+  let wiki = cached?.wiki;
+  let pop = cached?.pop;
+
+  // Resolve: if no cache -> fetch geo + wiki in parallel
+  const searchName = name.replace(/\s*\(.*?\)\s*/g,'').trim();
+
+  const [geoResult, wikiResult] = await Promise.all([
+    geo ? Promise.resolve(geo) : geocode(searchName + ', Deutschland'),
+    wiki ? Promise.resolve(wiki) : fetchWikiSummary(searchName)
+  ]);
+  geo = geoResult;
+  wiki = wikiResult;
+
+  // population: try wiki.extract or infobox
+  if(pop == null){
+    if(wiki && wiki.description) {
+      // summary rarely contains population, so fetch infobox
+    }
+    pop = await fetchWikiInfobox(searchName);
+  }
+
+  // cache
+  cacheSet(code, { geo, wiki, pop });
+
+  // Update DOM
+  const popCell = document.getElementById('popCell');
+  const locCell = document.getElementById('locCell');
+  const descBox = document.getElementById('descBox');
+
+  popCell.classList.remove('loading');
+  popCell.innerHTML = pop ? `<span class="pop">${fmtNumber(pop)}</span>` : '— (nicht verfügbar)';
+
+  locCell.classList.remove('loading');
+  if(geo){
+    locCell.textContent = `${geo.lat.toFixed(4)}°N, ${geo.lon.toFixed(4)}°E`;
+  } else {
+    locCell.textContent = 'unbekannt';
+  }
+
+  descBox.classList.remove('loading');
+  if(wiki && wiki.extract){
+    const thumb = wiki.thumbnail?.source
+      ? `<img class="thumb" src="${wiki.thumbnail.source}" alt="${wiki.title}" />` : '';
+    const wikiLink = wiki.content_urls?.desktop?.page
+      ? `<p style="margin-top:8px"><a href="${wiki.content_urls.desktop.page}" target="_blank" rel="noopener" style="color:var(--accent)">→ Mehr auf Wikipedia</a></p>` : '';
+    descBox.innerHTML = `${thumb}<div class="desc">${wiki.extract}</div>${wikiLink}`;
+  } else {
+    descBox.innerHTML = '<div style="color:var(--muted)">Keine Beschreibung gefunden.</div>';
+  }
+
+  // Map marker
+  if(geo){
+    if(currentMarker) map.removeLayer(currentMarker);
+    currentMarker = L.marker([geo.lat, geo.lon]).addTo(map)
+      .bindPopup(`<b>${code}</b> – ${name}<br>${BUNDESLAND[bl]||bl}`).openPopup();
+    map.flyTo([geo.lat, geo.lon], 10, { duration: 0.8 });
+  }
+}
+
+// ---------- Initial state ----------
+renderHistory();
+input.focus();
+
+// Demo preview hint: show a suggestion list if the user hasn't typed yet
+</script>
+</body>
+</html>

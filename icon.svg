@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <!-- Hintergrund (App-Icon) -->
+  <rect width="100" height="100" rx="22" fill="url(#g)"/>
+  <!-- Kennzeichen-Schild -->
+  <rect x="10" y="32" width="80" height="36" rx="5" fill="#f8fafc" stroke="#0f172a" stroke-width="2.5"/>
+  <!-- EU-Banner links -->
+  <rect x="12.5" y="34.5" width="14" height="31" rx="2.5" fill="#1e40af"/>
+  <!-- EU-Sterne (vereinfacht) -->
+  <circle cx="19.5" cy="42" r="0.9" fill="#facc15"/>
+  <circle cx="22"   cy="44" r="0.9" fill="#facc15"/>
+  <circle cx="22"   cy="47" r="0.9" fill="#facc15"/>
+  <circle cx="19.5" cy="49" r="0.9" fill="#facc15"/>
+  <circle cx="17"   cy="47" r="0.9" fill="#facc15"/>
+  <circle cx="17"   cy="44" r="0.9" fill="#facc15"/>
+  <!-- D-Kennung -->
+  <text x="19.5" y="61" font-size="9" fill="#facc15" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-weight="bold">D</text>
+  <!-- Hauptaufschrift -->
+  <text x="56" y="58" font-size="22" fill="#0f172a" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif" font-weight="bold" letter-spacing="1.5">KFZ</text>
+  <!-- Kleine Lupe oben rechts (Suche-Symbol) -->
+  <circle cx="78" cy="20" r="7" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
+  <line x1="83" y1="25" x2="89" y2="31" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Standort-Pin unten -->
+  <path d="M50 78 C50 78 56 85 56 90 C56 93.3 53.3 96 50 96 C46.7 96 44 93.3 44 90 C44 85 50 78 50 78 Z"
+        fill="#ef4444"/>
+  <circle cx="50" cy="89" r="2" fill="#f8fafc"/>
+</svg>
