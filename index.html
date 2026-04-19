@@ -40,6 +40,15 @@
                    font-weight:bold;font-size:28px;letter-spacing:2px;text-transform:uppercase;
                    outline:none;width:100%;padding:6px}
   input::placeholder{color:#94a3b8;font-weight:normal;letter-spacing:1px}
+  .plate-reset{
+    flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;
+    background:#e2e8f0;color:#475569;font-size:16px;font-weight:bold;line-height:1;
+    display:none;align-items:center;justify-content:center;margin-left:4px;
+    transition:.15s; font-family:inherit;
+  }
+  .plate-reset:hover{background:#ef4444;color:#fff;transform:rotate(90deg)}
+  .plate-reset:focus-visible{outline:2px solid #0f172a;outline-offset:2px}
+  .plate.has-content .plate-reset{display:flex}
   .hint{margin-top:8px;color:var(--muted);font-size:13px;text-align:center}
   #suggestions{position:absolute;top:100%;left:0;right:0;background:var(--card);border:1px solid var(--border);
                border-radius:0 0 10px 10px;max-height:260px;overflow-y:auto;z-index:50;box-shadow:0 10px 20px rgba(0,0,0,.4);
@@ -87,9 +96,10 @@
 <main>
   <section class="card">
     <div class="search-wrap">
-      <div class="plate">
+      <div class="plate" id="plate">
         <div class="plate-eu">EU<span>D</span></div>
         <input id="code" type="text" placeholder="z. B. B, HH, M, MYK" autocomplete="off" spellcheck="false" />
+        <button id="resetBtn" class="plate-reset" title="Zurücksetzen" aria-label="Zurücksetzen">✕</button>
       </div>
       <div id="suggestions"></div>
     </div>
@@ -378,18 +388,47 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   maxZoom: 18
 }).addTo(map);
-let currentMarker = null;
+let currentLayer = null;
 
 // ---------- DOM refs ----------
+const plate = document.getElementById('plate');
 const input = document.getElementById('code');
 const sugBox = document.getElementById('suggestions');
 const resultBox = document.getElementById('result');
 const historyChips = document.getElementById('historyChips');
 const clearHistoryBtn = document.getElementById('clearHistory');
+const resetBtn = document.getElementById('resetBtn');
+
+// ---------- Reset / Empty State ----------
+const MAP_INITIAL_CENTER = [51.1657, 10.4515];
+const MAP_INITIAL_ZOOM   = 6;
+function updatePlateState(){
+  const hasText = input.value.trim().length > 0;
+  const hasResult = resultBox.classList.contains('show');
+  plate.classList.toggle('has-content', hasText || hasResult);
+}
+function resetAll(){
+  input.value = '';
+  sugBox.classList.remove('open');
+  sugBox.innerHTML = '';
+  resultBox.classList.remove('show');
+  resultBox.innerHTML = '';
+  if(currentLayer){ map.removeLayer(currentLayer); currentLayer = null; }
+  map.setView(MAP_INITIAL_CENTER, MAP_INITIAL_ZOOM);
+  updatePlateState();
+  input.focus();
+}
+resetBtn.addEventListener('click', resetAll);
+// Escape leert bei leerem Input ebenfalls den Ergebnisbereich
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape' && resultBox.classList.contains('show') && input.value === ''){
+    resetAll();
+  }
+});
 
 // ---------- History ----------
 const HISTORY_KEY = 'kz-history-v1';
-const CACHE_KEY = 'kz-cache-v2';
+const CACHE_KEY = 'kz-cache-v3';
 function loadHistory(){ try { return JSON.parse(localStorage.getItem(HISTORY_KEY))||[] } catch { return [] } }
 function saveHistory(h){ localStorage.setItem(HISTORY_KEY, JSON.stringify(h.slice(0,12))) }
 function addHistory(code){
@@ -407,7 +446,11 @@ function renderHistory(){
     el.addEventListener('click', () => { input.value = el.dataset.code; lookup(el.dataset.code); });
   });
 }
-clearHistoryBtn.addEventListener('click', () => { localStorage.removeItem(HISTORY_KEY); renderHistory(); });
+clearHistoryBtn.addEventListener('click', () => {
+  localStorage.removeItem(HISTORY_KEY);
+  renderHistory();
+  resetAll();
+});
 
 // ---------- Cache ----------
 function loadCache(){ try { return JSON.parse(localStorage.getItem(CACHE_KEY))||{} } catch { return {} } }
@@ -449,6 +492,7 @@ input.addEventListener('input', () => {
   const matches = findMatches(input.value);
   activeIdx = 0;
   renderSuggestions(matches);
+  updatePlateState();
 });
 input.addEventListener('keydown', (e) => {
   const items = sugBox.querySelectorAll('.sug');
@@ -480,7 +524,7 @@ document.addEventListener('click', (e) => {
   if(!sugBox.contains(e.target) && e.target !== input) sugBox.classList.remove('open');
 });
 
-// ---------- Wikipedia + Geocoding ----------
+// ---------- Wikipedia + Wikidata + Geocoding ----------
 async function fetchWikiSummary(title){
   try {
     const url = `https://de.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}?redirect=true`;
@@ -489,58 +533,54 @@ async function fetchWikiSummary(title){
     return await r.json();
   } catch { return null; }
 }
-async function fetchPopulation(title, wikidataId){
-  // Strategie 1: Wikidata API (P1082 = Einwohnerzahl) – zuverlässigste Quelle
-  if(wikidataId){
-    try {
-      const url = `https://www.wikidata.org/wiki/Special:EntityData/${wikidataId}.json`;
-      const r = await fetch(url);
-      if(r.ok){
-        const j = await r.json();
-        const entity = j.entities?.[wikidataId];
-        const claims = entity?.claims?.P1082;
-        if(claims && claims.length > 0){
-          // Neuesten Wert nehmen (nach Datum sortiert, Qualifier P585 = Zeitpunkt)
-          const valid = claims.filter(c => c.mainsnak?.datavalue?.value?.amount);
-          valid.sort((a,b) => {
-            const ta = a.qualifiers?.P585?.[0]?.datavalue?.value?.time || '';
-            const tb = b.qualifiers?.P585?.[0]?.datavalue?.value?.time || '';
-            return tb.localeCompare(ta);
-          });
-          if(valid.length > 0){
-            const n = parseInt(valid[0].mainsnak.datavalue.value.amount.replace('+',''), 10);
-            if(!isNaN(n) && n > 0) return n;
-          }
-        }
-      }
-    } catch {}
-  }
 
-  // Strategie 2: Wikipedia Infobox-Wikitext – mit mehreren Mustern
+// Wikidata-SPARQL: aktuelle Einwohnerzahl (P1082 mit Stichtag P585)
+// und zugehörige OSM-Relation-ID (P402) in einer einzigen Abfrage.
+async function fetchWikidata(qid){
+  if(!qid) return null;
+  const sparql =
+    'SELECT ?population ?date ?osmRelation WHERE {' +
+    '  OPTIONAL { wd:' + qid + ' p:P1082 ?popStmt .' +
+    '             ?popStmt ps:P1082 ?population .' +
+    '             OPTIONAL { ?popStmt pq:P585 ?date . } }' +
+    '  OPTIONAL { wd:' + qid + ' wdt:P402 ?osmRelation . }' +
+    '} ORDER BY DESC(?date) LIMIT 1';
   try {
-    const url = `https://de.wikipedia.org/w/api.php?action=parse&page=${encodeURIComponent(title)}&prop=wikitext&format=json&origin=*&redirects=1`;
-    const r = await fetch(url);
-    if(r.ok){
-      const j = await r.json();
-      const wt = j.parse?.wikitext?.['*'] || '';
-      const patterns = [
-        /\|\s*Einwohner\s*=\s*([\d\.]+)/,
-        /\|\s*Einwohnerzahl\s*=\s*([\d\.]+)/,
-        /\|\s*EW\s*=\s*([\d\.]+)/,
-        /\|\s*population\s*=\s*([\d\.]+)/i,
-      ];
-      for(const p of patterns){
-        const m = wt.match(p);
-        if(m){
-          const n = parseInt(m[1].replace(/[^\d]/g,''), 10);
-          if(!isNaN(n) && n > 0) return n;
-        }
-      }
-    }
-  } catch {}
-
-  return null;
+    const url = 'https://query.wikidata.org/sparql?format=json&query=' + encodeURIComponent(sparql);
+    const r = await fetch(url, { headers: { 'Accept': 'application/sparql-results+json' }});
+    if(!r.ok) return null;
+    const j = await r.json();
+    const b = j.results && j.results.bindings && j.results.bindings[0];
+    if(!b) return null;
+    return {
+      population:     b.population ? Math.round(parseFloat(b.population.value)) : null,
+      populationDate: b.date ? b.date.value.slice(0,10) : null,
+      osmRelation:    b.osmRelation ? b.osmRelation.value : null
+    };
+  } catch { return null; }
 }
+
+// Lädt die Gebietsgrenze einer OSM-Relation als GeoJSON (via Nominatim-Lookup).
+async function fetchBoundary(osmRelationId){
+  if(!osmRelationId) return null;
+  try {
+    const url = 'https://nominatim.openstreetmap.org/lookup'
+              + '?osm_ids=R' + encodeURIComponent(osmRelationId)
+              + '&format=json&polygon_geojson=1&polygon_threshold=0.002';
+    const r = await fetch(url, { headers: { 'Accept-Language': 'de' }});
+    if(!r.ok) return null;
+    const arr = await r.json();
+    if(!arr.length || !arr[0].geojson) return null;
+    return {
+      geojson: arr[0].geojson,
+      lat: parseFloat(arr[0].lat),
+      lon: parseFloat(arr[0].lon),
+      display: arr[0].display_name
+    };
+  } catch { return null; }
+}
+
+// Fallback-Geocoding für Fälle ohne OSM-Relation
 async function geocode(q){
   try {
     const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=de&q=${encodeURIComponent(q)}`;
@@ -565,11 +605,13 @@ async function lookup(rawCode){
   if(!entry){
     resultBox.classList.add('show');
     resultBox.innerHTML = `<div class="error">Kennzeichen <b>${code}</b> wurde nicht gefunden. Versuche es mit einem anderen Code oder wähle einen Vorschlag.</div>`;
+    updatePlateState();
     return;
   }
   const [name, bl] = entry;
   addHistory(code);
   resultBox.classList.add('show');
+  updatePlateState();
   resultBox.innerHTML = `
     <h2>${code} – ${name}</h2>
     <dl class="kv">
@@ -580,42 +622,60 @@ async function lookup(rawCode){
     <div id="descBox" class="loading">Lade Beschreibung …</div>
   `;
 
-  // Try cache first
-  const cached = cacheGet(code);
-  let geo = cached?.geo;
-  let wiki = cached?.wiki;
-  let pop = cached?.pop;
+  // Try cache first (v3: wiki + wikidata + boundary + fallback-Marker)
+  const cached   = cacheGet(code) || {};
+  let wiki       = cached.wiki || null;
+  let wikidata   = cached.wikidata || null;
+  let boundary   = cached.boundary || null;
+  let fallback   = cached.fallback || null;
 
-  // Resolve: if no cache -> fetch geo + wiki in parallel
   const searchName = name.replace(/\s*\(.*?\)\s*/g,'').trim();
 
-  const [geoResult, wikiResult] = await Promise.all([
-    geo ? Promise.resolve(geo) : geocode(searchName + ', Deutschland'),
-    wiki ? Promise.resolve(wiki) : fetchWikiSummary(searchName)
-  ]);
-  geo = geoResult;
-  wiki = wikiResult;
+  // Schritt 1: Wikipedia-Summary (liefert extract + thumbnail + wikibase_item)
+  if(!wiki) wiki = await fetchWikiSummary(searchName);
 
-  // population: Wikidata (via wikibase_item aus Summary) → Infobox-Fallback
-  if(pop == null){
-    const wikidataId = wiki?.wikibase_item || null;
-    pop = await fetchPopulation(searchName, wikidataId);
+  // Schritt 2: Wikidata-SPARQL (Einwohner + OSM-Relation-ID)
+  if(!wikidata && wiki && wiki.wikibase_item){
+    wikidata = await fetchWikidata(wiki.wikibase_item);
   }
 
-  // cache
-  cacheSet(code, { geo, wiki, pop });
+  // Schritt 3: Boundary-Polygon über die OSM-Relation
+  if(!boundary && wikidata && wikidata.osmRelation){
+    boundary = await fetchBoundary(wikidata.osmRelation);
+  }
 
-  // Update DOM
+  // Schritt 4: Fallback-Marker, falls keine Grenze gefunden
+  if(!boundary && !fallback){
+    fallback = await geocode(searchName + ', Deutschland');
+  }
+
+  // Cache speichern (Quota-sicher)
+  try {
+    cacheSet(code, { wiki, wikidata, boundary, fallback });
+  } catch {
+    // Bei zu großem Polygon das boundary aus dem Cache weglassen
+    try { cacheSet(code, { wiki, wikidata, fallback }); } catch {}
+  }
+
+  // ----- DOM aktualisieren -----
   const popCell = document.getElementById('popCell');
   const locCell = document.getElementById('locCell');
   const descBox = document.getElementById('descBox');
 
   popCell.classList.remove('loading');
-  popCell.innerHTML = pop ? `<span class="pop">${fmtNumber(pop)}</span>` : '— (nicht verfügbar)';
+  if(wikidata && wikidata.population){
+    const year = wikidata.populationDate ? wikidata.populationDate.slice(0,4) : null;
+    const dateStr = year ? ` <span style="color:var(--muted);font-size:12px">(Stand ${year})</span>` : '';
+    popCell.innerHTML = `<span class="pop">${fmtNumber(wikidata.population)}</span>${dateStr}`;
+  } else {
+    popCell.innerHTML = '— (nicht verfügbar)';
+  }
 
+  const center = boundary ? { lat: boundary.lat, lon: boundary.lon } : fallback;
   locCell.classList.remove('loading');
-  if(geo){
-    locCell.textContent = `${geo.lat.toFixed(4)}°N, ${geo.lon.toFixed(4)}°E`;
+  if(center){
+    locCell.textContent = `${center.lat.toFixed(4)}°N, ${center.lon.toFixed(4)}°E`
+                        + (boundary ? ' · mit Gebietsgrenze' : '');
   } else {
     locCell.textContent = 'unbekannt';
   }
@@ -631,12 +691,19 @@ async function lookup(rawCode){
     descBox.innerHTML = '<div style="color:var(--muted)">Keine Beschreibung gefunden.</div>';
   }
 
-  // Map marker
-  if(geo){
-    if(currentMarker) map.removeLayer(currentMarker);
-    currentMarker = L.marker([geo.lat, geo.lon]).addTo(map)
+  // ----- Karte: Polygon bevorzugt, sonst Marker -----
+  if(currentLayer){ map.removeLayer(currentLayer); currentLayer = null; }
+  if(boundary && boundary.geojson){
+    currentLayer = L.geoJSON(boundary.geojson, {
+      style: { color:'#38bdf8', weight:2.5, fillColor:'#38bdf8', fillOpacity:0.18 }
+    }).addTo(map);
+    currentLayer.bindPopup(`<b>${code}</b> – ${name}<br>${BUNDESLAND[bl]||bl}`);
+    const b = currentLayer.getBounds();
+    if(b.isValid()) map.flyToBounds(b, { duration: 0.8, padding: [20,20], maxZoom: 13 });
+  } else if(center){
+    currentLayer = L.marker([center.lat, center.lon]).addTo(map)
       .bindPopup(`<b>${code}</b> – ${name}<br>${BUNDESLAND[bl]||bl}`).openPopup();
-    map.flyTo([geo.lat, geo.lon], 10, { duration: 0.8 });
+    map.flyTo([center.lat, center.lon], 10, { duration: 0.8 });
   }
 }
 
