@@ -58,8 +58,10 @@
   .sug:last-child{border-bottom:none}
   .sug:hover, .sug.active{background:var(--panel2)}
   .sug-code{font-family:monospace;font-weight:bold;color:var(--accent);min-width:50px}
-  .sug-name{color:var(--text);flex:1}
-  .sug-land{color:var(--muted);font-size:12px}
+  .sug-name{color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sug-origin{color:#cbd5e1;font-size:13px;font-style:italic;flex:0 0 auto;min-width:0;
+              overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:38%}
+  .sug-land{color:var(--muted);font-size:12px;flex:0 0 auto}
   .result{margin-top:20px;padding:18px;background:var(--card);border-radius:12px;border:1px solid var(--border);display:none}
   .result.show{display:block}
   .result h2{margin:0 0 4px;font-size:22px;color:var(--accent)}
@@ -509,21 +511,27 @@ function findMatches(q){
   q = q.trim().toUpperCase();
   if(!q) return [];
   const out = [];
-  for(const [code, [name, bl]] of Object.entries(KENNZEICHEN)){
-    if(code === q) out.push({code,name,bl,score:0});
-    else if(code.startsWith(q)) out.push({code,name,bl,score:1});
-    else if(name.toUpperCase().includes(q)) out.push({code,name,bl,score:2});
+  for(const [code, entry] of Object.entries(KENNZEICHEN)){
+    const [name, bl, origin] = entry;
+    if(code === q) out.push({code,name,bl,origin,score:0});
+    else if(code.startsWith(q)) out.push({code,name,bl,origin,score:1});
+    else if(name.toUpperCase().includes(q)) out.push({code,name,bl,origin,score:2});
+    else if(origin && origin.toUpperCase().includes(q)) out.push({code,name,bl,origin,score:3});
   }
   return out.sort((a,b)=> a.score - b.score || a.code.localeCompare(b.code)).slice(0,12);
 }
 function renderSuggestions(list){
   if(!list.length){ sugBox.classList.remove('open'); sugBox.innerHTML=''; return; }
-  sugBox.innerHTML = list.map((m,i) =>
-    `<div class="sug${i===0?' active':''}" data-code="${m.code}">
+  sugBox.innerHTML = list.map((m,i) => {
+    const origin = (m.origin && m.origin !== m.name)
+      ? `<span class="sug-origin">${m.origin}</span>` : '';
+    return `<div class="sug${i===0?' active':''}" data-code="${m.code}">
        <span class="sug-code">${m.code}</span>
        <span class="sug-name">${m.name}</span>
+       ${origin}
        <span class="sug-land">${BUNDESLAND[m.bl]||m.bl}</span>
-     </div>`).join('');
+     </div>`;
+  }).join('');
   sugBox.classList.add('open');
   sugBox.querySelectorAll('.sug').forEach(el => {
     el.addEventListener('click', () => {
