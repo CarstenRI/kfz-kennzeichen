@@ -135,8 +135,12 @@
 //    NI=Niedersachsen, NW=Nordrhein-Westfalen, RP=Rheinland-Pfalz,
 //    SL=Saarland, SN=Sachsen, ST=Sachsen-Anhalt,
 //    SH=Schleswig-Holstein, TH=Thüringen
+//
+//  Diese eingebettete Liste dient als Fallback. Beim Start versucht die App,
+//  die aktuellere Version aus kennzeichen.json zu laden (monatlich von einem
+//  GitHub-Action-Workflow aus Wikipedia + Wikidata gepflegt).
 // ============================================================
-const KENNZEICHEN = {
+let KENNZEICHEN = {
   "A":["Augsburg","BY"], "AA":["Ostalbkreis (Aalen)","BW"], "AB":["Aschaffenburg","BY"],
   "ABG":["Altenburger Land","TH"], "ABI":["Anhalt-Bitterfeld","ST"], "AC":["Städteregion Aachen","NW"],
   "AE":["Auerbach/Vogtland","SN"], "AIB":["Bad Aibling (Rosenheim)","BY"], "AIC":["Aichach-Friedberg","BY"],
@@ -381,6 +385,47 @@ const BUNDESLAND = {
   "SL":"Saarland","SN":"Sachsen","ST":"Sachsen-Anhalt",
   "SH":"Schleswig-Holstein","TH":"Thüringen","—":"Sonderkennzeichen"
 };
+
+// ---------- Dynamisches Update der Kennzeichen-Liste ----------
+// Versucht beim Start die aktuellere kennzeichen.json zu laden. Bei Erfolg
+// wird die eingebettete Fallback-Liste ersetzt.
+async function loadKennzeichenJson(){
+  try {
+    const r = await fetch('kennzeichen.json', { cache: 'no-cache' });
+    if(!r.ok) return false;
+    const data = await r.json();
+    if(!data || !data.kennzeichen) return false;
+
+    const fresh = {};
+    for(const [code, entry] of Object.entries(data.kennzeichen)){
+      if(entry && entry.name && entry.bundesland){
+        fresh[code] = [entry.name, entry.bundesland];
+      }
+    }
+    // Sanity-Check: Mindestens 600 Einträge erwarten, sonst Fallback behalten
+    const n = Object.keys(fresh).length;
+    if(n < 600){
+      console.warn(`kennzeichen.json hat nur ${n} Einträge – behalte eingebettete Liste`);
+      return false;
+    }
+    KENNZEICHEN = fresh;
+
+    // Stempel im Footer anzeigen
+    if(data.generated){
+      const stamp = document.createElement('div');
+      stamp.style.cssText = 'margin-top:6px;opacity:.7;font-size:11px';
+      const d = new Date(data.generated);
+      const datum = d.toLocaleDateString('de-DE', { year:'numeric', month:'long', day:'numeric' });
+      stamp.innerHTML = `Kennzeichen-Datenbank: <b>${n}</b> Einträge · zuletzt aktualisiert: ${datum}`;
+      const footer = document.querySelector('footer');
+      if(footer) footer.appendChild(stamp);
+    }
+    return true;
+  } catch (e) {
+    console.warn('kennzeichen.json nicht ladbar – nutze eingebettete Liste:', e);
+    return false;
+  }
+}
 
 // ---------- Map init ----------
 const map = L.map('map', { zoomControl: true }).setView([51.1657, 10.4515], 6);
@@ -710,6 +755,8 @@ async function lookup(rawCode){
 // ---------- Initial state ----------
 renderHistory();
 input.focus();
+// Aktuellere Kennzeichen-Liste nachladen (läuft asynchron im Hintergrund)
+loadKennzeichenJson();
 
 // Demo preview hint: show a suggestion list if the user hasn't typed yet
 </script>

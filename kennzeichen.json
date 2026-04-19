@@ -1,0 +1,2580 @@
+{
+  "generated": "2026-04-19T16:42:54.036Z",
+  "source": "Initial extract from Kennzeichen-Finder.html v1",
+  "source_note": "Wird beim nächsten GitHub-Action-Lauf durch Wikipedia+Wikidata-Merge aktualisiert",
+  "count": 643,
+  "kennzeichen": {
+    "A": {
+      "name": "Augsburg",
+      "bundesland": "BY"
+    },
+    "AA": {
+      "name": "Ostalbkreis (Aalen)",
+      "bundesland": "BW"
+    },
+    "AB": {
+      "name": "Aschaffenburg",
+      "bundesland": "BY"
+    },
+    "ABG": {
+      "name": "Altenburger Land",
+      "bundesland": "TH"
+    },
+    "ABI": {
+      "name": "Anhalt-Bitterfeld",
+      "bundesland": "ST"
+    },
+    "AC": {
+      "name": "Städteregion Aachen",
+      "bundesland": "NW"
+    },
+    "AE": {
+      "name": "Auerbach/Vogtland",
+      "bundesland": "SN"
+    },
+    "AIB": {
+      "name": "Bad Aibling (Rosenheim)",
+      "bundesland": "BY"
+    },
+    "AIC": {
+      "name": "Aichach-Friedberg",
+      "bundesland": "BY"
+    },
+    "AK": {
+      "name": "Altenkirchen (Westerwald)",
+      "bundesland": "RP"
+    },
+    "ALF": {
+      "name": "Alfeld (Leine)",
+      "bundesland": "NI"
+    },
+    "ALS": {
+      "name": "Alsfeld (Vogelsbergkreis)",
+      "bundesland": "HE"
+    },
+    "ALZ": {
+      "name": "Alzenau",
+      "bundesland": "BY"
+    },
+    "AM": {
+      "name": "Amberg",
+      "bundesland": "BY"
+    },
+    "AN": {
+      "name": "Ansbach",
+      "bundesland": "BY"
+    },
+    "ANA": {
+      "name": "Annaberg-Buchholz",
+      "bundesland": "SN"
+    },
+    "ANG": {
+      "name": "Angermünde",
+      "bundesland": "BB"
+    },
+    "ANK": {
+      "name": "Anklam",
+      "bundesland": "MV"
+    },
+    "AÖ": {
+      "name": "Altötting",
+      "bundesland": "BY"
+    },
+    "AP": {
+      "name": "Weimarer Land (Apolda)",
+      "bundesland": "TH"
+    },
+    "APD": {
+      "name": "Apolda",
+      "bundesland": "TH"
+    },
+    "ARN": {
+      "name": "Arnstadt (Ilm-Kreis)",
+      "bundesland": "TH"
+    },
+    "ART": {
+      "name": "Artern (Kyffhäuserkreis)",
+      "bundesland": "TH"
+    },
+    "AS": {
+      "name": "Amberg-Sulzbach",
+      "bundesland": "BY"
+    },
+    "ASL": {
+      "name": "Aschersleben (Salzlandkreis)",
+      "bundesland": "ST"
+    },
+    "ASZ": {
+      "name": "Aue-Schwarzenberg",
+      "bundesland": "SN"
+    },
+    "AT": {
+      "name": "Altentreptow",
+      "bundesland": "MV"
+    },
+    "AU": {
+      "name": "Aue (Erzgebirgskreis)",
+      "bundesland": "SN"
+    },
+    "AUR": {
+      "name": "Aurich",
+      "bundesland": "NI"
+    },
+    "AW": {
+      "name": "Ahrweiler",
+      "bundesland": "RP"
+    },
+    "AZ": {
+      "name": "Alzey-Worms",
+      "bundesland": "RP"
+    },
+    "AZE": {
+      "name": "Anhalt-Zerbst",
+      "bundesland": "ST"
+    },
+    "B": {
+      "name": "Berlin",
+      "bundesland": "BE"
+    },
+    "BA": {
+      "name": "Bamberg",
+      "bundesland": "BY"
+    },
+    "BAD": {
+      "name": "Baden-Baden",
+      "bundesland": "BW"
+    },
+    "BAR": {
+      "name": "Barnim",
+      "bundesland": "BB"
+    },
+    "BBG": {
+      "name": "Bernburg (Salzlandkreis)",
+      "bundesland": "ST"
+    },
+    "BB": {
+      "name": "Böblingen",
+      "bundesland": "BW"
+    },
+    "BC": {
+      "name": "Biberach",
+      "bundesland": "BW"
+    },
+    "BCH": {
+      "name": "Buchen (Neckar-Odenwald)",
+      "bundesland": "BW"
+    },
+    "BED": {
+      "name": "Brand-Erbisdorf (Mittelsachsen)",
+      "bundesland": "SN"
+    },
+    "BER": {
+      "name": "Bernau bei Berlin",
+      "bundesland": "BB"
+    },
+    "BF": {
+      "name": "Burgsteinfurt",
+      "bundesland": "NW"
+    },
+    "BGL": {
+      "name": "Berchtesgadener Land",
+      "bundesland": "BY"
+    },
+    "BH": {
+      "name": "Bühl (Rastatt)",
+      "bundesland": "BW"
+    },
+    "BI": {
+      "name": "Bielefeld",
+      "bundesland": "NW"
+    },
+    "BID": {
+      "name": "Biedenkopf",
+      "bundesland": "HE"
+    },
+    "BIN": {
+      "name": "Bingen am Rhein",
+      "bundesland": "RP"
+    },
+    "BIR": {
+      "name": "Birkenfeld",
+      "bundesland": "RP"
+    },
+    "BIT": {
+      "name": "Eifelkreis Bitburg-Prüm",
+      "bundesland": "RP"
+    },
+    "BIW": {
+      "name": "Bischofswerda",
+      "bundesland": "SN"
+    },
+    "BK": {
+      "name": "Landkreis Börde (Haldensleben)",
+      "bundesland": "ST"
+    },
+    "BL": {
+      "name": "Zollernalbkreis (Balingen)",
+      "bundesland": "BW"
+    },
+    "BLB": {
+      "name": "Bad Berleburg",
+      "bundesland": "NW"
+    },
+    "BLK": {
+      "name": "Burgenlandkreis",
+      "bundesland": "ST"
+    },
+    "BM": {
+      "name": "Rhein-Erft-Kreis (Bergheim)",
+      "bundesland": "NW"
+    },
+    "BN": {
+      "name": "Bonn",
+      "bundesland": "NW"
+    },
+    "BNA": {
+      "name": "Borna (Leipzig)",
+      "bundesland": "SN"
+    },
+    "BO": {
+      "name": "Bochum",
+      "bundesland": "NW"
+    },
+    "BOG": {
+      "name": "Bogen (Straubing-Bogen)",
+      "bundesland": "BY"
+    },
+    "BOH": {
+      "name": "Bocholt (Borken)",
+      "bundesland": "NW"
+    },
+    "BOR": {
+      "name": "Borken",
+      "bundesland": "NW"
+    },
+    "BOT": {
+      "name": "Bottrop",
+      "bundesland": "NW"
+    },
+    "BP": {
+      "name": "Bundespolizei",
+      "bundesland": "—"
+    },
+    "BRA": {
+      "name": "Brake (Wesermarsch)",
+      "bundesland": "NI"
+    },
+    "BRB": {
+      "name": "Brandenburg an der Havel",
+      "bundesland": "BB"
+    },
+    "BRG": {
+      "name": "Burg (Jerichower Land)",
+      "bundesland": "ST"
+    },
+    "BRK": {
+      "name": "Bad Brückenau",
+      "bundesland": "BY"
+    },
+    "BRL": {
+      "name": "Braunlage (Goslar)",
+      "bundesland": "NI"
+    },
+    "BRV": {
+      "name": "Bremervörde",
+      "bundesland": "NI"
+    },
+    "BS": {
+      "name": "Braunschweig",
+      "bundesland": "NI"
+    },
+    "BSB": {
+      "name": "Bersenbrück",
+      "bundesland": "NI"
+    },
+    "BSK": {
+      "name": "Beeskow (Oder-Spree)",
+      "bundesland": "BB"
+    },
+    "BT": {
+      "name": "Bayreuth",
+      "bundesland": "BY"
+    },
+    "BTF": {
+      "name": "Bitterfeld",
+      "bundesland": "ST"
+    },
+    "BÜD": {
+      "name": "Büdingen (Wetteraukreis)",
+      "bundesland": "HE"
+    },
+    "BÜR": {
+      "name": "Büren (Paderborn)",
+      "bundesland": "NW"
+    },
+    "BÜS": {
+      "name": "Büsingen am Hochrhein",
+      "bundesland": "BW"
+    },
+    "BÜZ": {
+      "name": "Bützow (Rostock)",
+      "bundesland": "MV"
+    },
+    "BZ": {
+      "name": "Bautzen",
+      "bundesland": "SN"
+    },
+    "C": {
+      "name": "Chemnitz",
+      "bundesland": "SN"
+    },
+    "CA": {
+      "name": "Calau",
+      "bundesland": "BB"
+    },
+    "CB": {
+      "name": "Cottbus",
+      "bundesland": "BB"
+    },
+    "CE": {
+      "name": "Celle",
+      "bundesland": "NI"
+    },
+    "CHA": {
+      "name": "Cham",
+      "bundesland": "BY"
+    },
+    "CLP": {
+      "name": "Cloppenburg",
+      "bundesland": "NI"
+    },
+    "CLZ": {
+      "name": "Clausthal-Zellerfeld",
+      "bundesland": "NI"
+    },
+    "CO": {
+      "name": "Coburg",
+      "bundesland": "BY"
+    },
+    "COC": {
+      "name": "Cochem-Zell",
+      "bundesland": "RP"
+    },
+    "COE": {
+      "name": "Coesfeld",
+      "bundesland": "NW"
+    },
+    "CR": {
+      "name": "Crailsheim (Schwäbisch Hall)",
+      "bundesland": "BW"
+    },
+    "CUX": {
+      "name": "Cuxhaven",
+      "bundesland": "NI"
+    },
+    "CW": {
+      "name": "Calw",
+      "bundesland": "BW"
+    },
+    "D": {
+      "name": "Düsseldorf",
+      "bundesland": "NW"
+    },
+    "DA": {
+      "name": "Darmstadt",
+      "bundesland": "HE"
+    },
+    "DAH": {
+      "name": "Dachau",
+      "bundesland": "BY"
+    },
+    "DAN": {
+      "name": "Lüchow-Dannenberg",
+      "bundesland": "NI"
+    },
+    "DAU": {
+      "name": "Vulkaneifel (Daun)",
+      "bundesland": "RP"
+    },
+    "DBR": {
+      "name": "Bad Doberan (Rostock)",
+      "bundesland": "MV"
+    },
+    "DD": {
+      "name": "Dresden",
+      "bundesland": "SN"
+    },
+    "DE": {
+      "name": "Dessau-Roßlau",
+      "bundesland": "ST"
+    },
+    "DEG": {
+      "name": "Deggendorf",
+      "bundesland": "BY"
+    },
+    "DEL": {
+      "name": "Delmenhorst",
+      "bundesland": "NI"
+    },
+    "DGF": {
+      "name": "Dingolfing-Landau",
+      "bundesland": "BY"
+    },
+    "DH": {
+      "name": "Diepholz",
+      "bundesland": "NI"
+    },
+    "DI": {
+      "name": "Dieburg (Darmstadt-Dieburg)",
+      "bundesland": "HE"
+    },
+    "DIL": {
+      "name": "Dillenburg (Lahn-Dill-Kreis)",
+      "bundesland": "HE"
+    },
+    "DIN": {
+      "name": "Dinslaken (Wesel)",
+      "bundesland": "NW"
+    },
+    "DIZ": {
+      "name": "Diez (Rhein-Lahn-Kreis)",
+      "bundesland": "RP"
+    },
+    "DKB": {
+      "name": "Dinkelsbühl",
+      "bundesland": "BY"
+    },
+    "DL": {
+      "name": "Döbeln (Mittelsachsen)",
+      "bundesland": "SN"
+    },
+    "DLG": {
+      "name": "Dillingen a.d. Donau",
+      "bundesland": "BY"
+    },
+    "DM": {
+      "name": "Demmin",
+      "bundesland": "MV"
+    },
+    "DN": {
+      "name": "Düren",
+      "bundesland": "NW"
+    },
+    "DO": {
+      "name": "Dortmund",
+      "bundesland": "NW"
+    },
+    "DON": {
+      "name": "Donau-Ries (Donauwörth)",
+      "bundesland": "BY"
+    },
+    "DU": {
+      "name": "Duisburg",
+      "bundesland": "NW"
+    },
+    "DÜW": {
+      "name": "Bad Dürkheim",
+      "bundesland": "RP"
+    },
+    "DW": {
+      "name": "Dippoldiswalde",
+      "bundesland": "SN"
+    },
+    "DZ": {
+      "name": "Delitzsch (Nordsachsen)",
+      "bundesland": "SN"
+    },
+    "E": {
+      "name": "Essen",
+      "bundesland": "NW"
+    },
+    "EA": {
+      "name": "Eisenach",
+      "bundesland": "TH"
+    },
+    "EB": {
+      "name": "Eilenburg (Nordsachsen)",
+      "bundesland": "SN"
+    },
+    "EBE": {
+      "name": "Ebersberg",
+      "bundesland": "BY"
+    },
+    "EBN": {
+      "name": "Ebern (Haßberge)",
+      "bundesland": "BY"
+    },
+    "ED": {
+      "name": "Erding",
+      "bundesland": "BY"
+    },
+    "EE": {
+      "name": "Elbe-Elster",
+      "bundesland": "BB"
+    },
+    "EF": {
+      "name": "Erfurt",
+      "bundesland": "TH"
+    },
+    "EG": {
+      "name": "Eggenfelden (Rottal-Inn)",
+      "bundesland": "BY"
+    },
+    "EH": {
+      "name": "Eisenhüttenstadt",
+      "bundesland": "BB"
+    },
+    "EI": {
+      "name": "Eichstätt",
+      "bundesland": "BY"
+    },
+    "EIC": {
+      "name": "Eichsfeld",
+      "bundesland": "TH"
+    },
+    "EIL": {
+      "name": "Eisleben (Mansfeld-Südharz)",
+      "bundesland": "ST"
+    },
+    "EIN": {
+      "name": "Einbeck",
+      "bundesland": "NI"
+    },
+    "EIS": {
+      "name": "Eisenberg (Saale-Holzland)",
+      "bundesland": "TH"
+    },
+    "EL": {
+      "name": "Emsland",
+      "bundesland": "NI"
+    },
+    "EM": {
+      "name": "Emmendingen",
+      "bundesland": "BW"
+    },
+    "EMD": {
+      "name": "Emden",
+      "bundesland": "NI"
+    },
+    "EMS": {
+      "name": "Rhein-Lahn-Kreis",
+      "bundesland": "RP"
+    },
+    "EN": {
+      "name": "Ennepe-Ruhr-Kreis",
+      "bundesland": "NW"
+    },
+    "ER": {
+      "name": "Erlangen",
+      "bundesland": "BY"
+    },
+    "ERB": {
+      "name": "Odenwaldkreis (Erbach)",
+      "bundesland": "HE"
+    },
+    "ERH": {
+      "name": "Erlangen-Höchstadt",
+      "bundesland": "BY"
+    },
+    "ERK": {
+      "name": "Erkelenz (Heinsberg)",
+      "bundesland": "NW"
+    },
+    "ERZ": {
+      "name": "Erzgebirgskreis",
+      "bundesland": "SN"
+    },
+    "ES": {
+      "name": "Esslingen",
+      "bundesland": "BW"
+    },
+    "ESB": {
+      "name": "Eschenbach i.d.OPf.",
+      "bundesland": "BY"
+    },
+    "ESW": {
+      "name": "Werra-Meißner-Kreis",
+      "bundesland": "HE"
+    },
+    "EU": {
+      "name": "Euskirchen",
+      "bundesland": "NW"
+    },
+    "EW": {
+      "name": "Eberswalde (Barnim)",
+      "bundesland": "BB"
+    },
+    "F": {
+      "name": "Frankfurt am Main",
+      "bundesland": "HE"
+    },
+    "FB": {
+      "name": "Wetteraukreis (Friedberg)",
+      "bundesland": "HE"
+    },
+    "FD": {
+      "name": "Fulda",
+      "bundesland": "HE"
+    },
+    "FDB": {
+      "name": "Friedberg (Aichach-Friedberg)",
+      "bundesland": "BY"
+    },
+    "FDS": {
+      "name": "Freudenstadt",
+      "bundesland": "BW"
+    },
+    "FEU": {
+      "name": "Feuchtwangen",
+      "bundesland": "BY"
+    },
+    "FF": {
+      "name": "Frankfurt (Oder)",
+      "bundesland": "BB"
+    },
+    "FFB": {
+      "name": "Fürstenfeldbruck",
+      "bundesland": "BY"
+    },
+    "FG": {
+      "name": "Freiberg (Mittelsachsen)",
+      "bundesland": "SN"
+    },
+    "FI": {
+      "name": "Finsterwalde (Elbe-Elster)",
+      "bundesland": "BB"
+    },
+    "FKB": {
+      "name": "Frankenberg (Waldeck-Frankenberg)",
+      "bundesland": "HE"
+    },
+    "FL": {
+      "name": "Flensburg",
+      "bundesland": "SH"
+    },
+    "FLÖ": {
+      "name": "Flöha (Mittelsachsen)",
+      "bundesland": "SN"
+    },
+    "FN": {
+      "name": "Bodenseekreis (Friedrichshafen)",
+      "bundesland": "BW"
+    },
+    "FO": {
+      "name": "Forchheim",
+      "bundesland": "BY"
+    },
+    "FOR": {
+      "name": "Forst (Spree-Neiße)",
+      "bundesland": "BB"
+    },
+    "FR": {
+      "name": "Freiburg im Breisgau",
+      "bundesland": "BW"
+    },
+    "FRG": {
+      "name": "Freyung-Grafenau",
+      "bundesland": "BY"
+    },
+    "FRI": {
+      "name": "Friesland",
+      "bundesland": "NI"
+    },
+    "FRW": {
+      "name": "Bad Freienwalde",
+      "bundesland": "BB"
+    },
+    "FS": {
+      "name": "Freising",
+      "bundesland": "BY"
+    },
+    "FT": {
+      "name": "Frankenthal (Pfalz)",
+      "bundesland": "RP"
+    },
+    "FTL": {
+      "name": "Freital",
+      "bundesland": "SN"
+    },
+    "FÜ": {
+      "name": "Fürth",
+      "bundesland": "BY"
+    },
+    "FÜS": {
+      "name": "Füssen (Ostallgäu)",
+      "bundesland": "BY"
+    },
+    "FW": {
+      "name": "Fürstenwalde/Spree",
+      "bundesland": "BB"
+    },
+    "G": {
+      "name": "Gera",
+      "bundesland": "TH"
+    },
+    "GA": {
+      "name": "Gardelegen",
+      "bundesland": "ST"
+    },
+    "GAN": {
+      "name": "Bad Gandersheim",
+      "bundesland": "NI"
+    },
+    "GAP": {
+      "name": "Garmisch-Partenkirchen",
+      "bundesland": "BY"
+    },
+    "GC": {
+      "name": "Glauchau (Zwickau)",
+      "bundesland": "SN"
+    },
+    "GD": {
+      "name": "Schwäbisch Gmünd",
+      "bundesland": "BW"
+    },
+    "GDB": {
+      "name": "Gadebusch (Nordwestmecklenburg)",
+      "bundesland": "MV"
+    },
+    "GE": {
+      "name": "Gelsenkirchen",
+      "bundesland": "NW"
+    },
+    "GEL": {
+      "name": "Geldern (Kleve)",
+      "bundesland": "NW"
+    },
+    "GEO": {
+      "name": "Gerolzhofen",
+      "bundesland": "BY"
+    },
+    "GER": {
+      "name": "Germersheim",
+      "bundesland": "RP"
+    },
+    "GF": {
+      "name": "Gifhorn",
+      "bundesland": "NI"
+    },
+    "GG": {
+      "name": "Groß-Gerau",
+      "bundesland": "HE"
+    },
+    "GHA": {
+      "name": "Geithain (Leipzig)",
+      "bundesland": "SN"
+    },
+    "GHC": {
+      "name": "Gräfenhainichen",
+      "bundesland": "ST"
+    },
+    "GI": {
+      "name": "Gießen",
+      "bundesland": "HE"
+    },
+    "GL": {
+      "name": "Rheinisch-Bergischer Kreis",
+      "bundesland": "NW"
+    },
+    "GLA": {
+      "name": "Gladbeck (Recklinghausen)",
+      "bundesland": "NW"
+    },
+    "GM": {
+      "name": "Oberbergischer Kreis (Gummersbach)",
+      "bundesland": "NW"
+    },
+    "GMN": {
+      "name": "Grimmen (Vorpommern-Rügen)",
+      "bundesland": "MV"
+    },
+    "GNT": {
+      "name": "Genthin (Jerichower Land)",
+      "bundesland": "ST"
+    },
+    "GÖ": {
+      "name": "Göttingen",
+      "bundesland": "NI"
+    },
+    "GOA": {
+      "name": "St. Goar",
+      "bundesland": "RP"
+    },
+    "GOH": {
+      "name": "St. Goarshausen",
+      "bundesland": "RP"
+    },
+    "GP": {
+      "name": "Göppingen",
+      "bundesland": "BW"
+    },
+    "GR": {
+      "name": "Görlitz",
+      "bundesland": "SN"
+    },
+    "GRA": {
+      "name": "Grafenau (Freyung-Grafenau)",
+      "bundesland": "BY"
+    },
+    "GRH": {
+      "name": "Großenhain (Meißen)",
+      "bundesland": "SN"
+    },
+    "GRI": {
+      "name": "Griesbach i.Rottal",
+      "bundesland": "BY"
+    },
+    "GRM": {
+      "name": "Grimma (Leipzig)",
+      "bundesland": "SN"
+    },
+    "GRZ": {
+      "name": "Greiz",
+      "bundesland": "TH"
+    },
+    "GS": {
+      "name": "Goslar",
+      "bundesland": "NI"
+    },
+    "GT": {
+      "name": "Gütersloh",
+      "bundesland": "NW"
+    },
+    "GTH": {
+      "name": "Gotha",
+      "bundesland": "TH"
+    },
+    "GÜ": {
+      "name": "Güstrow (Rostock)",
+      "bundesland": "MV"
+    },
+    "GUB": {
+      "name": "Guben (Spree-Neiße)",
+      "bundesland": "BB"
+    },
+    "GUN": {
+      "name": "Gunzenhausen",
+      "bundesland": "BY"
+    },
+    "GVM": {
+      "name": "Grevesmühlen",
+      "bundesland": "MV"
+    },
+    "GW": {
+      "name": "Greifswald",
+      "bundesland": "MV"
+    },
+    "GZ": {
+      "name": "Günzburg",
+      "bundesland": "BY"
+    },
+    "H": {
+      "name": "Hannover",
+      "bundesland": "NI"
+    },
+    "HA": {
+      "name": "Hagen",
+      "bundesland": "NW"
+    },
+    "HAB": {
+      "name": "Hammelburg (Bad Kissingen)",
+      "bundesland": "BY"
+    },
+    "HAL": {
+      "name": "Halle (Saale)",
+      "bundesland": "ST"
+    },
+    "HAM": {
+      "name": "Hamm",
+      "bundesland": "NW"
+    },
+    "HAS": {
+      "name": "Haßberge",
+      "bundesland": "BY"
+    },
+    "HB": {
+      "name": "Bremen",
+      "bundesland": "HB"
+    },
+    "HBN": {
+      "name": "Hildburghausen",
+      "bundesland": "TH"
+    },
+    "HBS": {
+      "name": "Halberstadt (Harz)",
+      "bundesland": "ST"
+    },
+    "HC": {
+      "name": "Hainichen (Mittelsachsen)",
+      "bundesland": "SN"
+    },
+    "HCH": {
+      "name": "Hechingen (Zollernalbkreis)",
+      "bundesland": "BW"
+    },
+    "HD": {
+      "name": "Heidelberg",
+      "bundesland": "BW"
+    },
+    "HDH": {
+      "name": "Heidenheim an der Brenz",
+      "bundesland": "BW"
+    },
+    "HDL": {
+      "name": "Haldensleben (Börde)",
+      "bundesland": "ST"
+    },
+    "HE": {
+      "name": "Helmstedt",
+      "bundesland": "NI"
+    },
+    "HEB": {
+      "name": "Hersbruck (Nürnberger Land)",
+      "bundesland": "BY"
+    },
+    "HEF": {
+      "name": "Hersfeld-Rotenburg",
+      "bundesland": "HE"
+    },
+    "HEI": {
+      "name": "Dithmarschen (Heide)",
+      "bundesland": "SH"
+    },
+    "HER": {
+      "name": "Herne",
+      "bundesland": "NW"
+    },
+    "HET": {
+      "name": "Hettstedt (Mansfeld-Südharz)",
+      "bundesland": "ST"
+    },
+    "HF": {
+      "name": "Herford",
+      "bundesland": "NW"
+    },
+    "HG": {
+      "name": "Hochtaunuskreis (Bad Homburg)",
+      "bundesland": "HE"
+    },
+    "HGN": {
+      "name": "Hagenow (Ludwigslust-Parchim)",
+      "bundesland": "MV"
+    },
+    "HGW": {
+      "name": "Hansestadt Greifswald",
+      "bundesland": "MV"
+    },
+    "HH": {
+      "name": "Hamburg",
+      "bundesland": "HH"
+    },
+    "HHM": {
+      "name": "Hohenmölsen (Burgenlandkreis)",
+      "bundesland": "ST"
+    },
+    "HI": {
+      "name": "Hildesheim",
+      "bundesland": "NI"
+    },
+    "HIG": {
+      "name": "Heiligenstadt (Eichsfeld)",
+      "bundesland": "TH"
+    },
+    "HIP": {
+      "name": "Hilpoltstein (Roth)",
+      "bundesland": "BY"
+    },
+    "HK": {
+      "name": "Heidekreis",
+      "bundesland": "NI"
+    },
+    "HL": {
+      "name": "Lübeck",
+      "bundesland": "SH"
+    },
+    "HM": {
+      "name": "Hameln-Pyrmont",
+      "bundesland": "NI"
+    },
+    "HMÜ": {
+      "name": "Hann. Münden (Göttingen)",
+      "bundesland": "NI"
+    },
+    "HN": {
+      "name": "Heilbronn",
+      "bundesland": "BW"
+    },
+    "HO": {
+      "name": "Hof",
+      "bundesland": "BY"
+    },
+    "HOG": {
+      "name": "Hofgeismar (Kassel)",
+      "bundesland": "HE"
+    },
+    "HOH": {
+      "name": "Hofheim (Haßberge)",
+      "bundesland": "BY"
+    },
+    "HOL": {
+      "name": "Holzminden",
+      "bundesland": "NI"
+    },
+    "HOM": {
+      "name": "Saarpfalz-Kreis (Homburg)",
+      "bundesland": "SL"
+    },
+    "HOR": {
+      "name": "Horb am Neckar (Freudenstadt)",
+      "bundesland": "BW"
+    },
+    "HOT": {
+      "name": "Hohenstein-Ernstthal (Zwickau)",
+      "bundesland": "SN"
+    },
+    "HP": {
+      "name": "Bergstraße (Heppenheim)",
+      "bundesland": "HE"
+    },
+    "HR": {
+      "name": "Schwalm-Eder-Kreis",
+      "bundesland": "HE"
+    },
+    "HRO": {
+      "name": "Hansestadt Rostock",
+      "bundesland": "MV"
+    },
+    "HS": {
+      "name": "Heinsberg",
+      "bundesland": "NW"
+    },
+    "HSK": {
+      "name": "Hochsauerlandkreis",
+      "bundesland": "NW"
+    },
+    "HST": {
+      "name": "Hansestadt Stralsund",
+      "bundesland": "MV"
+    },
+    "HU": {
+      "name": "Main-Kinzig-Kreis (Hanau)",
+      "bundesland": "HE"
+    },
+    "HV": {
+      "name": "Havelberg (Stendal)",
+      "bundesland": "ST"
+    },
+    "HWI": {
+      "name": "Hansestadt Wismar",
+      "bundesland": "MV"
+    },
+    "HX": {
+      "name": "Höxter",
+      "bundesland": "NW"
+    },
+    "HY": {
+      "name": "Hoyerswerda (Bautzen)",
+      "bundesland": "SN"
+    },
+    "HZ": {
+      "name": "Harz",
+      "bundesland": "ST"
+    },
+    "IGB": {
+      "name": "St. Ingbert",
+      "bundesland": "SL"
+    },
+    "IK": {
+      "name": "Ilm-Kreis",
+      "bundesland": "TH"
+    },
+    "IL": {
+      "name": "Ilmenau",
+      "bundesland": "TH"
+    },
+    "ILL": {
+      "name": "Illertissen (Neu-Ulm)",
+      "bundesland": "BY"
+    },
+    "IN": {
+      "name": "Ingolstadt",
+      "bundesland": "BY"
+    },
+    "IZ": {
+      "name": "Steinburg (Itzehoe)",
+      "bundesland": "SH"
+    },
+    "J": {
+      "name": "Jena",
+      "bundesland": "TH"
+    },
+    "JE": {
+      "name": "Jessen (Wittenberg)",
+      "bundesland": "ST"
+    },
+    "JL": {
+      "name": "Jerichower Land (Burg)",
+      "bundesland": "ST"
+    },
+    "JÜL": {
+      "name": "Jülich (Düren)",
+      "bundesland": "NW"
+    },
+    "K": {
+      "name": "Köln",
+      "bundesland": "NW"
+    },
+    "KA": {
+      "name": "Karlsruhe",
+      "bundesland": "BW"
+    },
+    "KB": {
+      "name": "Waldeck-Frankenberg",
+      "bundesland": "HE"
+    },
+    "KC": {
+      "name": "Kronach",
+      "bundesland": "BY"
+    },
+    "KE": {
+      "name": "Kempten (Allgäu)",
+      "bundesland": "BY"
+    },
+    "KEH": {
+      "name": "Kelheim",
+      "bundesland": "BY"
+    },
+    "KEL": {
+      "name": "Kehl (Ortenaukreis)",
+      "bundesland": "BW"
+    },
+    "KEM": {
+      "name": "Kemnath (Tirschenreuth)",
+      "bundesland": "BY"
+    },
+    "KF": {
+      "name": "Kaufbeuren",
+      "bundesland": "BY"
+    },
+    "KG": {
+      "name": "Bad Kissingen",
+      "bundesland": "BY"
+    },
+    "KH": {
+      "name": "Bad Kreuznach",
+      "bundesland": "RP"
+    },
+    "KI": {
+      "name": "Kiel",
+      "bundesland": "SH"
+    },
+    "KIB": {
+      "name": "Donnersbergkreis",
+      "bundesland": "RP"
+    },
+    "KL": {
+      "name": "Kaiserslautern",
+      "bundesland": "RP"
+    },
+    "KLE": {
+      "name": "Kleve",
+      "bundesland": "NW"
+    },
+    "KLZ": {
+      "name": "Klötze (Altmarkkreis Salzwedel)",
+      "bundesland": "ST"
+    },
+    "KM": {
+      "name": "Kamenz (Bautzen)",
+      "bundesland": "SN"
+    },
+    "KN": {
+      "name": "Konstanz",
+      "bundesland": "BW"
+    },
+    "KO": {
+      "name": "Koblenz",
+      "bundesland": "RP"
+    },
+    "KÖN": {
+      "name": "Bad Königshofen",
+      "bundesland": "BY"
+    },
+    "KÖT": {
+      "name": "Köthen (Anhalt-Bitterfeld)",
+      "bundesland": "ST"
+    },
+    "KÖZ": {
+      "name": "Bad Kötzting (Cham)",
+      "bundesland": "BY"
+    },
+    "KR": {
+      "name": "Krefeld",
+      "bundesland": "NW"
+    },
+    "KRU": {
+      "name": "Krumbach (Günzburg)",
+      "bundesland": "BY"
+    },
+    "KS": {
+      "name": "Kassel",
+      "bundesland": "HE"
+    },
+    "KT": {
+      "name": "Kitzingen",
+      "bundesland": "BY"
+    },
+    "KU": {
+      "name": "Kulmbach",
+      "bundesland": "BY"
+    },
+    "KUS": {
+      "name": "Kusel",
+      "bundesland": "RP"
+    },
+    "KW": {
+      "name": "Königs Wusterhausen (Dahme-Spreewald)",
+      "bundesland": "BB"
+    },
+    "KY": {
+      "name": "Kyritz (Ostprignitz-Ruppin)",
+      "bundesland": "BB"
+    },
+    "KYF": {
+      "name": "Kyffhäuserkreis",
+      "bundesland": "TH"
+    },
+    "L": {
+      "name": "Leipzig",
+      "bundesland": "SN"
+    },
+    "LA": {
+      "name": "Landshut",
+      "bundesland": "BY"
+    },
+    "LAN": {
+      "name": "Landau a.d. Isar",
+      "bundesland": "BY"
+    },
+    "LAU": {
+      "name": "Nürnberger Land (Lauf)",
+      "bundesland": "BY"
+    },
+    "LB": {
+      "name": "Ludwigsburg",
+      "bundesland": "BW"
+    },
+    "LBS": {
+      "name": "Bad Lobenstein",
+      "bundesland": "TH"
+    },
+    "LBZ": {
+      "name": "Lübz (Ludwigslust-Parchim)",
+      "bundesland": "MV"
+    },
+    "LD": {
+      "name": "Landau in der Pfalz",
+      "bundesland": "RP"
+    },
+    "LDK": {
+      "name": "Lahn-Dill-Kreis",
+      "bundesland": "HE"
+    },
+    "LDS": {
+      "name": "Dahme-Spreewald",
+      "bundesland": "BB"
+    },
+    "LEO": {
+      "name": "Leonberg (Böblingen)",
+      "bundesland": "BW"
+    },
+    "LER": {
+      "name": "Leer",
+      "bundesland": "NI"
+    },
+    "LEV": {
+      "name": "Leverkusen",
+      "bundesland": "NW"
+    },
+    "LG": {
+      "name": "Lüneburg",
+      "bundesland": "NI"
+    },
+    "LH": {
+      "name": "Lüdinghausen (Coesfeld)",
+      "bundesland": "NW"
+    },
+    "LI": {
+      "name": "Lindau (Bodensee)",
+      "bundesland": "BY"
+    },
+    "LIB": {
+      "name": "Bad Liebenwerda",
+      "bundesland": "BB"
+    },
+    "LIF": {
+      "name": "Lichtenfels",
+      "bundesland": "BY"
+    },
+    "LIP": {
+      "name": "Lippe",
+      "bundesland": "NW"
+    },
+    "LL": {
+      "name": "Landsberg am Lech",
+      "bundesland": "BY"
+    },
+    "LM": {
+      "name": "Limburg-Weilburg",
+      "bundesland": "HE"
+    },
+    "LÖ": {
+      "name": "Lörrach",
+      "bundesland": "BW"
+    },
+    "LÖB": {
+      "name": "Löbau (Görlitz)",
+      "bundesland": "SN"
+    },
+    "LOS": {
+      "name": "Oder-Spree",
+      "bundesland": "BB"
+    },
+    "LP": {
+      "name": "Lippstadt (Soest)",
+      "bundesland": "NW"
+    },
+    "LR": {
+      "name": "Lahr (Ortenaukreis)",
+      "bundesland": "BW"
+    },
+    "LRO": {
+      "name": "Landkreis Rostock",
+      "bundesland": "MV"
+    },
+    "LSA": {
+      "name": "Sachsen-Anhalt (Landesregierung)",
+      "bundesland": "ST"
+    },
+    "LSN": {
+      "name": "Sachsen (Landesregierung)",
+      "bundesland": "SN"
+    },
+    "LSZ": {
+      "name": "Bad Langensalza",
+      "bundesland": "TH"
+    },
+    "LÜN": {
+      "name": "Lünen (Unna)",
+      "bundesland": "NW"
+    },
+    "LUP": {
+      "name": "Ludwigslust-Parchim",
+      "bundesland": "MV"
+    },
+    "LWL": {
+      "name": "Bad Wildungen",
+      "bundesland": "HE"
+    },
+    "M": {
+      "name": "München",
+      "bundesland": "BY"
+    },
+    "MA": {
+      "name": "Mannheim",
+      "bundesland": "BW"
+    },
+    "MAB": {
+      "name": "Marienberg (Erzgebirgskreis)",
+      "bundesland": "SN"
+    },
+    "MAI": {
+      "name": "Mainburg (Kelheim)",
+      "bundesland": "BY"
+    },
+    "MAK": {
+      "name": "Mayen-Koblenz (Mayen)",
+      "bundesland": "RP"
+    },
+    "MAL": {
+      "name": "Mallersdorf (Straubing-Bogen)",
+      "bundesland": "BY"
+    },
+    "MB": {
+      "name": "Miesbach",
+      "bundesland": "BY"
+    },
+    "MC": {
+      "name": "Malchin",
+      "bundesland": "MV"
+    },
+    "MD": {
+      "name": "Magdeburg",
+      "bundesland": "ST"
+    },
+    "ME": {
+      "name": "Mettmann",
+      "bundesland": "NW"
+    },
+    "MED": {
+      "name": "Medebach (Hochsauerlandkreis)",
+      "bundesland": "NW"
+    },
+    "MEI": {
+      "name": "Meißen",
+      "bundesland": "SN"
+    },
+    "MEK": {
+      "name": "Mittlerer Erzgebirgskreis",
+      "bundesland": "SN"
+    },
+    "MEL": {
+      "name": "Melle (Osnabrück)",
+      "bundesland": "NI"
+    },
+    "MER": {
+      "name": "Merseburg (Saalekreis)",
+      "bundesland": "ST"
+    },
+    "MG": {
+      "name": "Mönchengladbach",
+      "bundesland": "NW"
+    },
+    "MGH": {
+      "name": "Bad Langensalza/Mühlhausen",
+      "bundesland": "TH"
+    },
+    "MGN": {
+      "name": "Meiningen (Schmalkalden-Meiningen)",
+      "bundesland": "TH"
+    },
+    "MH": {
+      "name": "Mülheim an der Ruhr",
+      "bundesland": "NW"
+    },
+    "MHL": {
+      "name": "Mühlhausen (Unstrut-Hainich-Kreis)",
+      "bundesland": "TH"
+    },
+    "MI": {
+      "name": "Minden-Lübbecke",
+      "bundesland": "NW"
+    },
+    "MIL": {
+      "name": "Miltenberg",
+      "bundesland": "BY"
+    },
+    "MK": {
+      "name": "Märkischer Kreis",
+      "bundesland": "NW"
+    },
+    "MKK": {
+      "name": "Main-Kinzig-Kreis",
+      "bundesland": "HE"
+    },
+    "ML": {
+      "name": "Mansfelder Land (Eisleben)",
+      "bundesland": "ST"
+    },
+    "MM": {
+      "name": "Memmingen",
+      "bundesland": "BY"
+    },
+    "MN": {
+      "name": "Unterallgäu (Mindelheim)",
+      "bundesland": "BY"
+    },
+    "MO": {
+      "name": "Moers (Wesel)",
+      "bundesland": "NW"
+    },
+    "MOL": {
+      "name": "Märkisch-Oderland",
+      "bundesland": "BB"
+    },
+    "MON": {
+      "name": "Monschau (Aachen)",
+      "bundesland": "NW"
+    },
+    "MOS": {
+      "name": "Neckar-Odenwald-Kreis (Mosbach)",
+      "bundesland": "BW"
+    },
+    "MQ": {
+      "name": "Merseburg-Querfurt",
+      "bundesland": "ST"
+    },
+    "MR": {
+      "name": "Marburg-Biedenkopf",
+      "bundesland": "HE"
+    },
+    "MS": {
+      "name": "Münster",
+      "bundesland": "NW"
+    },
+    "MSE": {
+      "name": "Mecklenburgische Seenplatte",
+      "bundesland": "MV"
+    },
+    "MSH": {
+      "name": "Mansfeld-Südharz",
+      "bundesland": "ST"
+    },
+    "MSP": {
+      "name": "Main-Spessart",
+      "bundesland": "BY"
+    },
+    "MST": {
+      "name": "Mecklenburg-Strelitz",
+      "bundesland": "MV"
+    },
+    "MTK": {
+      "name": "Main-Taunus-Kreis",
+      "bundesland": "HE"
+    },
+    "MTL": {
+      "name": "Muldentalkreis",
+      "bundesland": "SN"
+    },
+    "MÜ": {
+      "name": "Mühldorf am Inn",
+      "bundesland": "BY"
+    },
+    "MÜB": {
+      "name": "Münchberg (Hof)",
+      "bundesland": "BY"
+    },
+    "MÜR": {
+      "name": "Müritz",
+      "bundesland": "MV"
+    },
+    "MVL": {
+      "name": "Mecklenburg-Vorpommern (Land)",
+      "bundesland": "MV"
+    },
+    "MW": {
+      "name": "Mittweida (Mittelsachsen)",
+      "bundesland": "SN"
+    },
+    "MY": {
+      "name": "Mayen",
+      "bundesland": "RP"
+    },
+    "MYK": {
+      "name": "Mayen-Koblenz",
+      "bundesland": "RP"
+    },
+    "MZ": {
+      "name": "Mainz",
+      "bundesland": "RP"
+    },
+    "MZG": {
+      "name": "Merzig-Wadern",
+      "bundesland": "SL"
+    },
+    "N": {
+      "name": "Nürnberg",
+      "bundesland": "BY"
+    },
+    "NAB": {
+      "name": "Nabburg (Schwandorf)",
+      "bundesland": "BY"
+    },
+    "NAI": {
+      "name": "Naila (Hof)",
+      "bundesland": "BY"
+    },
+    "NAU": {
+      "name": "Nauen (Havelland)",
+      "bundesland": "BB"
+    },
+    "NB": {
+      "name": "Neubrandenburg",
+      "bundesland": "MV"
+    },
+    "ND": {
+      "name": "Neuburg-Schrobenhausen",
+      "bundesland": "BY"
+    },
+    "NDH": {
+      "name": "Nordhausen",
+      "bundesland": "TH"
+    },
+    "NE": {
+      "name": "Rhein-Kreis Neuss",
+      "bundesland": "NW"
+    },
+    "NEA": {
+      "name": "Neustadt a.d.Aisch-Bad Windsheim",
+      "bundesland": "BY"
+    },
+    "NEB": {
+      "name": "Nebra (Burgenlandkreis)",
+      "bundesland": "ST"
+    },
+    "NEC": {
+      "name": "Neustadt bei Coburg",
+      "bundesland": "BY"
+    },
+    "NEN": {
+      "name": "Neunburg vorm Wald",
+      "bundesland": "BY"
+    },
+    "NES": {
+      "name": "Rhön-Grabfeld (Bad Neustadt a.d.Saale)",
+      "bundesland": "BY"
+    },
+    "NEW": {
+      "name": "Neustadt a.d.Waldnaab",
+      "bundesland": "BY"
+    },
+    "NF": {
+      "name": "Nordfriesland",
+      "bundesland": "SH"
+    },
+    "NH": {
+      "name": "Neuhaus am Rennweg",
+      "bundesland": "TH"
+    },
+    "NI": {
+      "name": "Nienburg (Weser)",
+      "bundesland": "NI"
+    },
+    "NK": {
+      "name": "Neunkirchen (Saar)",
+      "bundesland": "SL"
+    },
+    "NM": {
+      "name": "Neumarkt in der Oberpfalz",
+      "bundesland": "BY"
+    },
+    "NMB": {
+      "name": "Naumburg (Burgenlandkreis)",
+      "bundesland": "ST"
+    },
+    "NMS": {
+      "name": "Neumünster",
+      "bundesland": "SH"
+    },
+    "NÖ": {
+      "name": "Nördlingen (Donau-Ries)",
+      "bundesland": "BY"
+    },
+    "NOH": {
+      "name": "Grafschaft Bentheim (Nordhorn)",
+      "bundesland": "NI"
+    },
+    "NOL": {
+      "name": "Niederschlesischer Oberlausitzkreis (Niesky)",
+      "bundesland": "SN"
+    },
+    "NOM": {
+      "name": "Northeim",
+      "bundesland": "NI"
+    },
+    "NOR": {
+      "name": "Norden (Aurich)",
+      "bundesland": "NI"
+    },
+    "NP": {
+      "name": "Neuruppin (Ostprignitz-Ruppin)",
+      "bundesland": "BB"
+    },
+    "NR": {
+      "name": "Neuwied",
+      "bundesland": "RP"
+    },
+    "NT": {
+      "name": "Nürtingen (Esslingen)",
+      "bundesland": "BW"
+    },
+    "NU": {
+      "name": "Neu-Ulm",
+      "bundesland": "BY"
+    },
+    "NVP": {
+      "name": "Nordvorpommern",
+      "bundesland": "MV"
+    },
+    "NW": {
+      "name": "Neustadt an der Weinstraße",
+      "bundesland": "RP"
+    },
+    "NWM": {
+      "name": "Nordwestmecklenburg",
+      "bundesland": "MV"
+    },
+    "NY": {
+      "name": "Niesky (Görlitz)",
+      "bundesland": "SN"
+    },
+    "NZ": {
+      "name": "Neustrelitz (Mecklenburgische Seenplatte)",
+      "bundesland": "MV"
+    },
+    "OA": {
+      "name": "Oberallgäu",
+      "bundesland": "BY"
+    },
+    "OAL": {
+      "name": "Ostallgäu",
+      "bundesland": "BY"
+    },
+    "OB": {
+      "name": "Oberhausen",
+      "bundesland": "NW"
+    },
+    "OC": {
+      "name": "Oschatz (Nordsachsen)",
+      "bundesland": "SN"
+    },
+    "OCH": {
+      "name": "Ochsenfurt (Würzburg)",
+      "bundesland": "BY"
+    },
+    "OD": {
+      "name": "Stormarn (Bad Oldesloe)",
+      "bundesland": "SH"
+    },
+    "OE": {
+      "name": "Olpe",
+      "bundesland": "NW"
+    },
+    "OF": {
+      "name": "Offenbach am Main",
+      "bundesland": "HE"
+    },
+    "OG": {
+      "name": "Ortenaukreis (Offenburg)",
+      "bundesland": "BW"
+    },
+    "OH": {
+      "name": "Ostholstein",
+      "bundesland": "SH"
+    },
+    "OHA": {
+      "name": "Osterode am Harz",
+      "bundesland": "NI"
+    },
+    "OHV": {
+      "name": "Oberhavel",
+      "bundesland": "BB"
+    },
+    "OHZ": {
+      "name": "Osterholz",
+      "bundesland": "NI"
+    },
+    "OK": {
+      "name": "Ohrekreis (Börde)",
+      "bundesland": "ST"
+    },
+    "OL": {
+      "name": "Oldenburg (Oldenburg)",
+      "bundesland": "NI"
+    },
+    "OPR": {
+      "name": "Ostprignitz-Ruppin",
+      "bundesland": "BB"
+    },
+    "OS": {
+      "name": "Osnabrück",
+      "bundesland": "NI"
+    },
+    "OSL": {
+      "name": "Oberspreewald-Lausitz",
+      "bundesland": "BB"
+    },
+    "OVI": {
+      "name": "Oberviechtach (Schwandorf)",
+      "bundesland": "BY"
+    },
+    "OVL": {
+      "name": "Vogtlandkreis (historisch)",
+      "bundesland": "SN"
+    },
+    "OVP": {
+      "name": "Ostvorpommern",
+      "bundesland": "MV"
+    },
+    "P": {
+      "name": "Potsdam",
+      "bundesland": "BB"
+    },
+    "PA": {
+      "name": "Passau",
+      "bundesland": "BY"
+    },
+    "PAF": {
+      "name": "Pfaffenhofen a.d.Ilm",
+      "bundesland": "BY"
+    },
+    "PAN": {
+      "name": "Rottal-Inn (Pfarrkirchen)",
+      "bundesland": "BY"
+    },
+    "PAR": {
+      "name": "Parchim (Ludwigslust-Parchim)",
+      "bundesland": "MV"
+    },
+    "PB": {
+      "name": "Paderborn",
+      "bundesland": "NW"
+    },
+    "PCH": {
+      "name": "Parchim",
+      "bundesland": "MV"
+    },
+    "PE": {
+      "name": "Peine",
+      "bundesland": "NI"
+    },
+    "PEG": {
+      "name": "Pegnitz (Bayreuth)",
+      "bundesland": "BY"
+    },
+    "PF": {
+      "name": "Pforzheim / Enzkreis",
+      "bundesland": "BW"
+    },
+    "PI": {
+      "name": "Pinneberg",
+      "bundesland": "SH"
+    },
+    "PIR": {
+      "name": "Sächsische Schweiz-Osterzgebirge (Pirna)",
+      "bundesland": "SN"
+    },
+    "PL": {
+      "name": "Plauen (Vogtlandkreis)",
+      "bundesland": "SN"
+    },
+    "PLÖ": {
+      "name": "Plön",
+      "bundesland": "SH"
+    },
+    "PM": {
+      "name": "Potsdam-Mittelmark",
+      "bundesland": "BB"
+    },
+    "PN": {
+      "name": "Pößneck (Saale-Orla-Kreis)",
+      "bundesland": "TH"
+    },
+    "PR": {
+      "name": "Prignitz",
+      "bundesland": "BB"
+    },
+    "PS": {
+      "name": "Pirmasens",
+      "bundesland": "RP"
+    },
+    "PZ": {
+      "name": "Prenzlau (Uckermark)",
+      "bundesland": "BB"
+    },
+    "QFT": {
+      "name": "Querfurt (Saalekreis)",
+      "bundesland": "ST"
+    },
+    "QLB": {
+      "name": "Quedlinburg (Harz)",
+      "bundesland": "ST"
+    },
+    "R": {
+      "name": "Regensburg",
+      "bundesland": "BY"
+    },
+    "RA": {
+      "name": "Rastatt",
+      "bundesland": "BW"
+    },
+    "RD": {
+      "name": "Rendsburg-Eckernförde",
+      "bundesland": "SH"
+    },
+    "RE": {
+      "name": "Recklinghausen",
+      "bundesland": "NW"
+    },
+    "REG": {
+      "name": "Regen",
+      "bundesland": "BY"
+    },
+    "REH": {
+      "name": "Rehau (Hof)",
+      "bundesland": "BY"
+    },
+    "RG": {
+      "name": "Riesa-Großenhain (Meißen)",
+      "bundesland": "SN"
+    },
+    "RH": {
+      "name": "Roth",
+      "bundesland": "BY"
+    },
+    "RI": {
+      "name": "Rinteln (Schaumburg)",
+      "bundesland": "NI"
+    },
+    "RIE": {
+      "name": "Riesa (Meißen)",
+      "bundesland": "SN"
+    },
+    "RL": {
+      "name": "Rochlitz (Mittelsachsen)",
+      "bundesland": "SN"
+    },
+    "RM": {
+      "name": "Rockenhausen (Donnersbergkreis)",
+      "bundesland": "RP"
+    },
+    "RN": {
+      "name": "Rhein-Neckar-Kreis (Heidelberg)",
+      "bundesland": "BW"
+    },
+    "RO": {
+      "name": "Rosenheim",
+      "bundesland": "BY"
+    },
+    "ROD": {
+      "name": "Bad Rodach (Coburg)",
+      "bundesland": "BY"
+    },
+    "ROF": {
+      "name": "Rotenburg an der Fulda",
+      "bundesland": "HE"
+    },
+    "ROL": {
+      "name": "Rottenburg a.d.Laaber",
+      "bundesland": "BY"
+    },
+    "ROS": {
+      "name": "Landkreis Rostock",
+      "bundesland": "MV"
+    },
+    "ROT": {
+      "name": "Rothenburg ob der Tauber",
+      "bundesland": "BY"
+    },
+    "ROW": {
+      "name": "Rotenburg (Wümme)",
+      "bundesland": "NI"
+    },
+    "RS": {
+      "name": "Remscheid",
+      "bundesland": "NW"
+    },
+    "RSL": {
+      "name": "Roßlau (Elbe)",
+      "bundesland": "ST"
+    },
+    "RT": {
+      "name": "Reutlingen",
+      "bundesland": "BW"
+    },
+    "RÜD": {
+      "name": "Rheingau-Taunus-Kreis",
+      "bundesland": "HE"
+    },
+    "RÜG": {
+      "name": "Rügen (Vorpommern-Rügen)",
+      "bundesland": "MV"
+    },
+    "RV": {
+      "name": "Ravensburg",
+      "bundesland": "BW"
+    },
+    "RW": {
+      "name": "Rottweil",
+      "bundesland": "BW"
+    },
+    "RZ": {
+      "name": "Herzogtum Lauenburg (Ratzeburg)",
+      "bundesland": "SH"
+    },
+    "S": {
+      "name": "Stuttgart",
+      "bundesland": "BW"
+    },
+    "SAB": {
+      "name": "Saarburg (Trier-Saarburg)",
+      "bundesland": "RP"
+    },
+    "SAD": {
+      "name": "Schwandorf",
+      "bundesland": "BY"
+    },
+    "SAL": {
+      "name": "Saalfeld-Rudolstadt",
+      "bundesland": "TH"
+    },
+    "SAN": {
+      "name": "Sangerhausen (Mansfeld-Südharz)",
+      "bundesland": "ST"
+    },
+    "SAW": {
+      "name": "Altmarkkreis Salzwedel",
+      "bundesland": "ST"
+    },
+    "SB": {
+      "name": "Regionalverband Saarbrücken",
+      "bundesland": "SL"
+    },
+    "SBG": {
+      "name": "Strausberg (Märkisch-Oderland)",
+      "bundesland": "BB"
+    },
+    "SBK": {
+      "name": "Schönebeck (Salzlandkreis)",
+      "bundesland": "ST"
+    },
+    "SC": {
+      "name": "Schwabach",
+      "bundesland": "BY"
+    },
+    "SCZ": {
+      "name": "Schleiz (Saale-Orla-Kreis)",
+      "bundesland": "TH"
+    },
+    "SDL": {
+      "name": "Stendal",
+      "bundesland": "ST"
+    },
+    "SDT": {
+      "name": "Schwedt/Oder (Uckermark)",
+      "bundesland": "BB"
+    },
+    "SE": {
+      "name": "Segeberg",
+      "bundesland": "SH"
+    },
+    "SEB": {
+      "name": "Sebnitz",
+      "bundesland": "SN"
+    },
+    "SEE": {
+      "name": "Seelow (Märkisch-Oderland)",
+      "bundesland": "BB"
+    },
+    "SEL": {
+      "name": "Selb (Wunsiedel)",
+      "bundesland": "BY"
+    },
+    "SFB": {
+      "name": "Senftenberg (Oberspreewald-Lausitz)",
+      "bundesland": "BB"
+    },
+    "SFT": {
+      "name": "Staßfurt (Salzlandkreis)",
+      "bundesland": "ST"
+    },
+    "SG": {
+      "name": "Solingen",
+      "bundesland": "NW"
+    },
+    "SGH": {
+      "name": "Sangerhausen",
+      "bundesland": "ST"
+    },
+    "SHA": {
+      "name": "Schwäbisch Hall",
+      "bundesland": "BW"
+    },
+    "SHG": {
+      "name": "Schaumburg (Stadthagen)",
+      "bundesland": "NI"
+    },
+    "SHK": {
+      "name": "Saale-Holzland-Kreis",
+      "bundesland": "TH"
+    },
+    "SHL": {
+      "name": "Suhl",
+      "bundesland": "TH"
+    },
+    "SI": {
+      "name": "Siegen-Wittgenstein",
+      "bundesland": "NW"
+    },
+    "SIG": {
+      "name": "Sigmaringen",
+      "bundesland": "BW"
+    },
+    "SIM": {
+      "name": "Rhein-Hunsrück-Kreis (Simmern)",
+      "bundesland": "RP"
+    },
+    "SK": {
+      "name": "Saalekreis",
+      "bundesland": "ST"
+    },
+    "SL": {
+      "name": "Schleswig-Flensburg",
+      "bundesland": "SH"
+    },
+    "SLE": {
+      "name": "Schleiden (Euskirchen)",
+      "bundesland": "NW"
+    },
+    "SLF": {
+      "name": "Saalfeld-Rudolstadt",
+      "bundesland": "TH"
+    },
+    "SLK": {
+      "name": "Salzlandkreis",
+      "bundesland": "ST"
+    },
+    "SLS": {
+      "name": "Saarlouis",
+      "bundesland": "SL"
+    },
+    "SLÜ": {
+      "name": "Schlüchtern (Main-Kinzig-Kreis)",
+      "bundesland": "HE"
+    },
+    "SLZ": {
+      "name": "Bad Salzungen (Wartburgkreis)",
+      "bundesland": "TH"
+    },
+    "SM": {
+      "name": "Schmalkalden-Meiningen",
+      "bundesland": "TH"
+    },
+    "SN": {
+      "name": "Schwerin",
+      "bundesland": "MV"
+    },
+    "SO": {
+      "name": "Soest",
+      "bundesland": "NW"
+    },
+    "SOB": {
+      "name": "Schrobenhausen",
+      "bundesland": "BY"
+    },
+    "SOG": {
+      "name": "Schongau (Weilheim-Schongau)",
+      "bundesland": "BY"
+    },
+    "SOK": {
+      "name": "Saale-Orla-Kreis",
+      "bundesland": "TH"
+    },
+    "SOM": {
+      "name": "Sömmerda",
+      "bundesland": "TH"
+    },
+    "SON": {
+      "name": "Sonneberg",
+      "bundesland": "TH"
+    },
+    "SP": {
+      "name": "Speyer",
+      "bundesland": "RP"
+    },
+    "SPB": {
+      "name": "Spremberg (Spree-Neiße)",
+      "bundesland": "BB"
+    },
+    "SPN": {
+      "name": "Spree-Neiße",
+      "bundesland": "BB"
+    },
+    "SR": {
+      "name": "Straubing",
+      "bundesland": "BY"
+    },
+    "SRB": {
+      "name": "Strasburg (Vorpommern-Greifswald)",
+      "bundesland": "MV"
+    },
+    "SRO": {
+      "name": "Stadtroda",
+      "bundesland": "TH"
+    },
+    "ST": {
+      "name": "Steinfurt",
+      "bundesland": "NW"
+    },
+    "STA": {
+      "name": "Starnberg",
+      "bundesland": "BY"
+    },
+    "STB": {
+      "name": "Sternberg (Ludwigslust-Parchim)",
+      "bundesland": "MV"
+    },
+    "STD": {
+      "name": "Stade",
+      "bundesland": "NI"
+    },
+    "STE": {
+      "name": "Bad Staffelstein (Lichtenfels)",
+      "bundesland": "BY"
+    },
+    "STL": {
+      "name": "Stollberg (Erzgebirgskreis)",
+      "bundesland": "SN"
+    },
+    "SU": {
+      "name": "Rhein-Sieg-Kreis (Siegburg)",
+      "bundesland": "NW"
+    },
+    "SÜW": {
+      "name": "Südliche Weinstraße",
+      "bundesland": "RP"
+    },
+    "SW": {
+      "name": "Schweinfurt",
+      "bundesland": "BY"
+    },
+    "SZ": {
+      "name": "Salzgitter",
+      "bundesland": "NI"
+    },
+    "SZB": {
+      "name": "Schwarzenberg (Erzgebirgskreis)",
+      "bundesland": "SN"
+    },
+    "TBB": {
+      "name": "Main-Tauber-Kreis (Tauberbischofsheim)",
+      "bundesland": "BW"
+    },
+    "TDO": {
+      "name": "Torgau-Oschatz",
+      "bundesland": "SN"
+    },
+    "TE": {
+      "name": "Tecklenburg (Steinfurt)",
+      "bundesland": "NW"
+    },
+    "TF": {
+      "name": "Teltow-Fläming",
+      "bundesland": "BB"
+    },
+    "TG": {
+      "name": "Torgau (Nordsachsen)",
+      "bundesland": "SN"
+    },
+    "THL": {
+      "name": "Thüringen (Landesregierung)",
+      "bundesland": "TH"
+    },
+    "TIR": {
+      "name": "Tirschenreuth",
+      "bundesland": "BY"
+    },
+    "TÖL": {
+      "name": "Bad Tölz-Wolfratshausen",
+      "bundesland": "BY"
+    },
+    "TO": {
+      "name": "Torgau (Nordsachsen)",
+      "bundesland": "SN"
+    },
+    "TP": {
+      "name": "Templin (Uckermark)",
+      "bundesland": "BB"
+    },
+    "TR": {
+      "name": "Trier",
+      "bundesland": "RP"
+    },
+    "TS": {
+      "name": "Traunstein",
+      "bundesland": "BY"
+    },
+    "TÜ": {
+      "name": "Tübingen",
+      "bundesland": "BW"
+    },
+    "TUT": {
+      "name": "Tuttlingen",
+      "bundesland": "BW"
+    },
+    "UE": {
+      "name": "Uelzen",
+      "bundesland": "NI"
+    },
+    "UEM": {
+      "name": "Ueckermünde (Vorpommern-Greifswald)",
+      "bundesland": "MV"
+    },
+    "UFF": {
+      "name": "Uffenheim",
+      "bundesland": "BY"
+    },
+    "UH": {
+      "name": "Unstrut-Hainich-Kreis",
+      "bundesland": "TH"
+    },
+    "UL": {
+      "name": "Ulm",
+      "bundesland": "BW"
+    },
+    "UM": {
+      "name": "Uckermark",
+      "bundesland": "BB"
+    },
+    "UN": {
+      "name": "Unna",
+      "bundesland": "NW"
+    },
+    "V": {
+      "name": "Vogtlandkreis",
+      "bundesland": "SN"
+    },
+    "VAI": {
+      "name": "Vaihingen (Ludwigsburg)",
+      "bundesland": "BW"
+    },
+    "VB": {
+      "name": "Vogelsbergkreis",
+      "bundesland": "HE"
+    },
+    "VEC": {
+      "name": "Vechta",
+      "bundesland": "NI"
+    },
+    "VER": {
+      "name": "Verden",
+      "bundesland": "NI"
+    },
+    "VG": {
+      "name": "Vorpommern-Greifswald",
+      "bundesland": "MV"
+    },
+    "VIB": {
+      "name": "Vilsbiburg (Landshut)",
+      "bundesland": "BY"
+    },
+    "VIE": {
+      "name": "Viersen",
+      "bundesland": "NW"
+    },
+    "VIT": {
+      "name": "Viechtach (Regen)",
+      "bundesland": "BY"
+    },
+    "VK": {
+      "name": "Völklingen (Saarbrücken)",
+      "bundesland": "SL"
+    },
+    "VOF": {
+      "name": "Vilshofen (Passau)",
+      "bundesland": "BY"
+    },
+    "VOH": {
+      "name": "Vohenstrauß (Neustadt a.d.Waldnaab)",
+      "bundesland": "BY"
+    },
+    "VR": {
+      "name": "Vorpommern-Rügen",
+      "bundesland": "MV"
+    },
+    "VS": {
+      "name": "Schwarzwald-Baar-Kreis (Villingen-Schwenningen)",
+      "bundesland": "BW"
+    },
+    "W": {
+      "name": "Wuppertal",
+      "bundesland": "NW"
+    },
+    "WA": {
+      "name": "Waldeck (Waldeck-Frankenberg)",
+      "bundesland": "HE"
+    },
+    "WAF": {
+      "name": "Warendorf",
+      "bundesland": "NW"
+    },
+    "WAK": {
+      "name": "Wartburgkreis",
+      "bundesland": "TH"
+    },
+    "WAR": {
+      "name": "Warburg (Höxter)",
+      "bundesland": "NW"
+    },
+    "WB": {
+      "name": "Wittenberg",
+      "bundesland": "ST"
+    },
+    "WBS": {
+      "name": "Worbis (Eichsfeld)",
+      "bundesland": "TH"
+    },
+    "WDA": {
+      "name": "Werdau (Zwickau)",
+      "bundesland": "SN"
+    },
+    "WE": {
+      "name": "Weimar",
+      "bundesland": "TH"
+    },
+    "WEL": {
+      "name": "Weilburg (Limburg-Weilburg)",
+      "bundesland": "HE"
+    },
+    "WEN": {
+      "name": "Weiden in der Oberpfalz",
+      "bundesland": "BY"
+    },
+    "WER": {
+      "name": "Wernigerode (Harz)",
+      "bundesland": "ST"
+    },
+    "WES": {
+      "name": "Wesel",
+      "bundesland": "NW"
+    },
+    "WF": {
+      "name": "Wolfenbüttel",
+      "bundesland": "NI"
+    },
+    "WHV": {
+      "name": "Wilhelmshaven",
+      "bundesland": "NI"
+    },
+    "WI": {
+      "name": "Wiesbaden",
+      "bundesland": "HE"
+    },
+    "WIL": {
+      "name": "Bernkastel-Wittlich",
+      "bundesland": "RP"
+    },
+    "WIZ": {
+      "name": "Witzenhausen (Werra-Meißner-Kreis)",
+      "bundesland": "HE"
+    },
+    "WL": {
+      "name": "Harburg (Winsen/Luhe)",
+      "bundesland": "NI"
+    },
+    "WLG": {
+      "name": "Wolgast (Vorpommern-Greifswald)",
+      "bundesland": "MV"
+    },
+    "WM": {
+      "name": "Weilheim-Schongau",
+      "bundesland": "BY"
+    },
+    "WMS": {
+      "name": "Wolmirstedt (Börde)",
+      "bundesland": "ST"
+    },
+    "WN": {
+      "name": "Rems-Murr-Kreis (Waiblingen)",
+      "bundesland": "BW"
+    },
+    "WND": {
+      "name": "St. Wendel",
+      "bundesland": "SL"
+    },
+    "WO": {
+      "name": "Worms",
+      "bundesland": "RP"
+    },
+    "WOB": {
+      "name": "Wolfsburg",
+      "bundesland": "NI"
+    },
+    "WOH": {
+      "name": "Wolfhagen (Kassel)",
+      "bundesland": "HE"
+    },
+    "WOL": {
+      "name": "Wolfen (Anhalt-Bitterfeld)",
+      "bundesland": "ST"
+    },
+    "WR": {
+      "name": "Wernigerode (historisch)",
+      "bundesland": "ST"
+    },
+    "WRN": {
+      "name": "Waren (Müritz)",
+      "bundesland": "MV"
+    },
+    "WSF": {
+      "name": "Weißenfels (Burgenlandkreis)",
+      "bundesland": "ST"
+    },
+    "WST": {
+      "name": "Ammerland (Westerstede)",
+      "bundesland": "NI"
+    },
+    "WT": {
+      "name": "Waldshut",
+      "bundesland": "BW"
+    },
+    "WTL": {
+      "name": "Wittlich (Bernkastel-Wittlich)",
+      "bundesland": "RP"
+    },
+    "WTM": {
+      "name": "Wittmund",
+      "bundesland": "NI"
+    },
+    "WUG": {
+      "name": "Weißenburg-Gunzenhausen",
+      "bundesland": "BY"
+    },
+    "WUN": {
+      "name": "Wunsiedel im Fichtelgebirge",
+      "bundesland": "BY"
+    },
+    "WUR": {
+      "name": "Wurzen (Leipzig)",
+      "bundesland": "SN"
+    },
+    "WÜ": {
+      "name": "Würzburg",
+      "bundesland": "BY"
+    },
+    "WW": {
+      "name": "Westerwaldkreis (Montabaur)",
+      "bundesland": "RP"
+    },
+    "WZL": {
+      "name": "Wetzlar (Lahn-Dill-Kreis)",
+      "bundesland": "HE"
+    },
+    "Z": {
+      "name": "Zwickau",
+      "bundesland": "SN"
+    },
+    "ZE": {
+      "name": "Zerbst (Anhalt-Bitterfeld)",
+      "bundesland": "ST"
+    },
+    "ZEL": {
+      "name": "Zell (Cochem-Zell)",
+      "bundesland": "RP"
+    },
+    "ZI": {
+      "name": "Zittau (Görlitz)",
+      "bundesland": "SN"
+    },
+    "ZIG": {
+      "name": "Ziegenhain (Schwalm-Eder-Kreis)",
+      "bundesland": "HE"
+    },
+    "ZP": {
+      "name": "Zschopau (Erzgebirgskreis)",
+      "bundesland": "SN"
+    },
+    "ZR": {
+      "name": "Zeulenroda (Greiz)",
+      "bundesland": "TH"
+    },
+    "ZW": {
+      "name": "Zweibrücken",
+      "bundesland": "RP"
+    },
+    "ZZ": {
+      "name": "Zeitz (Burgenlandkreis)",
+      "bundesland": "ST"
+    }
+  }
+}
