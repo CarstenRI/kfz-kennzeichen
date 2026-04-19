@@ -48,7 +48,7 @@ BUNDESLAND_MAP = {
 USER_AGENT = "kfz-kennzeichen-updater/1.0 (https://github.com/carstenri/kfz-kennzeichen)"
 
 
-# ---------------------------------------------------------------- HTTP helper
+# ----------------------------------------------------------------- HTTP helper
 def http_get(url: str, headers: dict | None = None, timeout: int = 60) -> str:
     req = urllib.request.Request(url)
     req.add_header("User-Agent", USER_AGENT)
@@ -58,7 +58,7 @@ def http_get(url: str, headers: dict | None = None, timeout: int = 60) -> str:
         return r.read().decode("utf-8")
 
 
-# ---------------------------------------------------------------- Wikidata
+# ----------------------------------------------------------------- Wikidata
 SPARQL = r"""
 SELECT DISTINCT ?code ?ortLabel ?blLabel WHERE {
   ?ort wdt:P395 ?code .
@@ -92,22 +92,53 @@ def fetch_wikidata() -> dict[str, dict]:
 
 
 # ---------------------------------------------------------------- Wikipedia
+# Die deutsche Liste nutzt pro Buchstaben-Sektion eine Tabelle mit der
+# Vorlage {{TabDKfz}}. Jede Zeile besteht aus 4 Zellen, die mehrzeilig
+# (je | am Zeilenanfang) notiert sind:  Code · Region · Herleitung · Bundesland.
+# rowspan="N" ist häufig (z. B. "A" deckt Stadt + Landkreis Augsburg ab).
 WIKI_API = (
     "https://de.wikipedia.org/w/api.php?"
     "action=parse&page=Liste_der_Kfz-Kennzeichen_in_Deutschland"
-    "&prop=wikitext&format=json&redirects=1"
+    "&prop=wikitext&format=json&redirects=1&formatversion=2"
 )
 
-_LINK_RE = re.compile(r'\[\[(?:[^|\]]+\|)?([^\]]+)\]\]')
-_TAG_RE  = re.compile(r'<[^>]+>')
+_LINK_RE    = re.compile(r'\[\[(?:[^|\]]+\|)?([^\]]+)\]\]')
+_BOLD_RE    = re.compile(r"'''([^']+)'''")
+_ITALIC_RE  = re.compile(r"''([^']+)''")
+_TAG_RE     = re.compile(r'<[^>]+>')
+_ATTR_PREFIX_RE = re.compile(
+    r'^\s*(?:rowspan|colspan|style|class|align|valign|width|bgcolor)\s*=\s*"[^"]*"\s*(?:\s+(?:rowspan|colspan|style|class|align|valign|width|bgcolor)\s*=\s*"[^"]*"\s*)*\|\s*',
+    re.IGNORECASE
+)
 
-def _clean(s: str) -> str:
+def _strip_formatting(s: str) -> str:
     s = _LINK_RE.sub(r'\1', s)
+    s = _BOLD_RE.sub(r'\1', s)
+    s = _ITALIC_RE.sub(r'\1', s)
     s = _TAG_RE.sub('', s)
     s = s.replace("&nbsp;", " ")
-    return re.sub(r'\s+', ' ', s).strip(" *")
+    return re.sub(r'\s+', ' ', s).strip()
 
-_CODE_RE = re.compile(r'^(?:\[\[[^|\]]+\|)?([A-ZÄÖÜ]{1,3})\]?\]?$')
+def _cell_content(cell: str) -> str:
+    """Entfernt Attribut-Präfixe wie `rowspan="2" |` vor dem Zellinhalt."""
+    return _ATTR_PREFIX_RE.sub('', cell, count=1)
+
+def _extract_code(cell: str) -> str | None:
+    c = _strip_formatting(_cell_content(cell))
+    m = re.match(r'^([A-ZÄÖÜ]{1,3})$', c)
+    return m.group(1) if m else None
+
+def _extract_region(cell: str) -> str:
+    """Region ist meist der erste Wikilink (Stadt [[Augsburg]] → „Augsburg").
+    Fällt auf die bereinigte Zelle zurück, wenn kein Link vorhanden ist."""
+    c = _cell_content(cell)
+    m = _LINK_RE.search(c)
+    if m:
+        return m.group(1).strip()
+    return _strip_formatting(c)
+
+# Pro Buchstabe eine TabDKfz-Tabelle
+_TABLE_RE = re.compile(r'\{\|\s*\{\{TabDKfz[^}]*\}\}[^\n]*\n(.*?)\n\|\}', re.DOTALL)
 
 def fetch_wikipedia() -> dict[str, dict]:
     raw = http_get(WIKI_API)
@@ -115,30 +146,35 @@ def fetch_wikipedia() -> dict[str, dict]:
     wt = ((data.get("parse") or {}).get("wikitext") or {}).get("*", "")
     out: dict[str, dict] = {}
 
-    # Strategie: jede Wikitabelle-Zeile parsen, die nach "| CODE || Region || Bundesland" aussieht
-    for line in wt.split("\n"):
-        s = line.strip()
-        if not s.startswith("|") or s.startswith(("|-", "|+", "|}", "|class", "|style")):
-            continue
-        # "| A || Augsburg || Bayern" — führendes "|" weg, per || splitten
-        parts = [p.strip() for p in s.lstrip("|").split("||")]
-        if len(parts) < 3:
-            continue
-        m = _CODE_RE.match(_clean(parts[0]))
-        if not m:
-            continue
-        code = m.group(1).upper()
-        region = _clean(parts[1])
-        bl_raw = _clean(parts[2])
-        bl = BUNDESLAND_MAP.get(bl_raw, "")
-        if not code or not region or not bl:
-            continue
-        if code not in out:
-            out[code] = {"name": region, "bundesland": bl}
+    for body in _TABLE_RE.findall(wt):
+        # Tabelle in Zeilen-Blöcke splitten; |- trennt Zeilen
+        blocks = re.split(r'(?m)^\|\-.*$', body)
+        for block in blocks:
+            # Zellen sammeln: Zeilen, die mit | beginnen (ohne |-, |}, |+).
+            cells = []
+            for raw_line in block.split('\n'):
+                line = raw_line.rstrip()
+                if not line.startswith('|'):
+                    continue
+                if line.startswith(('|-', '|}', '|+')):
+                    continue
+                cells.append(line[1:])
+
+            if len(cells) < 4:
+                # 1-Zellen-Blöcke sind rowspan-Folgezeilen (weitere Region für
+                # denselben Code) – für unsere Zwecke ignorieren.
+                continue
+
+            code = _extract_code(cells[0])
+            region = _extract_region(cells[1])
+            bl_raw = _strip_formatting(_cell_content(cells[3]))
+            bl = BUNDESLAND_MAP.get(bl_raw, "")
+            if code and region and bl and code not in out:
+                out[code] = {"name": region, "bundesland": bl}
     return out
 
 
-# ---------------------------------------------------------------- Merge
+# ----------------------------------------------------------------- Merge
 def merge(wp: dict[str, dict], wd: dict[str, dict]):
     all_codes = set(wp) | set(wd)
     merged: dict[str, dict] = {}
