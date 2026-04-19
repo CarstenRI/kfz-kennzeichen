@@ -137,6 +137,20 @@ def _extract_region(cell: str) -> str:
         return m.group(1).strip()
     return _strip_formatting(c)
 
+# Link-Ziel extrahieren (erste [[Ziel|Anzeige]] oder [[Ziel]] → "Ziel")
+_LINK_TARGET_RE = re.compile(r'\[\[([^|\]]+)(?:\|[^\]]+)?\]\]')
+
+def _extract_origin(cell: str) -> str:
+    """Herleitung: in der 3. Spalte steht i. d. R. ein Wikilink auf den Ort,
+    aus dem das Kürzel stammt (z. B. [[Rinteln|'''RI'''nteln]]). Wir nehmen
+    das LINK-ZIEL, nicht den Anzeigetext (der mit Bold-Markup versehen ist)."""
+    c = _cell_content(cell)
+    m = _LINK_TARGET_RE.search(c)
+    if m:
+        return m.group(1).strip()
+    # Kein Wikilink → Bold-Entfernung liefert den Ort meist trotzdem korrekt
+    return _strip_formatting(c)
+
 # Pro Buchstabe eine TabDKfz-Tabelle
 _TABLE_RE = re.compile(r'\{\|\s*\{\{TabDKfz[^}]*\}\}[^\n]*\n(.*?)\n\|\}', re.DOTALL)
 
@@ -174,10 +188,14 @@ def fetch_wikipedia() -> dict[str, dict]:
 
             code = _extract_code(cells[0])
             region = _extract_region(cells[1])
+            origin = _extract_origin(cells[2])
             bl_raw = _strip_formatting(_cell_content(cells[3]))
             bl = BUNDESLAND_MAP.get(bl_raw, "")
             if code and region and bl and code not in out:
-                out[code] = {"name": region, "bundesland": bl}
+                entry = {"name": region, "bundesland": bl}
+                if origin and origin != region:
+                    entry["origin"] = origin
+                out[code] = entry
     return out
 
 
