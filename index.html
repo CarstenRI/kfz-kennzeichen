@@ -557,10 +557,10 @@ let activeIdx = 0;
 let liveTimer = null;
 let liveAbort = null;
 
-async function findRemoteMatches(q, signal){
+async function _lookupKfzForTitle(title, signal){
   try {
     const r1 = await fetch(
-      'https://de.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(q) + '?redirect=true',
+      'https://de.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(title) + '?redirect=true',
       { signal }
     );
     if(!r1.ok) return [];
@@ -582,14 +582,41 @@ async function findRemoteMatches(q, signal){
     if(!r2.ok) return [];
     const j = await r2.json();
 
-    const seen = new Set();
     const out = [];
     for(const b of j.results?.bindings || []){
       const code = (b.code?.value || '').toUpperCase();
-      if(!code || seen.has(code) || !KENNZEICHEN[code]) continue;
-      seen.add(code);
+      if(!code || !KENNZEICHEN[code]) continue;
       const [name, bl, origin] = KENNZEICHEN[code];
       out.push({ code, name, bl, origin, viaPlace: wiki.title, score: 10 });
+    }
+    return out;
+  } catch(e){
+    if(e.name === 'AbortError') throw e;
+    return [];
+  }
+}
+
+async function findRemoteMatches(q, signal){
+  try {
+    const openUrl = 'https://de.wikipedia.org/w/api.php?action=opensearch'
+                  + '&search=' + encodeURIComponent(q)
+                  + '&limit=5&namespace=0&format=json&origin=*';
+    const r0 = await fetch(openUrl, { signal });
+    if(!r0.ok) return [];
+    const open = await r0.json();
+    const titles = (open && open[1]) || [];
+    if(!titles.length) return [];
+
+    const seen = new Set();
+    const out = [];
+    for(const title of titles.slice(0, 3)){
+      const hits = await _lookupKfzForTitle(title, signal);
+      for(const h of hits){
+        if(seen.has(h.code)) continue;
+        seen.add(h.code);
+        out.push(h);
+      }
+      if(out.length > 0) break;
     }
     return out;
   } catch(e){
