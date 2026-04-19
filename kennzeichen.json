@@ -1,18 +1,18 @@
 {
-  "generated": "2026-04-19T17:50:11+00:00",
+  "generated": "2026-04-19T19:40:18+00:00",
   "source": "Wikipedia + Wikidata (merge)",
   "sources": {
     "wikipedia": "https://de.wikipedia.org/wiki/Liste_der_Kfz-Kennzeichen_in_Deutschland",
     "wikidata": "https://query.wikidata.org/sparql (P395)"
   },
-  "count": 749,
+  "count": 724,
   "stats": {
-    "added": 58,
-    "removed": 0,
-    "changed": 494,
-    "only_wikipedia": 58,
-    "only_wikidata": 25,
-    "conflicts_wp_won": 2
+    "added": 0,
+    "removed": 25,
+    "changed": 707,
+    "only_wikipedia": 724,
+    "only_wikidata": 0,
+    "conflicts_wp_won": 0
   },
   "kennzeichen": {
     "A": {
@@ -21,135 +21,158 @@
     },
     "AA": {
       "name": "Ostalbkreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Aalen"
     },
     "AB": {
       "name": "Aschaffenburg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "AschaffenBurg"
     },
     "ABG": {
       "name": "Landkreis Altenburger Land",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Altenburg"
     },
     "ABI": {
       "name": "Landkreis Anhalt-Bitterfeld",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Anhalt"
     },
     "AC": {
       "name": "Städteregion Aachen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Aachen"
     },
     "AE": {
       "name": "Vogtlandkreis",
-      "bundesland": "SN"
-    },
-    "AG": {
-      "name": "Helgoland",
-      "bundesland": "SH"
+      "bundesland": "SN",
+      "origin": "Auerbach/Vogtl."
     },
     "AH": {
       "name": "Kreis Borken",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Ahaus"
     },
     "AIB": {
       "name": "Landkreis München",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Bad Aibling"
     },
     "AIC": {
       "name": "Landkreis Aichach-Friedberg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Aichach"
     },
     "AK": {
       "name": "Landkreis Altenkirchen (Westerwald)",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Altenkirchen (Westerwald)"
     },
     "ALF": {
       "name": "Landkreis Hildesheim",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Alfeld (Leine)"
     },
     "ALZ": {
       "name": "Landkreis Aschaffenburg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Alzenau"
     },
     "AM": {
       "name": "Amberg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "AMberg"
     },
     "AN": {
       "name": "Ansbach",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "ANsbach"
     },
     "ANA": {
       "name": "Erzgebirgskreis",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Annaberg-Buchholz"
     },
     "ANG": {
       "name": "Landkreis Uckermark",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Angermünde"
     },
     "ANK": {
       "name": "Landkreis Vorpommern-Greifswald",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Anklam"
     },
     "AP": {
       "name": "Landkreis Weimarer Land",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Apolda"
     },
     "APD": {
       "name": "Landkreis Weimarer Land",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "APolDa"
     },
     "ARN": {
       "name": "Ilm-Kreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Arnstadt"
     },
     "ART": {
       "name": "Kyffhäuserkreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Artern"
     },
     "AS": {
       "name": "Landkreis Amberg-Sulzbach",
-      "bundesland": "BY"
-    },
-    "ASD": {
-      "name": "Landkreis Aschendorf-Hümmling",
-      "bundesland": "NI"
+      "bundesland": "BY",
+      "origin": "Amberg"
     },
     "ASL": {
       "name": "Salzlandkreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Aschersleben"
     },
     "ASZ": {
       "name": "Erzgebirgskreis",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Aue (Sachsen)"
     },
     "AT": {
       "name": "Landkreis Vorpommern-Greifswald",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Altentreptow"
     },
     "AU": {
       "name": "Erzgebirgskreis",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Aue (Sachsen)"
     },
     "AUR": {
       "name": "Landkreis Aurich",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Aurich"
     },
     "AW": {
       "name": "Landkreis Ahrweiler",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Ahrweiler"
     },
     "AZ": {
       "name": "Landkreis Alzey-Worms",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Alzey"
     },
     "AZE": {
       "name": "Landkreis Anhalt-Bitterfeld",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Anhalt"
     },
     "AÖ": {
       "name": "Landkreis Altötting",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Altötting"
     },
     "B": {
       "name": "Berlin",
@@ -157,239 +180,283 @@
     },
     "BA": {
       "name": "Bamberg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "BAmberg"
     },
     "BAD": {
       "name": "Baden-Baden",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "BADen-Baden"
     },
     "BAR": {
       "name": "Landkreis Barnim",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Barnim"
     },
     "BB": {
       "name": "Landkreis Böblingen",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Böblingen"
     },
     "BBG": {
       "name": "Salzlandkreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Bernburg (Saale)"
     },
     "BBL": {
       "name": "Brandenburg",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "BrandenBurgische Landesregierung"
     },
     "BC": {
       "name": "Landkreis Biberach",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Biberach an der Riß"
     },
     "BCH": {
       "name": "Neckar-Odenwald-Kreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Buchen (Odenwald)"
     },
     "BE": {
       "name": "Kreis Warendorf",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Beckum"
     },
     "BED": {
       "name": "Landkreis Mittelsachsen",
-      "bundesland": "SN"
-    },
-    "BEI": {
-      "name": "Landkreis Beilngries",
-      "bundesland": "BY"
+      "bundesland": "SN",
+      "origin": "Brand-Erbisdorf"
     },
     "BEL": {
       "name": "Landkreis Potsdam-Mittelmark",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Bad Belzig"
     },
     "BER": {
       "name": "Landkreis Barnim",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Bernau bei Berlin"
     },
     "BF": {
       "name": "Kreis Steinfurt",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Steinfurt#Burgsteinfurt"
     },
     "BGD": {
       "name": "Landkreis Berchtesgadener Land",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Berchtesgaden"
     },
     "BGL": {
       "name": "Landkreis Berchtesgadener Land",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Berchtesgadener Land"
     },
     "BH": {
       "name": "Ortenaukreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Bühl"
     },
     "BI": {
       "name": "Bielefeld",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "BIelefeld"
     },
     "BID": {
       "name": "Landkreis Marburg-Biedenkopf",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Biedenkopf"
     },
     "BIN": {
       "name": "Landkreis Mainz-Bingen",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Bingen am Rhein"
     },
     "BIR": {
       "name": "Landkreis Birkenfeld",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Birkenfeld"
     },
     "BIT": {
       "name": "Eifelkreis Bitburg-Prüm",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Bitburg"
     },
     "BIW": {
       "name": "Landkreis Bautzen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Bischofswerda"
     },
     "BK": {
       "name": "Rems-Murr-Kreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Backnang"
     },
     "BKS": {
       "name": "Landkreis Bernkastel-Wittlich",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Bernkastel-Kues"
     },
     "BL": {
       "name": "Zollernalbkreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Balingen"
     },
     "BLB": {
       "name": "Kreis Siegen-Wittgenstein",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Bad Berleburg"
     },
     "BLK": {
       "name": "Burgenlandkreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "BurgenLandKreis"
     },
     "BM": {
       "name": "Rhein-Erft-Kreis",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Bergheim"
     },
     "BN": {
       "name": "Bonn",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "BonN"
     },
     "BNA": {
       "name": "Landkreis Leipzig",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Borna"
     },
     "BO": {
       "name": "Bochum",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "BOchum"
     },
     "BOG": {
       "name": "Landkreis Straubing-Bogen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Bogen (Stadt)"
     },
     "BOH": {
       "name": "Kreis Borken",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Bocholt"
     },
     "BOR": {
       "name": "Kreis Borken",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Borken"
     },
     "BOT": {
       "name": "Bottrop",
-      "bundesland": "NW"
-    },
-    "BP": {
-      "name": "Bundespolizei",
-      "bundesland": "—"
+      "bundesland": "NW",
+      "origin": "BOTtrop"
     },
     "BR": {
       "name": "Landkreis Karlsruhe",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Bruchsal"
     },
     "BRA": {
       "name": "Landkreis Wesermarsch",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Brake (Unterweser)"
     },
     "BRB": {
       "name": "Brandenburg an der Havel",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "BRandenBurg"
     },
     "BRG": {
       "name": "Landkreis Jerichower Land",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Burg (bei Magdeburg)"
     },
     "BRK": {
       "name": "Landkreis Bad Kissingen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Bad Brückenau"
     },
     "BRL": {
       "name": "Landkreis Goslar",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Braunlage"
     },
     "BRV": {
       "name": "Landkreis Rotenburg (Wümme)",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Bremervörde"
     },
     "BS": {
       "name": "Braunschweig",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "BraunSchweig"
     },
     "BSB": {
       "name": "Landkreis Osnabrück",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Bersenbrück"
     },
     "BSK": {
       "name": "Landkreis Oder-Spree",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Beeskow"
     },
     "BT": {
       "name": "Bayreuth",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "BayreuTh"
     },
     "BTF": {
       "name": "Landkreis Anhalt-Bitterfeld",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Bitterfeld"
     },
     "BUL": {
       "name": "Landkreis Amberg-Sulzbach",
-      "bundesland": "BY"
-    },
-    "BW": {
-      "name": "Wasserstraßen- und Schifffahrtsverwaltung des Bundes",
-      "bundesland": "—"
+      "bundesland": "BY",
+      "origin": "Burglengenfeld"
     },
     "BWL": {
       "name": "Landesregierung",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Baden-Württembergischer Landtag"
     },
     "BYL": {
       "name": "Bayern, Landesregierung",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "BaYerischer Landtag"
     },
     "BZ": {
       "name": "Landkreis Bautzen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Bautzen"
     },
     "BÖ": {
       "name": "Landkreis Börde",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Magdeburger Börde"
     },
     "BÜD": {
       "name": "Wetteraukreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Büdingen"
     },
     "BÜR": {
       "name": "Kreis Paderborn",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Büren (Westfalen)"
     },
     "BÜS": {
       "name": "Büsingen am Hochrhein",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "BÜSingen"
     },
     "BÜZ": {
       "name": "Landkreis Rostock",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Bützow"
     },
     "C": {
       "name": "Chemnitz",
@@ -397,55 +464,68 @@
     },
     "CA": {
       "name": "Landkreis Oberspreewald-Lausitz",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Calau"
     },
     "CAS": {
       "name": "Kreis Recklinghausen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Castrop-Rauxel"
     },
     "CB": {
       "name": "Cottbus",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "CottBus"
     },
     "CE": {
       "name": "Landkreis Celle",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Celle"
     },
     "CHA": {
       "name": "Landkreis Cham",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Cham (Oberpfalz)"
     },
     "CLP": {
       "name": "Landkreis Cloppenburg",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Cloppenburg"
     },
     "CLZ": {
       "name": "Landkreis Goslar",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Clausthal-Zellerfeld"
     },
     "CO": {
       "name": "Coburg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "COburg"
     },
     "COC": {
       "name": "Landkreis Cochem-Zell",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Cochem"
     },
     "COE": {
       "name": "Kreis Coesfeld",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Coesfeld"
     },
     "CR": {
       "name": "Landkreis Schwäbisch Hall",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Crailsheim"
     },
     "CUX": {
       "name": "Landkreis Cuxhaven",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Cuxhaven"
     },
     "CW": {
       "name": "Landkreis Calw",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Calw"
     },
     "D": {
       "name": "Düsseldorf",
@@ -453,119 +533,143 @@
     },
     "DA": {
       "name": "Landkreis Darmstadt-Dieburg",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "DArmstadt"
     },
     "DAH": {
       "name": "Landkreis Dachau",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Dachau"
     },
     "DAN": {
       "name": "Landkreis Lüchow-Dannenberg",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Dannenberg (Elbe)"
     },
     "DAU": {
       "name": "Landkreis Vulkaneifel",
-      "bundesland": "RP"
-    },
-    "DBA": {
-      "name": "Walim",
-      "bundesland": "—"
+      "bundesland": "RP",
+      "origin": "Daun"
     },
     "DBR": {
       "name": "Landkreis Rostock",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Bad Doberan"
     },
     "DD": {
       "name": "Dresden",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "DresDen"
     },
     "DE": {
       "name": "Dessau-Roßlau",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Dessau"
     },
     "DEG": {
       "name": "Landkreis Deggendorf",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Deggendorf"
     },
     "DEL": {
       "name": "Delmenhorst",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "DELmenhorst"
     },
     "DGF": {
       "name": "Landkreis Dingolfing-Landau",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Dingolfing"
     },
     "DH": {
       "name": "Landkreis Diepholz",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Diepholz"
     },
     "DI": {
       "name": "Landkreis Darmstadt-Dieburg",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Dieburg"
     },
     "DIL": {
       "name": "Lahn-Dill-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Dillenburg"
     },
     "DIN": {
       "name": "Kreis Wesel",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Dinslaken"
     },
     "DIZ": {
       "name": "Rhein-Lahn-Kreis",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Diez"
     },
     "DKB": {
       "name": "Landkreis Ansbach",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Dinkelsbühl"
     },
     "DL": {
       "name": "Landkreis Mittelsachsen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Döbeln"
     },
     "DLG": {
       "name": "Landkreis Dillingen an der Donau",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Dillingen an der Donau"
     },
     "DM": {
       "name": "Landkreis Mecklenburgische Seenplatte",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Demmin"
     },
     "DN": {
       "name": "Kreis Düren",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Düren"
     },
     "DO": {
       "name": "Dortmund",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "DOrtmund"
     },
     "DON": {
       "name": "Landkreis Donau-Ries",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Donauwörth"
     },
     "DS": {
       "name": "Schwarzwald-Baar-Kreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Donaueschingen"
     },
     "DU": {
       "name": "Duisburg",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "DUisburg"
     },
     "DUD": {
       "name": "Landkreis Göttingen",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Duderstadt"
     },
     "DW": {
       "name": "Landkreis Sächsische Schweiz-Osterzgebirge",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Dippoldiswalde"
     },
     "DZ": {
       "name": "Landkreis Nordsachsen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Delitzsch"
     },
     "DÜW": {
       "name": "Landkreis Bad Dürkheim",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Bad Dürkheim"
     },
     "E": {
       "name": "Essen",
@@ -573,251 +677,293 @@
     },
     "EA": {
       "name": "Wartburgkreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Eisenach"
     },
     "EB": {
       "name": "Landkreis Nordsachsen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Eilenburg"
     },
     "EBE": {
       "name": "Landkreis Ebersberg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Ebersberg"
     },
     "EBN": {
       "name": "Landkreis Haßberge",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Ebern"
     },
     "EBS": {
       "name": "Landkreis Bayreuth",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Ebermannstadt"
     },
     "ECK": {
       "name": "Kreis Rendsburg-Eckernförde",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Eckernförde"
     },
     "ED": {
       "name": "Landkreis Erding",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Erding"
     },
     "EE": {
       "name": "Landkreis Elbe-Elster",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Elbe"
     },
     "EF": {
       "name": "Erfurt",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "ErFurt"
     },
     "EG": {
       "name": "Landkreis Rottal-Inn",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Eggenfelden"
     },
     "EH": {
       "name": "Landkreis Oder-Spree",
-      "bundesland": "BB"
-    },
-    "EHI": {
-      "name": "Ehingen",
-      "bundesland": "BW"
+      "bundesland": "BB",
+      "origin": "Eisenhüttenstadt"
     },
     "EI": {
       "name": "Landkreis Eichstätt",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Eichstätt"
     },
     "EIC": {
       "name": "Landkreis Eichsfeld",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Eichsfeld"
     },
     "EIL": {
       "name": "Landkreis Mansfeld-Südharz",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Lutherstadt Eisleben"
     },
     "EIN": {
       "name": "Landkreis Northeim",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Einbeck"
     },
     "EIS": {
       "name": "Saale-Holzland-Kreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Eisenberg (Thüringen)"
     },
     "EL": {
       "name": "Landkreis Emsland",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Emsland"
     },
     "EM": {
       "name": "Landkreis Emmendingen",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Emmendingen"
     },
     "EMD": {
       "name": "Emden",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "EMDen"
     },
     "EMS": {
       "name": "Rhein-Lahn-Kreis",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Bad Ems"
     },
     "EN": {
       "name": "Ennepe-Ruhr-Kreis",
-      "bundesland": "NW"
-    },
-    "EO": {
-      "name": "Schöneiche bei Berlin",
-      "bundesland": "BB"
+      "bundesland": "NW",
+      "origin": "Ennepe"
     },
     "ER": {
       "name": "Erlangen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "ERlangen"
     },
     "ERB": {
       "name": "Odenwaldkreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Erbach (Odenwald)"
     },
     "ERH": {
       "name": "Landkreis Erlangen-Höchstadt",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Erlangen"
     },
     "ERK": {
       "name": "Kreis Heinsberg",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Erkelenz"
     },
     "ERZ": {
       "name": "Erzgebirgskreis",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Erzgebirge"
     },
     "ES": {
       "name": "Landkreis Esslingen",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Esslingen am Neckar"
     },
     "ESB": {
       "name": "Landkreis Amberg-Sulzbach",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Eschenbach in der Oberpfalz"
     },
     "ESW": {
       "name": "Werra-Meißner-Kreis",
-      "bundesland": "HE"
-    },
-    "ET": {
-      "name": "Schöneiche bei Berlin",
-      "bundesland": "BB"
+      "bundesland": "HE",
+      "origin": "Eschwege"
     },
     "EU": {
       "name": "Kreis Euskirchen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Euskirchen"
     },
     "EW": {
       "name": "Landkreis Barnim",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Eberswalde"
     },
     "F": {
       "name": "Frankfurt am Main",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Frankfurt"
     },
     "FB": {
       "name": "Wetteraukreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Friedberg (Hessen)"
     },
     "FD": {
       "name": "Landkreis Fulda",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Fulda"
     },
     "FDB": {
       "name": "Landkreis Aichach-Friedberg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Friedberg (Bayern)"
     },
     "FDS": {
       "name": "Landkreis Freudenstadt",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Freudenstadt"
     },
     "FEU": {
       "name": "Landkreis Ansbach",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Feuchtwangen"
     },
     "FF": {
       "name": "Frankfurt (Oder)",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "FrankFurt"
     },
     "FFB": {
       "name": "Landkreis Fürstenfeldbruck",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Fürstenfeldbruck"
     },
     "FG": {
       "name": "Landkreis Mittelsachsen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Freiberg"
     },
     "FI": {
       "name": "Landkreis Elbe-Elster",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Finsterwalde"
     },
     "FKB": {
       "name": "Landkreis Waldeck-Frankenberg",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Frankenberg (Eder)"
     },
     "FL": {
       "name": "Flensburg",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "FLensburg"
     },
     "FLÖ": {
       "name": "Landkreis Mittelsachsen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Flöha"
     },
     "FN": {
       "name": "Bodenseekreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Friedrichshafen"
     },
     "FO": {
       "name": "Landkreis Forchheim",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Forchheim"
     },
     "FOR": {
       "name": "Landkreis Spree-Neiße",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Forst (Lausitz)"
     },
     "FR": {
       "name": "Freiburg im Breisgau",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "FReiburg"
     },
     "FRG": {
       "name": "Landkreis Freyung-Grafenau",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Freyung"
     },
     "FRI": {
       "name": "Landkreis Friesland",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Friesland"
     },
     "FRW": {
       "name": "Landkreis Märkisch-Oderland",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Bad Freienwalde (Oder)"
     },
     "FS": {
       "name": "Landkreis Freising",
-      "bundesland": "BY"
-    },
-    "FSU": {
-      "name": "Słońsk",
-      "bundesland": "—"
+      "bundesland": "BY",
+      "origin": "Freising"
     },
     "FT": {
       "name": "Frankenthal (Pfalz)",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "FrankenThal"
     },
     "FTL": {
       "name": "Landkreis Sächsische Schweiz-Osterzgebirge",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Freital"
     },
     "FW": {
       "name": "Landkreis Oder-Spree",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Fürstenwalde/Spree"
     },
     "FZ": {
       "name": "Schwalm-Eder-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Fritzlar"
     },
     "FÜ": {
       "name": "Fürth",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "FÜrth"
     },
     "FÜS": {
       "name": "Landkreis Ostallgäu",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Füssen"
     },
     "G": {
       "name": "Gera",
@@ -825,423 +971,523 @@
     },
     "GA": {
       "name": "Altmarkkreis Salzwedel",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Gardelegen"
     },
     "GAN": {
       "name": "Landkreis Northeim",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Bad Gandersheim"
     },
     "GAP": {
       "name": "Landkreis Garmisch-Partenkirchen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Garmisch-Partenkirchen"
     },
     "GC": {
       "name": "Landkreis Zwickau",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Glauchau"
     },
     "GD": {
       "name": "Ostalbkreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Schwäbisch Gmünd"
     },
     "GDB": {
       "name": "Landkreis Nordwestmecklenburg",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Gadebusch"
     },
     "GE": {
       "name": "Gelsenkirchen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "GElsenkirchen"
     },
     "GEL": {
       "name": "Kreis Kleve",
-      "bundesland": "NW"
-    },
-    "GEM": {
-      "name": "Landkreis Gemünden am Main",
-      "bundesland": "BY"
+      "bundesland": "NW",
+      "origin": "Geldern"
     },
     "GEO": {
       "name": "Landkreis Haßberge",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Gerolzhofen"
     },
     "GER": {
       "name": "Landkreis Germersheim",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Germersheim"
     },
     "GF": {
       "name": "Landkreis Gifhorn",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Gifhorn"
     },
     "GG": {
       "name": "Kreis Groß-Gerau",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Groß-Gerau"
     },
     "GHA": {
       "name": "Landkreis Leipzig",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Geithain"
     },
     "GHC": {
       "name": "Landkreis Wittenberg",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Gräfenhainichen"
     },
     "GI": {
       "name": "Landkreis Gießen",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Gießen"
     },
     "GK": {
       "name": "Kreis Heinsberg",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Geilenkirchen"
     },
     "GL": {
       "name": "Rheinisch-Bergischer Kreis",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Bergisch Gladbach"
     },
     "GLA": {
       "name": "Kreis Recklinghausen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Gladbeck"
     },
     "GM": {
       "name": "Oberbergischer Kreis",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Gummersbach"
     },
     "GMN": {
       "name": "Landkreis Vorpommern-Rügen",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Grimmen"
     },
     "GN": {
       "name": "Main-Kinzig-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Gelnhausen"
     },
     "GNT": {
       "name": "Landkreis Jerichower Land",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Genthin"
     },
     "GOA": {
       "name": "Rhein-Hunsrück-Kreis",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Sankt Goar"
     },
     "GOH": {
       "name": "Rhein-Lahn-Kreis",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Sankt Goarshausen"
     },
     "GP": {
       "name": "Landkreis Göppingen",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Göppingen"
     },
     "GR": {
       "name": "Landkreis Görlitz",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Görlitz"
     },
     "GRA": {
       "name": "Landkreis Freyung-Grafenau",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Grafenau (Niederbayern)"
     },
     "GRH": {
       "name": "Landkreis Meißen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Großenhain"
     },
     "GRI": {
       "name": "Landkreis Rottal-Inn",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Bad Griesbach im Rottal"
     },
     "GRM": {
       "name": "Landkreis Leipzig",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Grimma"
     },
     "GRZ": {
       "name": "Landkreis Greiz",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Greiz"
     },
     "GS": {
       "name": "Landkreis Goslar",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Goslar"
     },
     "GT": {
       "name": "Kreis Gütersloh",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Gütersloh"
     },
     "GTH": {
       "name": "Landkreis Gotha",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Gotha"
     },
     "GUB": {
       "name": "Landkreis Spree-Neiße",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Guben"
     },
     "GUN": {
       "name": "Landkreis Weißenburg-Gunzenhausen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Gunzenhausen"
     },
     "GV": {
       "name": "Rhein-Kreis Neuss",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Grevenbroich"
     },
     "GVM": {
       "name": "Landkreis Nordwestmecklenburg",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Grevesmühlen"
     },
     "GW": {
       "name": "Landkreis Vorpommern-Greifswald",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "GreifsWald"
     },
     "GZ": {
       "name": "Landkreis Günzburg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Günzburg"
     },
     "GÖ": {
       "name": "Landkreis Göttingen",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "GÖttingen"
     },
     "GÜ": {
       "name": "Landkreis Rostock",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Güstrow"
     },
     "H": {
       "name": "Region Hannover",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Hannover"
     },
     "HA": {
       "name": "Hagen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "HAgen"
     },
     "HAB": {
       "name": "Landkreis Bad Kissingen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Hammelburg"
     },
     "HAL": {
       "name": "Halle (Saale)",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "HALle"
     },
     "HAM": {
       "name": "Hamm",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "HAMm"
     },
     "HAS": {
       "name": "Landkreis Haßberge",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Haßfurt"
     },
     "HB": {
       "name": "Bremen",
-      "bundesland": "HB"
+      "bundesland": "HB",
+      "origin": "Hansestadt"
     },
     "HBN": {
       "name": "Landkreis Hildburghausen",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Hildburghausen"
     },
     "HBS": {
       "name": "Landkreis Harz",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Halberstadt"
     },
     "HC": {
       "name": "Landkreis Mittelsachsen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Hainichen"
     },
     "HCH": {
       "name": "Landkreis Freudenstadt",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Hechingen"
     },
     "HD": {
       "name": "Heidelberg",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "HeiDelberg"
     },
     "HDH": {
       "name": "Landkreis Heidenheim",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Heidenheim an der Brenz"
     },
     "HDL": {
       "name": "Landkreis Börde",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Haldensleben"
     },
     "HE": {
       "name": "Landkreis Helmstedt",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Helmstedt"
     },
     "HEB": {
       "name": "Landkreis Nürnberger Land",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Hersbruck"
     },
     "HEF": {
       "name": "Landkreis Hersfeld-Rotenburg",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Bad Hersfeld"
     },
     "HEI": {
       "name": "Kreis Dithmarschen",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Heide (Holstein)"
     },
     "HEL": {
       "name": "Hessen, Landesregierung",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "HEssischer Landtag"
     },
     "HER": {
       "name": "Herne",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "HERne"
     },
     "HET": {
       "name": "Landkreis Mansfeld-Südharz",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Hettstedt"
     },
     "HF": {
       "name": "Kreis Herford",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Herford"
     },
     "HG": {
       "name": "Hochtaunuskreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Bad Homburg vor der Höhe"
     },
     "HGN": {
       "name": "Landkreis Ludwigslust-Parchim",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Hagenow"
     },
     "HGW": {
       "name": "Greifswald",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Hansestadt"
     },
     "HH": {
       "name": "Freie und Hansestadt Hamburg",
-      "bundesland": "HH"
+      "bundesland": "HH",
+      "origin": "Hansestadt"
     },
     "HHM": {
       "name": "Burgenlandkreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Hohenmölsen"
     },
     "HI": {
       "name": "Landkreis Hildesheim",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Hildesheim"
     },
     "HIG": {
       "name": "Landkreis Eichsfeld",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Heilbad Heiligenstadt"
     },
     "HIP": {
       "name": "Landkreis Roth",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Hilpoltstein"
     },
     "HK": {
       "name": "Landkreis Heidekreis",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Lüneburger Heide"
     },
     "HL": {
       "name": "Lübeck",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Hansestadt"
     },
     "HM": {
       "name": "Landkreis Hameln-Pyrmont",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Hameln"
     },
     "HMÜ": {
       "name": "Landkreis Göttingen",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Hann. Münden"
     },
     "HN": {
       "name": "Heilbronn",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "HeilbronN"
     },
     "HO": {
       "name": "Hof",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "HOf"
     },
     "HOG": {
       "name": "Landkreis Kassel",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Hofgeismar"
     },
     "HOH": {
       "name": "Landkreis Haßberge",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Hofheim in Unterfranken"
     },
     "HOL": {
       "name": "Landkreis Holzminden",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Holzminden"
     },
     "HOM": {
       "name": "Saarpfalz-Kreis",
-      "bundesland": "SL"
+      "bundesland": "SL",
+      "origin": "Homburg"
     },
     "HOR": {
       "name": "Landkreis Freudenstadt",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Horb am Neckar"
     },
     "HOT": {
       "name": "Landkreis Zwickau",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Hohenstein-Ernstthal"
     },
     "HP": {
       "name": "Landkreis Bergstraße",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Heppenheim (Bergstraße)"
     },
     "HR": {
       "name": "Schwalm-Eder-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Homberg (Efze)"
     },
     "HRO": {
       "name": "Rostock",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Hansestadt"
     },
     "HS": {
       "name": "Kreis Heinsberg",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Heinsberg"
     },
     "HSK": {
       "name": "Hochsauerlandkreis",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "HochSauerlandKreis"
     },
     "HST": {
       "name": "Stralsund",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Hansestadt"
     },
     "HU": {
       "name": "Hanau",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "HanaU"
     },
     "HV": {
       "name": "Landkreis Stendal",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Havelberg"
     },
     "HVL": {
       "name": "Landkreis Havelland",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Havelland"
     },
     "HWI": {
       "name": "Wismar",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Hansestadt"
     },
     "HX": {
       "name": "Kreis Höxter",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Höxter"
     },
     "HY": {
       "name": "Landkreis Bautzen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Hoyerswerda"
     },
     "HZ": {
       "name": "Landkreis Harz",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Harz (Mittelgebirge)"
     },
     "HÖS": {
       "name": "Landkreis Erlangen-Höchstadt",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Höchstadt an der Aisch"
     },
     "IGB": {
       "name": "St. Ingbert",
-      "bundesland": "SL"
+      "bundesland": "SL",
+      "origin": "InGBert"
     },
     "IK": {
       "name": "Ilm-Kreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Ilm (Saale)"
     },
     "IL": {
       "name": "Ilm-Kreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Ilmenau"
     },
     "ILL": {
       "name": "Landkreis Neu-Ulm",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Illertissen"
     },
     "IN": {
       "name": "Ingolstadt",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "INgolstadt"
     },
     "IZ": {
       "name": "Kreis Steinburg",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Itzehoe"
     },
     "J": {
       "name": "Jena",
@@ -1249,19 +1495,23 @@
     },
     "JB": {
       "name": "Landkreis Teltow-Fläming",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Jüterbog"
     },
     "JE": {
       "name": "Landkreis Wittenberg",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Jessen (Elster)"
     },
     "JL": {
       "name": "Landkreis Jerichower Land",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Jerichow"
     },
     "JÜL": {
       "name": "Kreis Düren",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Jülich"
     },
     "K": {
       "name": "Köln",
@@ -1269,131 +1519,163 @@
     },
     "KA": {
       "name": "Karlsruhe",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "KArlsruhe"
     },
     "KB": {
       "name": "Landkreis Waldeck-Frankenberg",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Korbach"
     },
     "KC": {
       "name": "Landkreis Kronach",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Kronach"
     },
     "KE": {
       "name": "Kempten (Allgäu)",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "KEmpten"
     },
     "KEH": {
       "name": "Landkreis Kelheim",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Kelheim"
     },
     "KEL": {
       "name": "Ortenaukreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Kehl"
     },
     "KEM": {
       "name": "Landkreis Bayreuth",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Kemnath"
     },
     "KF": {
       "name": "Kaufbeuren",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "KauFbeuren"
     },
     "KG": {
       "name": "Landkreis Bad Kissingen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Bad Kissingen"
     },
     "KH": {
       "name": "Landkreis Bad Kreuznach",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Bad Kreuznach"
     },
     "KI": {
       "name": "Kiel",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "KIel"
     },
     "KIB": {
       "name": "Donnersbergkreis",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Kirchheimbolanden"
     },
     "KK": {
       "name": "Kreis Viersen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Kempen"
     },
     "KL": {
       "name": "Kaiserslautern",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "KaisersLautern"
     },
     "KLE": {
       "name": "Kreis Kleve",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Kleve"
     },
     "KLZ": {
       "name": "Altmarkkreis Salzwedel",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Klötze"
     },
     "KM": {
       "name": "Landkreis Bautzen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Kamenz"
     },
     "KN": {
       "name": "Landkreis Konstanz",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Konstanz"
     },
     "KO": {
       "name": "Koblenz",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "KOblenz"
     },
     "KR": {
       "name": "Krefeld",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "KRefeld"
     },
     "KRU": {
       "name": "Landkreis Günzburg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Krumbach (Schwaben)"
     },
     "KS": {
       "name": "Landkreis Kassel",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "KasSel"
     },
     "KT": {
       "name": "Landkreis Kitzingen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Kitzingen"
     },
     "KU": {
       "name": "Landkreis Kulmbach",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Kulmbach"
     },
     "KUS": {
       "name": "Landkreis Kusel",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Kusel"
     },
     "KW": {
       "name": "Landkreis Dahme-Spreewald",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Königs Wusterhausen"
     },
     "KY": {
       "name": "Landkreis Ostprignitz-Ruppin",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Kyritz"
     },
     "KYF": {
       "name": "Kyffhäuserkreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Kyffhäuser"
     },
     "KÖN": {
       "name": "Landkreis Rhön-Grabfeld",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Bad Königshofen im Grabfeld"
     },
     "KÖT": {
       "name": "Landkreis Anhalt-Bitterfeld",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Köthen (Anhalt)"
     },
     "KÖZ": {
       "name": "Landkreis Cham",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Bad Kötzting"
     },
     "KÜN": {
       "name": "Hohenlohekreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Künzelsau"
     },
     "L": {
       "name": "Leipzig",
@@ -1401,159 +1683,193 @@
     },
     "LA": {
       "name": "Landshut",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "LAndshut"
     },
     "LAN": {
       "name": "Landkreis Dingolfing-Landau",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Landau an der Isar"
     },
     "LAU": {
       "name": "Landkreis Nürnberger Land",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Lauf an der Pegnitz"
     },
     "LB": {
       "name": "Landkreis Ludwigsburg",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Ludwigsburg"
     },
     "LBS": {
       "name": "Saale-Orla-Kreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Bad Lobenstein"
     },
     "LBZ": {
       "name": "Landkreis Ludwigslust-Parchim",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Lübz"
     },
     "LC": {
       "name": "Landkreis Dahme-Spreewald",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Luckau"
     },
     "LD": {
       "name": "Landau in der Pfalz",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "LanDau"
     },
     "LDK": {
       "name": "Lahn-Dill-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Lahn"
     },
     "LDS": {
       "name": "Landkreis Dahme-Spreewald",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Landkreis"
     },
     "LEO": {
       "name": "Landkreis Böblingen",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Leonberg"
     },
     "LER": {
       "name": "Landkreis Leer",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Leer (Ostfriesland)"
     },
     "LEV": {
       "name": "Leverkusen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "LEVerkusen"
     },
     "LF": {
       "name": "Landkreis Altötting",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Laufen (Salzach)"
     },
     "LG": {
       "name": "Landkreis Lüneburg",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Lüneburg"
     },
     "LH": {
       "name": "Kreis Coesfeld",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Lüdinghausen"
     },
     "LI": {
       "name": "Landkreis Lindau (Bodensee)",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Lindau (Bodensee)"
     },
     "LIB": {
       "name": "Landkreis Elbe-Elster",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Bad Liebenwerda"
     },
     "LIF": {
       "name": "Landkreis Lichtenfels",
-      "bundesland": "BY"
-    },
-    "LIN": {
-      "name": "Landkreis Lingen",
-      "bundesland": "NI"
+      "bundesland": "BY",
+      "origin": "Lichtenfels (Oberfranken)"
     },
     "LIP": {
       "name": "Kreis Lippe",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Lippe (Land)"
     },
     "LK": {
       "name": "Kreis Minden-Lübbecke",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Lübbecke"
     },
     "LL": {
       "name": "Landkreis Landsberg am Lech",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Landsberg am Lech"
     },
     "LM": {
       "name": "Landkreis Limburg-Weilburg",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Limburg an der Lahn"
     },
     "LN": {
       "name": "Landkreis Dahme-Spreewald",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Lübben (Spreewald)"
     },
     "LOS": {
       "name": "Landkreis Oder-Spree",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Landkreis"
     },
     "LP": {
       "name": "Kreis Soest",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Lippstadt"
     },
     "LR": {
       "name": "Ortenaukreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Lahr/Schwarzwald"
     },
     "LRO": {
       "name": "Landkreis Rostock",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Landkreis"
     },
     "LSA": {
       "name": "Sachsen-Anhalt",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Land Sachsen-Anhalt"
     },
     "LSN": {
       "name": "Sachsen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Landtag SachseN"
     },
     "LSZ": {
       "name": "Unstrut-Hainich-Kreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Bad Langensalza"
     },
     "LU": {
       "name": "Ludwigshafen am Rhein",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "LUdwigshafen"
     },
     "LUK": {
       "name": "Landkreis Teltow-Fläming",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Luckenwalde"
     },
     "LUP": {
       "name": "Landkreis Ludwigslust-Parchim",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Ludwigslust"
     },
     "LWL": {
       "name": "Landkreis Ludwigslust-Parchim",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Ludwigslust"
     },
     "LÖ": {
       "name": "Landkreis Lörrach",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Lörrach"
     },
     "LÖB": {
       "name": "Landkreis Görlitz",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Löbau"
     },
     "LÜN": {
       "name": "Kreis Unna",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Lünen"
     },
     "M": {
       "name": "München",
@@ -1561,231 +1877,273 @@
     },
     "MA": {
       "name": "Mannheim",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "MAnnheim"
     },
     "MAB": {
       "name": "Erzgebirgskreis",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Marienberg"
     },
     "MAI": {
       "name": "Landkreis Kelheim",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Mainburg"
     },
     "MAK": {
       "name": "Landkreis Wunsiedel im Fichtelgebirge",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Marktredwitz"
     },
     "MAL": {
       "name": "Landkreis Landshut",
-      "bundesland": "BY"
-    },
-    "MAR": {
-      "name": "Landkreis Marktheidenfeld",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Mallersdorf-Pfaffenberg"
     },
     "MB": {
       "name": "Landkreis Miesbach",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Miesbach"
     },
     "MC": {
       "name": "Landkreis Mecklenburgische Seenplatte",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Malchin"
     },
     "MD": {
       "name": "Magdeburg",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "MagDeburg"
     },
     "ME": {
       "name": "Kreis Mettmann",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Mettmann"
     },
     "MED": {
       "name": "Kreis Dithmarschen",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Meldorf"
     },
     "MEG": {
       "name": "Schwalm-Eder-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Melsungen"
     },
     "MEI": {
       "name": "Landkreis Meißen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Meißen"
     },
     "MEK": {
       "name": "Erzgebirgskreis",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Mittlerer Erzgebirgskreis"
     },
     "MEL": {
       "name": "Landkreis Osnabrück",
-      "bundesland": "NI"
-    },
-    "MEP": {
-      "name": "Landkreis Meppen",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Melle"
     },
     "MER": {
       "name": "Saalekreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Merseburg"
     },
     "MET": {
       "name": "Landkreis Rhön-Grabfeld",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Mellrichstadt"
     },
     "MG": {
       "name": "Mönchengladbach",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "MönchenGladbach"
     },
     "MGH": {
       "name": "Main-Tauber-Kreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Bad Mergentheim"
     },
     "MGN": {
       "name": "Landkreis Schmalkalden-Meiningen",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Meiningen"
     },
     "MH": {
       "name": "Mülheim an der Ruhr",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "MülHeim"
     },
     "MHL": {
       "name": "Unstrut-Hainich-Kreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Mühlhausen/Thüringen"
     },
     "MI": {
       "name": "Kreis Minden-Lübbecke",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Minden"
     },
     "MIL": {
       "name": "Landkreis Miltenberg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Miltenberg"
     },
     "MK": {
       "name": "Märkischer Kreis",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Grafschaft Mark"
     },
     "MKK": {
       "name": "Main-Kinzig-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Main"
     },
     "ML": {
       "name": "Landkreis Mansfeld-Südharz",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Mansfelder Land"
     },
     "MM": {
       "name": "Memmingen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "MemMingen"
     },
     "MN": {
       "name": "Landkreis Unterallgäu",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Mindelheim"
     },
     "MO": {
       "name": "Kreis Wesel",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Moers"
     },
     "MOD": {
       "name": "Landkreis Ostallgäu",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Marktoberdorf"
     },
     "MOL": {
       "name": "Landkreis Märkisch-Oderland",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Mark Brandenburg"
     },
     "MON": {
       "name": "Städteregion Aachen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Monschau"
     },
     "MOS": {
       "name": "Neckar-Odenwald-Kreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Mosbach"
     },
     "MQ": {
       "name": "Saalekreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Merseburg"
     },
     "MR": {
       "name": "Landkreis Marburg-Biedenkopf",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Marburg"
     },
     "MS": {
       "name": "Münster",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "MünSter"
     },
     "MSE": {
       "name": "Landkreis Mecklenburgische Seenplatte",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Mecklenburgische Seenplatte"
     },
     "MSH": {
       "name": "Landkreis Mansfeld-Südharz",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Mansfelder Land"
     },
     "MSP": {
       "name": "Landkreis Main-Spessart",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Main"
     },
     "MST": {
       "name": "Landkreis Mecklenburgische Seenplatte",
-      "bundesland": "MV"
-    },
-    "MT": {
-      "name": "Unterwesterwaldkreis",
-      "bundesland": "RP"
+      "bundesland": "MV",
+      "origin": "Mecklenburg-Strelitz"
     },
     "MTK": {
       "name": "Main-Taunus-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Main"
     },
     "MTL": {
       "name": "Landkreis Leipzig",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Mulde (Fluss)"
     },
     "MU": {
       "name": "Landkreis München",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Münchner Umland"
     },
     "MUC": {
       "name": "München",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "MUenChen"
     },
     "MVL": {
       "name": "Mecklenburg-Vorpommern",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Mecklenburg-Vorpommerscher Landtag"
     },
     "MW": {
       "name": "Landkreis Mittelsachsen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Mittweida"
     },
     "MY": {
       "name": "Landkreis Mayen-Koblenz",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Mayen"
     },
     "MYK": {
       "name": "Landkreis Mayen-Koblenz",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Mayen"
     },
     "MZ": {
       "name": "Mainz",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "MainZ"
     },
     "MZG": {
       "name": "Landkreis Merzig-Wadern",
-      "bundesland": "SL"
+      "bundesland": "SL",
+      "origin": "Merzig"
     },
     "MÜ": {
       "name": "Landkreis Mühldorf am Inn",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Mühldorf am Inn"
     },
     "MÜB": {
       "name": "Landkreis Bayreuth",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Münchberg"
     },
     "MÜL": {
       "name": "Landkreis Breisgau-Hochschwarzwald",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Müllheim im Markgräflerland"
     },
     "MÜR": {
       "name": "Landkreis Mecklenburgische Seenplatte",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Müritz"
     },
     "N": {
       "name": "Nürnberg",
@@ -1793,131 +2151,163 @@
     },
     "NAB": {
       "name": "Landkreis Amberg-Sulzbach",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Nabburg"
     },
     "NAI": {
       "name": "Landkreis Hof",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Naila"
     },
     "NAU": {
       "name": "Landkreis Havelland",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Nauen"
     },
     "NB": {
       "name": "Neubrandenburg",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "NeuBrandenburg"
     },
     "ND": {
       "name": "Landkreis Neuburg-Schrobenhausen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Neuburg an der Donau"
     },
     "NDH": {
       "name": "Landkreis Nordhausen",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Nordhausen"
     },
     "NE": {
       "name": "Rhein-Kreis Neuss",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Neuss"
     },
     "NEA": {
       "name": "Landkreis Neustadt an der Aisch-Bad Windsheim",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Neustadt an der Aisch"
     },
     "NEB": {
       "name": "Burgenlandkreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Nebra (Unstrut)"
     },
     "NEC": {
       "name": "Coburg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Neustadt bei Coburg"
     },
     "NEN": {
       "name": "Landkreis Schwandorf",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Neunburg vorm Wald"
     },
     "NES": {
       "name": "Landkreis Rhön-Grabfeld",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Bad Neustadt an der Saale"
     },
     "NEU": {
       "name": "Landkreis Breisgau-Hochschwarzwald",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Titisee-Neustadt"
     },
     "NEW": {
       "name": "Landkreis Neustadt an der Waldnaab",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Neustadt an der Waldnaab"
     },
     "NF": {
       "name": "Kreis Nordfriesland",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Nordfriesland"
     },
     "NH": {
       "name": "Landkreis Sonneberg",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Neuhaus am Rennweg"
     },
     "NI": {
       "name": "Landkreis Nienburg/Weser",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Nienburg/Weser"
     },
     "NK": {
       "name": "Landkreis Neunkirchen",
-      "bundesland": "SL"
+      "bundesland": "SL",
+      "origin": "Neunkirchen (Saar)"
     },
     "NL": {
       "name": "Niedersachsen",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Niedersächsischer Landtag"
     },
     "NM": {
       "name": "Landkreis Neumarkt in der Oberpfalz",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Neumarkt in der Oberpfalz"
     },
     "NMB": {
       "name": "Burgenlandkreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Naumburg (Saale)"
     },
     "NMS": {
       "name": "Neumünster",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "NeuMünSter"
     },
     "NOH": {
       "name": "Landkreis Grafschaft Bentheim",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Nordhorn"
     },
     "NOL": {
       "name": "Landkreis Görlitz",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Niederschlesien"
     },
     "NOM": {
       "name": "Landkreis Northeim",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Northeim"
     },
     "NOR": {
       "name": "Landkreis Aurich",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Norden (Ostfriesland)"
     },
     "NP": {
       "name": "Landkreis Ostprignitz-Ruppin",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Neuruppin"
     },
     "NR": {
       "name": "Landkreis Neuwied",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Neuwied"
     },
     "NRW": {
       "name": "Nordrhein-Westfalen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "NordRhein-Westfalen"
     },
     "NT": {
       "name": "Landkreis Esslingen",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Nürtingen"
     },
     "NU": {
       "name": "Landkreis Neu-Ulm",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Neu-Ulm"
     },
     "NVP": {
       "name": "Landkreis Vorpommern-Rügen",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Vorpommern"
     },
     "NW": {
       "name": "Neustadt an der Weinstraße",
@@ -1925,127 +2315,148 @@
     },
     "NWM": {
       "name": "Landkreis Nordwestmecklenburg",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Mecklenburg"
     },
     "NY": {
       "name": "Landkreis Görlitz",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Niesky"
     },
     "NZ": {
       "name": "Landkreis Mecklenburgische Seenplatte",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Neustrelitz"
     },
     "NÖ": {
       "name": "Landkreis Donau-Ries",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Nördlingen"
     },
     "OA": {
       "name": "Landkreis Oberallgäu",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "OberAllgäu"
     },
     "OAL": {
       "name": "Landkreis Ostallgäu",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "OstALlgäu"
     },
     "OB": {
       "name": "Oberhausen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "OBerhausen"
     },
     "OBB": {
       "name": "Landkreis Miltenberg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Obernburg am Main"
     },
     "OBG": {
       "name": "Landkreis Stendal",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Osterburg (Altmark)"
     },
     "OC": {
       "name": "Landkreis Börde",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Oschersleben (Bode)"
     },
     "OCH": {
       "name": "Landkreis Würzburg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Ochsenfurt"
     },
     "OD": {
       "name": "Kreis Stormarn",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Bad Oldesloe"
     },
     "OE": {
       "name": "Kreis Olpe",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Olpe"
     },
     "OF": {
       "name": "Landkreis Offenbach",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "OFfenbach"
     },
     "OG": {
       "name": "Ortenaukreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Offenburg"
     },
     "OH": {
       "name": "Kreis Ostholstein",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Holstein"
     },
     "OHA": {
       "name": "Landkreis Göttingen",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Osterode am Harz"
     },
     "OHV": {
       "name": "Landkreis Oberhavel",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Havel"
     },
     "OHZ": {
       "name": "Landkreis Osterholz",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Osterholz-Scharmbeck"
     },
     "OK": {
       "name": "Landkreis Börde",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Ohrekreis"
     },
     "OL": {
       "name": "Oldenburg",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "OLdenburg"
     },
     "OP": {
       "name": "Leverkusen",
-      "bundesland": "NW"
-    },
-    "OPO": {
-      "name": "Prądy",
-      "bundesland": "—"
+      "bundesland": "NW",
+      "origin": "Opladen"
     },
     "OPR": {
       "name": "Landkreis Ostprignitz-Ruppin",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Prignitz"
     },
     "OS": {
       "name": "Osnabrück",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "OSnabrück"
     },
     "OSL": {
       "name": "Landkreis Oberspreewald-Lausitz",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Spreewald"
     },
     "OTW": {
       "name": "Landkreis Neunkirchen",
-      "bundesland": "SL"
+      "bundesland": "SL",
+      "origin": "Ottweiler"
     },
     "OVI": {
       "name": "Landkreis Schwandorf",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Oberviechtach"
     },
     "OVL": {
       "name": "Vogtlandkreis",
-      "bundesland": "SN"
-    },
-    "OVP": {
-      "name": "Lassan",
-      "bundesland": "MV"
+      "bundesland": "SN",
+      "origin": "Obervogtland"
     },
     "OZ": {
       "name": "Landkreis Nordsachsen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Oschatz"
     },
     "P": {
       "name": "Potsdam",
@@ -2053,91 +2464,113 @@
     },
     "PA": {
       "name": "Passau",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "PAssau"
     },
     "PAF": {
       "name": "Landkreis Pfaffenhofen an der Ilm",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Pfaffenhofen an der Ilm"
     },
     "PAN": {
       "name": "Landkreis Rottal-Inn",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Pfarrkirchen"
     },
     "PAR": {
       "name": "Landkreis Kelheim",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Parsberg"
     },
     "PB": {
       "name": "Kreis Paderborn",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Paderborn"
     },
     "PCH": {
       "name": "Landkreis Ludwigslust-Parchim",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Parchim"
     },
     "PE": {
       "name": "Landkreis Peine",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Peine"
     },
     "PEG": {
       "name": "Landkreis Bayreuth",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Pegnitz (Stadt)"
     },
     "PF": {
       "name": "Pforzheim",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "PForzheim"
     },
     "PI": {
       "name": "Kreis Pinneberg",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Pinneberg"
     },
     "PIR": {
       "name": "Landkreis Sächsische Schweiz-Osterzgebirge",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Pirna"
     },
     "PL": {
       "name": "Vogtlandkreis",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Plauen"
     },
     "PLÖ": {
       "name": "Kreis Plön",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Plön"
     },
     "PM": {
       "name": "Landkreis Potsdam-Mittelmark",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Potsdam"
     },
     "PN": {
       "name": "Saale-Orla-Kreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Pößneck"
     },
     "PR": {
       "name": "Landkreis Prignitz",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Prignitz"
     },
     "PRÜ": {
       "name": "Eifelkreis Bitburg-Prüm",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Prüm"
     },
     "PS": {
       "name": "Pirmasens",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "PirmaSens"
     },
     "PW": {
       "name": "Landkreis Vorpommern-Greifswald",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Pasewalk"
     },
     "PZ": {
       "name": "Landkreis Uckermark",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Prenzlau"
     },
     "QFT": {
       "name": "Saalekreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Querfurt"
     },
     "QLB": {
       "name": "Landkreis Harz",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Quedlinburg"
     },
     "R": {
       "name": "Regensburg",
@@ -2145,143 +2578,178 @@
     },
     "RA": {
       "name": "Landkreis Rastatt",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Rastatt"
     },
     "RC": {
       "name": "Vogtlandkreis",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Reichenbach im Vogtland"
     },
     "RD": {
       "name": "Kreis Rendsburg-Eckernförde",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Rendsburg"
     },
     "RDG": {
       "name": "Landkreis Vorpommern-Rügen",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Ribnitz-Damgarten"
     },
     "RE": {
       "name": "Kreis Recklinghausen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Recklinghausen"
     },
     "REG": {
       "name": "Landkreis Regen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Regen (Stadt)"
     },
     "REH": {
       "name": "Landkreis Hof",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Rehau"
     },
     "REI": {
       "name": "Landkreis Berchtesgadener Land",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Bad Reichenhall"
     },
     "RG": {
       "name": "Landkreis Meißen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Riesa"
     },
     "RH": {
       "name": "Landkreis Roth",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Roth"
     },
     "RI": {
       "name": "Landkreis Schaumburg",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Rinteln"
     },
     "RID": {
       "name": "Landkreis Kelheim",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Riedenburg"
     },
     "RIE": {
       "name": "Landkreis Meißen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Riesa"
     },
     "RL": {
       "name": "Landkreis Mittelsachsen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Rochlitz"
     },
     "RM": {
       "name": "Landkreis Mecklenburgische Seenplatte",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Röbel/Müritz"
     },
     "RN": {
       "name": "Landkreis Havelland",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Rathenow"
     },
     "RO": {
       "name": "Rosenheim",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "ROsenheim"
     },
     "ROD": {
       "name": "Landkreis Cham",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Roding"
     },
     "ROF": {
       "name": "Landkreis Hersfeld-Rotenburg",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Rotenburg an der Fulda"
     },
     "ROK": {
       "name": "Donnersbergkreis",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Rockenhausen"
     },
     "ROL": {
       "name": "Landkreis Kelheim",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Rottenburg an der Laaber"
     },
     "ROS": {
       "name": "Landkreis Rostock",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Rostock"
     },
     "ROT": {
       "name": "Landkreis Ansbach",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Rothenburg ob der Tauber"
     },
     "ROW": {
       "name": "Landkreis Rotenburg (Wümme)",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Rotenburg (Wümme)"
     },
     "RP": {
       "name": "Rhein-Pfalz-Kreis",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Rhein"
     },
     "RPL": {
       "name": "Rheinland-Pfalz, Landesregierung",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Rheinland-Pfälzischer Landtag"
     },
     "RS": {
       "name": "Remscheid",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "RemScheid"
     },
     "RSL": {
       "name": "Dessau-Roßlau",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Roßlau (Elbe)"
     },
     "RT": {
       "name": "Landkreis Reutlingen",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Reutlingen"
     },
     "RU": {
       "name": "Landkreis Saalfeld-Rudolstadt",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Rudolstadt"
     },
     "RV": {
       "name": "Landkreis Ravensburg",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Ravensburg"
     },
     "RW": {
       "name": "Landkreis Rottweil",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Rottweil"
     },
     "RZ": {
       "name": "Kreis Herzogtum Lauenburg",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Ratzeburg"
     },
     "RÜD": {
       "name": "Rheingau-Taunus-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Rüdesheim am Rhein"
     },
     "RÜG": {
       "name": "Landkreis Vorpommern-Rügen",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Rügen"
     },
     "S": {
       "name": "Stuttgart",
@@ -2289,99 +2757,113 @@
     },
     "SAB": {
       "name": "Landkreis Trier-Saarburg",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Saarburg"
     },
     "SAD": {
       "name": "Landkreis Schwandorf",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Schwandorf"
     },
     "SAL": {
       "name": "Saarland",
-      "bundesland": "SL"
+      "bundesland": "SL",
+      "origin": "Landtag des Saarlandes"
     },
     "SAN": {
       "name": "Landkreis Hof",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Stadtsteinach"
     },
     "SAW": {
       "name": "Altmarkkreis Salzwedel",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Salzwedel"
     },
     "SB": {
       "name": "Regionalverband Saarbrücken",
-      "bundesland": "SL"
+      "bundesland": "SL",
+      "origin": "Saarbrücken"
     },
     "SBG": {
       "name": "Landkreis Vorpommern-Greifswald",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Strasburg (Uckermark)"
     },
     "SBK": {
       "name": "Salzlandkreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Schönebeck (Elbe)"
     },
     "SC": {
       "name": "Schwabach",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "SChwabach"
     },
     "SCZ": {
       "name": "Saale-Orla-Kreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Schleiz"
     },
     "SDH": {
       "name": "Kyffhäuserkreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Sondershausen"
     },
     "SDL": {
       "name": "Landkreis Stendal",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Stendal"
     },
     "SDT": {
       "name": "Landkreis Uckermark",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Schwedt/Oder"
     },
     "SE": {
       "name": "Kreis Segeberg",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Bad Segeberg"
     },
     "SEB": {
       "name": "Landkreis Sächsische Schweiz-Osterzgebirge",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Sebnitz"
     },
     "SEE": {
       "name": "Landkreis Märkisch-Oderland",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Seelow"
     },
     "SEF": {
       "name": "Landkreis Neustadt an der Aisch-Bad Windsheim",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Scheinfeld"
     },
     "SEL": {
       "name": "Landkreis Wunsiedel im Fichtelgebirge",
-      "bundesland": "BY"
-    },
-    "SF": {
-      "name": "Landkreis Oberallgäu",
-      "bundesland": "BY"
-    },
-    "SFA": {
-      "name": "Ahlden (Aller)",
-      "bundesland": "NI"
+      "bundesland": "BY",
+      "origin": "Selb"
     },
     "SFB": {
       "name": "Landkreis Oberspreewald-Lausitz",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Senftenberg"
     },
     "SFT": {
       "name": "Salzlandkreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Staßfurt"
     },
     "SG": {
       "name": "Solingen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "SolinGen"
     },
     "SGH": {
       "name": "Landkreis Mansfeld-Südharz",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Sangerhausen"
     },
     "SH": {
       "name": "Schleswig-Holstein",
@@ -2389,355 +2871,428 @@
     },
     "SHA": {
       "name": "Landkreis Schwäbisch Hall",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Schwäbisch Hall"
     },
     "SHG": {
       "name": "Landkreis Schaumburg",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Stadthagen"
     },
     "SHK": {
       "name": "Saale-Holzland-Kreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Saale"
     },
     "SHL": {
       "name": "Suhl",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "SuHL"
     },
     "SI": {
       "name": "Kreis Siegen-Wittgenstein",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Siegen"
     },
     "SIG": {
       "name": "Landkreis Sigmaringen",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Sigmaringen"
     },
     "SIM": {
       "name": "Rhein-Hunsrück-Kreis",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Simmern/Hunsrück"
     },
     "SK": {
       "name": "Saalekreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "SaaleKreis"
     },
     "SL": {
       "name": "Kreis Schleswig-Flensburg",
-      "bundesland": "SH"
+      "bundesland": "SH",
+      "origin": "Schleswig"
     },
     "SLE": {
       "name": "Kreis Düren",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Schleiden"
     },
     "SLF": {
       "name": "Landkreis Saalfeld-Rudolstadt",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Saalfeld/Saale"
     },
     "SLG": {
       "name": "Landkreis Ravensburg",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Bad Saulgau"
     },
     "SLK": {
       "name": "Salzlandkreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "SalzLandKreis"
     },
     "SLN": {
       "name": "Landkreis Altenburger Land",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Schmölln"
     },
     "SLS": {
       "name": "Landkreis Saarlouis",
-      "bundesland": "SL"
+      "bundesland": "SL",
+      "origin": "Saarlouis"
     },
     "SLZ": {
       "name": "Wartburgkreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Bad Salzungen"
     },
     "SLÜ": {
       "name": "Main-Kinzig-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Schlüchtern"
     },
     "SM": {
       "name": "Landkreis Schmalkalden-Meiningen",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Schmalkalden"
     },
     "SMÜ": {
       "name": "Landkreis Augsburg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Schwabmünchen"
     },
     "SN": {
       "name": "Schwerin",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "SchweriN"
     },
     "SO": {
       "name": "Kreis Soest",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Soest"
     },
     "SOB": {
       "name": "Landkreis Neuburg-Schrobenhausen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Schrobenhausen"
     },
     "SOG": {
       "name": "Landkreis Weilheim-Schongau",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Schongau"
     },
     "SOK": {
       "name": "Saale-Orla-Kreis",
-      "bundesland": "TH"
-    },
-    "SOL": {
-      "name": "Landkreis Soltau",
-      "bundesland": "NI"
+      "bundesland": "TH",
+      "origin": "Saale"
     },
     "SON": {
       "name": "Landkreis Sonneberg",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Sonneberg"
     },
     "SP": {
       "name": "Speyer",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "SPeyer"
     },
     "SPB": {
       "name": "Landkreis Spree-Neiße",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Spremberg"
     },
     "SPN": {
       "name": "Landkreis Spree-Neiße",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Spree"
     },
     "SR": {
       "name": "Landkreis Straubing-Bogen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "StRaubing"
     },
     "SRB": {
       "name": "Landkreis Märkisch-Oderland",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Strausberg"
     },
     "SRO": {
       "name": "Saale-Holzland-Kreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Stadtroda"
     },
     "ST": {
       "name": "Kreis Steinfurt",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Steinfurt"
     },
     "STA": {
       "name": "Landkreis Starnberg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Starnberg"
     },
     "STB": {
       "name": "Landkreis Ludwigslust-Parchim",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Sternberg"
     },
     "STD": {
       "name": "Landkreis Stade",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Stade"
     },
     "STE": {
       "name": "Landkreis Lichtenfels",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Bad Staffelstein"
     },
     "STL": {
       "name": "Erzgebirgskreis",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Stollberg/Erzgeb."
     },
     "STO": {
       "name": "Landkreis Konstanz",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Stockach"
     },
     "SU": {
       "name": "Rhein-Sieg-Kreis",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Siegburg"
     },
     "SUL": {
       "name": "Landkreis Amberg-Sulzbach",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Sulzbach-Rosenberg"
     },
     "SW": {
       "name": "Schweinfurt",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "SchWeinfurt"
     },
     "SWA": {
       "name": "Rheingau-Taunus-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Bad Schwalbach"
     },
     "SY": {
       "name": "Landkreis Diepholz",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Syke"
     },
     "SZ": {
       "name": "Salzgitter",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "SalZgitter"
     },
     "SZB": {
       "name": "Erzgebirgskreis",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Schwarzenberg/Erzgeb."
     },
     "SÄK": {
       "name": "Landkreis Waldshut",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Bad Säckingen"
     },
     "SÖM": {
       "name": "Landkreis Sömmerda",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Sömmerda"
     },
     "SÜW": {
       "name": "Landkreis Südliche Weinstraße",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Deutsche Weinstraße"
     },
     "TBB": {
       "name": "Main-Tauber-Kreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Tauberbischofsheim"
     },
     "TDO": {
       "name": "Landkreis Nordsachsen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Torgau"
     },
     "TE": {
       "name": "Kreis Steinfurt",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Tecklenburg"
     },
     "TET": {
       "name": "Landkreis Rostock",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Teterow"
     },
     "TF": {
       "name": "Landkreis Teltow-Fläming",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Teltow (Landschaft)"
     },
     "TG": {
       "name": "Landkreis Nordsachsen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Torgau"
     },
     "THL": {
       "name": "Thüringen",
-      "bundesland": "TH"
-    },
-    "THW": {
-      "name": "Technisches Hilfswerk",
-      "bundesland": "—"
+      "bundesland": "TH",
+      "origin": "THüringer Landtag"
     },
     "TIR": {
       "name": "Landkreis Tirschenreuth",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Tirschenreuth"
     },
     "TO": {
       "name": "Landkreis Nordsachsen",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Torgau"
     },
     "TP": {
       "name": "Landkreis Uckermark",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Templin"
     },
     "TR": {
       "name": "Landkreis Trier-Saarburg",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "TRier"
     },
     "TS": {
       "name": "Landkreis Traunstein",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Traunstein"
     },
     "TT": {
       "name": "Bodenseekreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Tettnang"
     },
     "TUT": {
       "name": "Landkreis Tuttlingen",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Tuttlingen"
     },
     "TÖL": {
       "name": "Landkreis Bad Tölz-Wolfratshausen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Bad Tölz"
     },
     "TÜ": {
       "name": "Landkreis Tübingen",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Tübingen"
     },
     "UE": {
       "name": "Landkreis Uelzen",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Uelzen"
     },
     "UEM": {
       "name": "Landkreis Vorpommern-Greifswald",
-      "bundesland": "MV"
-    },
-    "UER": {
-      "name": "Krugsdorf",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Ueckermünde"
     },
     "UFF": {
       "name": "Landkreis Neustadt an der Aisch-Bad Windsheim",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Uffenheim"
     },
     "UH": {
       "name": "Unstrut-Hainich-Kreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Unstrut"
     },
     "UL": {
       "name": "Ulm",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "ULm"
     },
     "UM": {
       "name": "Landkreis Uckermark",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Uckermark"
     },
     "UN": {
       "name": "Kreis Unna",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Unna"
     },
     "USI": {
       "name": "Hochtaunuskreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Usingen"
     },
     "V": {
       "name": "Vogtlandkreis",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Vogtland"
     },
     "VAI": {
       "name": "Landkreis Ludwigsburg",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Vaihingen an der Enz"
     },
     "VB": {
       "name": "Vogelsbergkreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Vogelsberg"
     },
     "VEC": {
       "name": "Landkreis Vechta",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Vechta"
     },
     "VER": {
       "name": "Landkreis Verden",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Verden (Aller)"
     },
     "VG": {
       "name": "Landkreis Vorpommern-Greifswald",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Vorpommern-Greifswald"
     },
     "VIB": {
       "name": "Landkreis Landshut",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Vilsbiburg"
     },
     "VIE": {
       "name": "Kreis Viersen",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Viersen"
     },
     "VIT": {
       "name": "Landkreis Regen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Viechtach"
     },
     "VK": {
       "name": "Völklingen",
-      "bundesland": "SL"
+      "bundesland": "SL",
+      "origin": "VölKlingen"
     },
     "VOH": {
       "name": "Landkreis Neustadt an der Waldnaab",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Vohenstrauß"
     },
     "VR": {
       "name": "Landkreis Vorpommern-Rügen",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Vorpommern-Rügen"
     },
     "VS": {
       "name": "Schwarzwald-Baar-Kreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Villingen-Schwenningen"
     },
     "W": {
       "name": "Wuppertal",
@@ -2745,271 +3300,323 @@
     },
     "WA": {
       "name": "Landkreis Waldeck-Frankenberg",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Waldeck"
     },
     "WAF": {
       "name": "Kreis Warendorf",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Warendorf"
     },
     "WAK": {
       "name": "Wartburgkreis",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Wartburg"
     },
     "WAN": {
       "name": "Herne",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Wanne (Herne)"
     },
     "WAR": {
       "name": "Kreis Höxter",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Warburg"
     },
     "WAT": {
       "name": "Bochum",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Wattenscheid"
     },
     "WB": {
       "name": "Landkreis Wittenberg",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Lutherstadt Wittenberg"
     },
     "WBS": {
       "name": "Landkreis Eichsfeld",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Worbis"
     },
     "WDA": {
       "name": "Landkreis Zwickau",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Werdau"
     },
     "WE": {
       "name": "Weimar",
-      "bundesland": "TH"
-    },
-    "WEG": {
-      "name": "Landkreis Wegscheid",
-      "bundesland": "BY"
+      "bundesland": "TH",
+      "origin": "WEimar"
     },
     "WEL": {
       "name": "Landkreis Limburg-Weilburg",
-      "bundesland": "HE"
-    },
-    "WEM": {
-      "name": "Landkreis Wesermünde",
-      "bundesland": "—"
+      "bundesland": "HE",
+      "origin": "Weilburg"
     },
     "WEN": {
       "name": "Weiden in der Oberpfalz",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "WEideN"
     },
     "WER": {
       "name": "Landkreis Augsburg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Wertingen"
     },
     "WES": {
       "name": "Kreis Wesel",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Wesel"
     },
     "WF": {
       "name": "Landkreis Wolfenbüttel",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Wolfenbüttel"
     },
     "WG": {
       "name": "Landkreis Ravensburg",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Wangen im Allgäu"
     },
     "WHV": {
       "name": "Wilhelmshaven",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "WilhelmsHaVen"
     },
     "WI": {
       "name": "Wiesbaden",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "WIesbaden"
     },
     "WIL": {
       "name": "Landkreis Bernkastel-Wittlich",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Wittlich"
     },
     "WIS": {
       "name": "Landkreis Nordwestmecklenburg",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Wismar"
     },
     "WIT": {
       "name": "Ennepe-Ruhr-Kreis",
-      "bundesland": "NW"
+      "bundesland": "NW",
+      "origin": "Witten"
     },
     "WIZ": {
       "name": "Werra-Meißner-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Witzenhausen"
     },
     "WK": {
       "name": "Landkreis Ostprignitz-Ruppin",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Wittstock/Dosse"
     },
     "WL": {
       "name": "Landkreis Harburg",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Winsen (Luhe)"
     },
     "WLG": {
       "name": "Landkreis Vorpommern-Greifswald",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Wolgast"
     },
     "WM": {
       "name": "Landkreis Weilheim-Schongau",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Weilheim in Oberbayern"
     },
     "WMS": {
       "name": "Landkreis Börde",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Wolmirstedt"
     },
     "WN": {
       "name": "Rems-Murr-Kreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Waiblingen"
     },
     "WND": {
       "name": "Landkreis St. Wendel",
-      "bundesland": "SL"
+      "bundesland": "SL",
+      "origin": "St. Wendel"
     },
     "WO": {
       "name": "Worms",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "WOrms"
     },
     "WOB": {
       "name": "Wolfsburg",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "WOlfsBurg"
     },
     "WOH": {
       "name": "Landkreis Kassel",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Wolfhagen"
     },
     "WOL": {
       "name": "Landkreis Freudenstadt",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Wolfach"
     },
     "WOR": {
       "name": "Landkreis Bad Tölz-Wolfratshausen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Wolfratshausen"
     },
     "WOS": {
       "name": "Landkreis Freyung-Grafenau",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Schloss Wolfstein"
     },
     "WR": {
       "name": "Landkreis Harz",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Wernigerode"
     },
     "WRN": {
       "name": "Landkreis Mecklenburgische Seenplatte",
-      "bundesland": "MV"
+      "bundesland": "MV",
+      "origin": "Waren (Müritz)"
     },
     "WS": {
       "name": "Landkreis Mühldorf a.Inn",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Wasserburg am Inn"
     },
     "WSF": {
       "name": "Burgenlandkreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Weißenfels"
     },
     "WST": {
       "name": "Landkreis Ammerland",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Westerstede"
     },
     "WSW": {
       "name": "Landkreis Görlitz",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Weißwasser"
     },
     "WT": {
       "name": "Landkreis Waldshut",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Waldshut-Tiengen"
     },
     "WTL": {
       "name": "Landkreis Osnabrück",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Wittlage"
     },
     "WTM": {
       "name": "Landkreis Wittmund",
-      "bundesland": "NI"
+      "bundesland": "NI",
+      "origin": "Wittmund"
     },
     "WUG": {
       "name": "Landkreis Weißenburg-Gunzenhausen",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Weißenburg in Bayern"
     },
     "WUN": {
       "name": "Landkreis Wunsiedel im Fichtelgebirge",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "Wunsiedel"
     },
     "WUR": {
       "name": "Landkreis Leipzig",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Wurzen"
     },
     "WW": {
       "name": "Westerwaldkreis",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Westerwald"
     },
     "WZ": {
       "name": "Lahn-Dill-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Wetzlar"
     },
     "WZL": {
       "name": "Landkreis Börde",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Stadt Wanzleben"
     },
     "WÜ": {
       "name": "Würzburg",
-      "bundesland": "BY"
+      "bundesland": "BY",
+      "origin": "WÜrzburg"
     },
     "WÜM": {
       "name": "Landkreis Cham",
-      "bundesland": "BY"
-    },
-    "Y": {
-      "name": "Bundeswehr",
-      "bundesland": "—"
+      "bundesland": "BY",
+      "origin": "Waldmünchen"
     },
     "Z": {
       "name": "Landkreis Zwickau",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Zwickau"
     },
     "ZE": {
       "name": "Landkreis Anhalt-Bitterfeld",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Zerbst/Anhalt"
     },
     "ZEL": {
       "name": "Landkreis Cochem-Zell",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "Zell (Mosel)"
     },
     "ZI": {
       "name": "Landkreis Görlitz",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Zittau"
     },
     "ZIG": {
       "name": "Schwalm-Eder-Kreis",
-      "bundesland": "HE"
+      "bundesland": "HE",
+      "origin": "Ziegenhain (Schwalmstadt)"
     },
     "ZP": {
       "name": "Erzgebirgskreis",
-      "bundesland": "SN"
+      "bundesland": "SN",
+      "origin": "Zschopau"
     },
     "ZR": {
       "name": "Landkreis Greiz",
-      "bundesland": "TH"
+      "bundesland": "TH",
+      "origin": "Zeulenroda"
     },
     "ZS": {
       "name": "Landkreis Teltow-Fläming",
-      "bundesland": "BB"
+      "bundesland": "BB",
+      "origin": "Zossen"
     },
     "ZW": {
       "name": "Zweibrücken",
-      "bundesland": "RP"
+      "bundesland": "RP",
+      "origin": "ZWeibrücken"
     },
     "ZZ": {
       "name": "Burgenlandkreis",
-      "bundesland": "ST"
+      "bundesland": "ST",
+      "origin": "Zeitz"
     },
     "ÖHR": {
       "name": "Hohenlohekreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Öhringen"
     },
     "ÜB": {
       "name": "Bodenseekreis",
-      "bundesland": "BW"
+      "bundesland": "BW",
+      "origin": "Überlingen"
     }
   }
 }
