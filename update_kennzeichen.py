@@ -99,7 +99,7 @@ def fetch_wikidata() -> dict[str, dict]:
 WIKI_API = (
     "https://de.wikipedia.org/w/api.php?"
     "action=parse&page=Liste_der_Kfz-Kennzeichen_in_Deutschland"
-    "&prop=wikitext&format=json&redirects=1&formatversion=2"
+    "&prop=wikitext&format=json&redirects=1"
 )
 
 _LINK_RE    = re.compile(r'\[\[(?:[^|\]]+\|)?([^\]]+)\]\]')
@@ -143,7 +143,14 @@ _TABLE_RE = re.compile(r'\{\|\s*\{\{TabDKfz[^}]*\}\}[^\n]*\n(.*?)\n\|\}', re.DOT
 def fetch_wikipedia() -> dict[str, dict]:
     raw = http_get(WIKI_API)
     data = json.loads(raw)
-    wt = ((data.get("parse") or {}).get("wikitext") or {}).get("*", "")
+    wikitext_obj = (data.get("parse") or {}).get("wikitext")
+    # format=json  → {"*": "..."};  formatversion=2 → String direkt.
+    if isinstance(wikitext_obj, dict):
+        wt = wikitext_obj.get("*", "")
+    elif isinstance(wikitext_obj, str):
+        wt = wikitext_obj
+    else:
+        wt = ""
     out: dict[str, dict] = {}
 
     for body in _TABLE_RE.findall(wt):
