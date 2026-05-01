@@ -1,18 +1,18 @@
 {
-  "generated": "2026-04-19T19:40:18+00:00",
+  "generated": "2026-05-01T05:29:08+00:00",
   "source": "Wikipedia + Wikidata (merge)",
   "sources": {
     "wikipedia": "https://de.wikipedia.org/wiki/Liste_der_Kfz-Kennzeichen_in_Deutschland",
     "wikidata": "https://query.wikidata.org/sparql (P395)"
   },
-  "count": 724,
+  "count": 751,
   "stats": {
-    "added": 0,
-    "removed": 25,
-    "changed": 707,
-    "only_wikipedia": 724,
-    "only_wikidata": 0,
-    "conflicts_wp_won": 0
+    "added": 27,
+    "removed": 0,
+    "changed": 0,
+    "only_wikipedia": 52,
+    "only_wikidata": 25,
+    "conflicts_wp_won": 4
   },
   "kennzeichen": {
     "A": {
@@ -48,6 +48,10 @@
       "name": "Vogtlandkreis",
       "bundesland": "SN",
       "origin": "Auerbach/Vogtl."
+    },
+    "AG": {
+      "name": "Helgoland",
+      "bundesland": "SH"
     },
     "AH": {
       "name": "Kreis Borken",
@@ -128,6 +132,10 @@
       "name": "Landkreis Amberg-Sulzbach",
       "bundesland": "BY",
       "origin": "Amberg"
+    },
+    "ASD": {
+      "name": "Landkreis Aschendorf-Hümmling",
+      "bundesland": "NI"
     },
     "ASL": {
       "name": "Salzlandkreis",
@@ -227,6 +235,10 @@
       "name": "Landkreis Mittelsachsen",
       "bundesland": "SN",
       "origin": "Brand-Erbisdorf"
+    },
+    "BEI": {
+      "name": "Landkreis Beilngries",
+      "bundesland": "BY"
     },
     "BEL": {
       "name": "Landkreis Potsdam-Mittelmark",
@@ -353,6 +365,10 @@
       "bundesland": "NW",
       "origin": "BOTtrop"
     },
+    "BP": {
+      "name": "Bundespolizei",
+      "bundesland": "—"
+    },
     "BR": {
       "name": "Landkreis Karlsruhe",
       "bundesland": "BW",
@@ -417,6 +433,10 @@
       "name": "Landkreis Amberg-Sulzbach",
       "bundesland": "BY",
       "origin": "Burglengenfeld"
+    },
+    "BW": {
+      "name": "Wasserstraßen- und Schifffahrtsverwaltung des Bundes",
+      "bundesland": "—"
     },
     "BWL": {
       "name": "Landesregierung",
@@ -551,6 +571,10 @@
       "bundesland": "RP",
       "origin": "Daun"
     },
+    "DBA": {
+      "name": "Walim",
+      "bundesland": "—"
+    },
     "DBR": {
       "name": "Landkreis Rostock",
       "bundesland": "MV",
@@ -646,6 +670,11 @@
       "bundesland": "BW",
       "origin": "Donaueschingen"
     },
+    "DT": {
+      "name": "Kreis Lippe",
+      "bundesland": "NW",
+      "origin": "Detmold"
+    },
     "DU": {
       "name": "Duisburg",
       "bundesland": "NW",
@@ -730,6 +759,10 @@
       "bundesland": "BB",
       "origin": "Eisenhüttenstadt"
     },
+    "EHI": {
+      "name": "Ehingen",
+      "bundesland": "BW"
+    },
     "EI": {
       "name": "Landkreis Eichstätt",
       "bundesland": "BY",
@@ -780,6 +813,10 @@
       "bundesland": "NW",
       "origin": "Ennepe"
     },
+    "EO": {
+      "name": "Schöneiche bei Berlin",
+      "bundesland": "BB"
+    },
     "ER": {
       "name": "Erlangen",
       "bundesland": "BY",
@@ -819,6 +856,10 @@
       "name": "Werra-Meißner-Kreis",
       "bundesland": "HE",
       "origin": "Eschwege"
+    },
+    "ET": {
+      "name": "Schöneiche bei Berlin",
+      "bundesland": "BB"
     },
     "EU": {
       "name": "Kreis Euskirchen",
@@ -935,6 +976,10 @@
       "bundesland": "BY",
       "origin": "Freising"
     },
+    "FSU": {
+      "name": "Słońsk",
+      "bundesland": "—"
+    },
     "FT": {
       "name": "Frankenthal (Pfalz)",
       "bundesland": "RP",
@@ -1008,6 +1053,10 @@
       "name": "Kreis Kleve",
       "bundesland": "NW",
       "origin": "Geldern"
+    },
+    "GEM": {
+      "name": "Landkreis Gemünden am Main",
+      "bundesland": "BY"
     },
     "GEO": {
       "name": "Landkreis Haßberge",
@@ -1731,6 +1780,11 @@
       "bundesland": "BB",
       "origin": "Landkreis"
     },
+    "LE": {
+      "name": "Kreis Lippe",
+      "bundesland": "NW",
+      "origin": "Lemgo"
+    },
     "LEO": {
       "name": "Landkreis Böblingen",
       "bundesland": "BW",
@@ -1775,6 +1829,10 @@
       "name": "Landkreis Lichtenfels",
       "bundesland": "BY",
       "origin": "Lichtenfels (Oberfranken)"
+    },
+    "LIN": {
+      "name": "Landkreis Lingen",
+      "bundesland": "NI"
     },
     "LIP": {
       "name": "Kreis Lippe",
@@ -1900,6 +1958,10 @@
       "bundesland": "BY",
       "origin": "Mallersdorf-Pfaffenberg"
     },
+    "MAR": {
+      "name": "Landkreis Marktheidenfeld",
+      "bundesland": "BY"
+    },
     "MB": {
       "name": "Landkreis Miesbach",
       "bundesland": "BY",
@@ -1944,6 +2006,10 @@
       "name": "Landkreis Osnabrück",
       "bundesland": "NI",
       "origin": "Melle"
+    },
+    "MEP": {
+      "name": "Landkreis Meppen",
+      "bundesland": "NI"
     },
     "MER": {
       "name": "Saalekreis",
@@ -2074,6 +2140,10 @@
       "name": "Landkreis Mecklenburgische Seenplatte",
       "bundesland": "MV",
       "origin": "Mecklenburg-Strelitz"
+    },
+    "MT": {
+      "name": "Unterwesterwaldkreis",
+      "bundesland": "RP"
     },
     "MTK": {
       "name": "Main-Taunus-Kreis",
@@ -2423,6 +2493,10 @@
       "bundesland": "NW",
       "origin": "Opladen"
     },
+    "OPO": {
+      "name": "Prądy",
+      "bundesland": "—"
+    },
     "OPR": {
       "name": "Landkreis Ostprignitz-Ruppin",
       "bundesland": "BB",
@@ -2452,6 +2526,10 @@
       "name": "Vogtlandkreis",
       "bundesland": "SN",
       "origin": "Obervogtland"
+    },
+    "OVP": {
+      "name": "Lassan",
+      "bundesland": "MV"
     },
     "OZ": {
       "name": "Landkreis Nordsachsen",
@@ -2845,6 +2923,14 @@
       "bundesland": "BY",
       "origin": "Selb"
     },
+    "SF": {
+      "name": "Landkreis Sonthofen",
+      "bundesland": "BY"
+    },
+    "SFA": {
+      "name": "Ahlden (Aller)",
+      "bundesland": "NI"
+    },
     "SFB": {
       "name": "Landkreis Oberspreewald-Lausitz",
       "bundesland": "BB",
@@ -2988,6 +3074,10 @@
       "name": "Saale-Orla-Kreis",
       "bundesland": "TH",
       "origin": "Saale"
+    },
+    "SOL": {
+      "name": "Landkreis Soltau",
+      "bundesland": "NI"
     },
     "SON": {
       "name": "Landkreis Sonneberg",
@@ -3144,6 +3234,10 @@
       "bundesland": "TH",
       "origin": "THüringer Landtag"
     },
+    "THW": {
+      "name": "Technisches Hilfswerk",
+      "bundesland": "—"
+    },
     "TIR": {
       "name": "Landkreis Tirschenreuth",
       "bundesland": "BY",
@@ -3198,6 +3292,10 @@
       "name": "Landkreis Vorpommern-Greifswald",
       "bundesland": "MV",
       "origin": "Ueckermünde"
+    },
+    "UER": {
+      "name": "Krugsdorf",
+      "bundesland": "MV"
     },
     "UFF": {
       "name": "Landkreis Neustadt an der Aisch-Bad Windsheim",
@@ -3348,10 +3446,18 @@
       "bundesland": "TH",
       "origin": "WEimar"
     },
+    "WEG": {
+      "name": "Landkreis Wegscheid",
+      "bundesland": "BY"
+    },
     "WEL": {
       "name": "Landkreis Limburg-Weilburg",
       "bundesland": "HE",
       "origin": "Weilburg"
+    },
+    "WEM": {
+      "name": "Landkreis Wesermünde",
+      "bundesland": "—"
     },
     "WEN": {
       "name": "Weiden in der Oberpfalz",
@@ -3557,6 +3663,10 @@
       "name": "Landkreis Cham",
       "bundesland": "BY",
       "origin": "Waldmünchen"
+    },
+    "Y": {
+      "name": "Bundeswehr",
+      "bundesland": "—"
     },
     "Z": {
       "name": "Landkreis Zwickau",
