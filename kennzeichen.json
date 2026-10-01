@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01T09:24:17+00:00",
+  "generated": "2026-10-01T10:56:57+00:00",
   "source": "Wikipedia + Wikidata (merge)",
   "sources": {
     "wikipedia": "https://de.wikipedia.org/wiki/Liste_der_Kfz-Kennzeichen_in_Deutschland",
@@ -9,10 +9,10 @@
   "stats": {
     "added": 0,
     "removed": 0,
-    "changed": 1,
+    "changed": 2,
     "only_wikipedia": 52,
     "only_wikidata": 25,
-    "conflicts_wp_won": 3
+    "conflicts_wp_won": 5
   },
   "kennzeichen": {
     "A": {
@@ -964,7 +964,7 @@
     "FRI": {
       "name": "Landkreis Friesland",
       "bundesland": "NI",
-      "origin": "Friesland"
+      "origin": "Frieslande"
     },
     "FRW": {
       "name": "Landkreis Märkisch-Oderland",
@@ -2924,7 +2924,7 @@
       "origin": "Selb"
     },
     "SF": {
-      "name": "Landkreis Oberallgäu",
+      "name": "Landkreis Sonthofen",
       "bundesland": "BY"
     },
     "SFA": {
